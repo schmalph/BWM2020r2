@@ -1,7 +1,7 @@
 /csnameendcsname.tex
-/main.aux
-/main.fdb_latexmk
-/main.fls
-/main.log
-/main.synctex.gz
-/main.toc
+/*.tex.aux
+/*.aux
+/*.fdb_latexmk
+/*.fls
+/*.log
+/*.synctex.gz
