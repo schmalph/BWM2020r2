@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage[top = 1cm, bottom = 1cm, right = 2cm, left = 6.1cm, includeheadfoot]{geometry}
+\usepackage{stmaryrd}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{Philipp Pascal Schmale}
+\fancyhead[L]{\leftmark}
+\fancyfoot{}
+\fancyfoot[R]{Seite \thepage}
+\newtheorem{thm}{Satz}
+\newtheorem{lem}{Lemma}[thm]
+\newtheorem{cor}{Korollar}[lem]
+
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\renewcommand\thesubsubsection{}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\author{Philipp Pascal Schmale}
+
+\title{Lösungen zu den Aufgaben der zweiten Runde des 50sten Bundeswettbewerbs Mathematik}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+\input{help.tex}
+
+\pagebreak
+\input{solutions/a1.tex}
+
+\pagebreak
+\input{solutions/a2.tex}
+
+\pagebreak
+\input{solutions/a3.tex}
+
+\pagebreak
+\input{solutions/a4.tex}
+
+\end{document}
