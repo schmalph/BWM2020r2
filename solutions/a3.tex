@@ -1,92 +1,29 @@
 \section{Aufgabe 3}
 
-\subsection*{Hinweise zur Darstellung}
+\subsection*{Anmerkungen zur Notation}
 
-$\gcd(\alpha, \beta)$ steht für den größten gemeinsamen Teiler (engl.: greatest common divisor) der Zahlen $\alpha$ 
-und $\beta$. Also ist z.B. $\gcd(\alpha, \beta) = 1$ äquivalent zu "`$\alpha$ und $\beta$ sind teilerfremd"'.\\
-"`O.B.d.A."' (oder mitten im Satz "`o.B.d.A."') ist kurz für "`ohne Beschränkung der Allgemeinheit"'.\\
-$\Q$ ist die Menge der rationalen Zahlen.\\
-$\N$ ist die Menge der natürlichen Zahlen (ohne die 0) und $\N_0$ die Menge der natürlichen Zahlen mit der 0.\\
-$\alpha \mid \beta$ heißt, dass $\alpha$ ein Teiler von $\beta$, also $\beta$ ein Vielfaches von $\alpha$ ist.
+Im Folgenden wird $x_A$ die $x$- und $y_A$ die $y$-Koordinate des allgemeinen Punktes $A$ bezeichnen. D.h. hier, dass 
+$P=(x_P, y_P), N=(x_N, y_N), M=(x_M, y_M), S=(x_S, y_S), Q=(x_Q, y_Q)$.\\
+$\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets positiv).
 
-\subsection*{Die tatsächliche Lösung von Aufgabe 3}
+\subsection*{"`Algebraisierung"' der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
 
-Die in Aufgabe 3 zu zeigende Aussage habe ich in folgenden Satz "`umformuliert"':
+\subsubsection*{Definition des Koordinatensystems}
 
-\begin{thm}
-    Es gibt keine drei Zahlen $x, y, z \in \Q$ mit $x + y + z = 0$ und $x^2 + y^2 + z^2 = 100$. \label{aufgabe_3}
-\end{thm}
+Um die Aufgabe von einer Geometrischen in eine eher Algebraische zu übersetzen, habe ich mich dazu entschieden, die 
+in der Aufgabenstellung beschriebene Konstruktion mit Hilfe eines kartesischen Koordinatensystems zu beschreiben. 
+Hierzu definiere man folgendermaßen ein kartesisches Koordinatensystem: $P$ sei der Urspung und $n$ die $x$-Achse; 
+dabei sei die $x$-Achse so beschriftet, dass der Punkt $N$ eine positive $x$-Koordinate hat, bevor er $P$ passiert, 
+und die $y$-Achse so, dass der Punkt $M$ eine positive $y$-Koordinate hat, bevor er $P$ passiert. Dies ist 
+offensichtlich möglich, da $P$ auf $n$ liegt. Offensichtlich ost auch die Beschriftung der $y$-Achse (also der 
+Orthonogonalen zu $m$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander
 
-\begin{proof}
-    Es folgt ein Beweis durch Widerspruch. Nehme man hierzu an, es gäbe drei Zahlen $x, y, z \in \Q$, 
-    die beide Gleichungen erfüllen. Offenbar können nicht alle drei Zahlen $x, y, z$ nicht-positiv und auch 
-    nicht alle drei Zahlen $x, y, z$ nicht-negativ sein, denn damit dann $x+y+z = 0$ erfüllt wäre, müsste $x = y = z 
-    = 0$, was der zweiten Gleichung $x^2+y^2+z^2 = 100$ widerspricht. Es sind also entweder zwei der drei Zahlen $x, 
-    y, z$ nicht-negativ und eine nicht-positiv oder es sind zwei nicht-positiv und eine nicht-negativ. Unter der 
-    Annahme, dass es ein Lösungstripel $x, y, z$ gibt, müsste es auch eines mit zwei nicht-negativen und einer 
-    nicht-positiven Zahl geben. Denn zu jedem Lösungstripel $x, y, z$, dass zwei nicht-positive Zahlen und eine 
-    nicht-negative Zahl beinhaltet, gibt es ein Lösungstripel $-x,-y,-z$ (das, wenn $x, y, z$ hinreichend für die 
-    beiden Gleichungen ist, dies offensichtlich ebenfalls ist), das dann zwei nicht-negative Zahlen und eine 
-    nicht-positive Zahl beinhaltet. Wenn es also überhaupt Lösungstripel gibt (wovon ja für den Widerspruchsbeweis 
-    ausgegangen wurde), so muss es also auch welche mit zwei nicht-negativen Zahlen und einer nicht-positiven Zahl 
-    geben. Sei nun $x, y, z$ ein solches Tripel und sei o.B.d.A. $z$ die nicht-positive Zahl (ansonsten benenne man 
-    einfach um, die Gleichungen ändern dadurch ihre Form nicht). Es ist also $z \leq 0$ und $x, y \geq 0$. Da $x, y$ 
-    nicht-negative rationale Zahlen sind, muss es vier Zahlen $a', b', c', d' \in \N_0$ ($b, d \neq 0$) geben, für die $x 
-    = \frac{a'}{b'}$ und $y = \frac{c'}{d'}$. Sei nun $\frac{a}{b}$ die vollständig gekürzte Form des Bruches 
-    $\frac{a'}{b'}$ und $\frac{c}{d}$ die des Bruches $\frac{c'}{d'}$. D.h., es ist $x = \frac{a}{b}$ und $y = 
-    \frac{c}{d}$ mit $\gcd(a, b) = \gcd(c, d) = 1$. 
-    %Sei nun o.B.d.A. $b \geq d$ (ansonsten bennen man einfach um, die Bedingungen für $x$ und $y$ und den jeweils 
-    %zugehörigen Variablen $a, b, c, d$ ändern dadurch ihre Form nicht). 
-    Nun ist wegen $x+y+z=0$ offenbar $z = -x-y = -\frac{a}{b} - \frac{c}{d} = -\frac{a \cdot d}{b \cdot d} - 
-    \frac{c \cdot b}{d \cdot b} = - \frac{ad+cb}{db}$. Damit gilt dann wegen $x^2+y^2+z^2 = 100$:
-    \begin{align*}
-        100 = x^2+y^2+z^2 &= \left( \frac{a}{b} \right)^2 + \left( \frac{c}{d} \right)^2 + \left( -\frac{ad+cb}{db} \right)^2\\
-        &= \left( \frac{a}{b} \right)^2 + \left( \frac{c}{d} \right)^2 + \left( \frac{ad+cb}{db} \right)^2\\
-        &= \left( \frac{a \cdot d}{b \cdot d} \right)^2 + \left( \frac{c \cdot b}{d \cdot b} \right)^2 + \left( 
-        \frac{ad+cb}{db} \right)^2\\
-        &= \frac{(ad)^2}{(db)^2} + \frac{(cb)^2}{(db)^2} + \frac{(ad)^2 + 2abcd + (cb)^2}{(db)^2}\\
-        &= \frac{2 \left( (ad)^2 + abcd + (cb)^2 \right)}{(db)^2} \quad \quad \quad \| \cdot \frac{(db)^2}{2}\\
-        \iff 50 \cdot (db)^2 &= (ad)^2 + abcd + (cb)^2 \numberthis \label{frac_manip}
-    \end{align*}\\
-    Sei nun $\gcd(b, d) = t$ und seien die dann natürlichen Zahlen $\frac{b}{t}$ und $\frac{d}{t}$ mit $p$ bzw. $q$ 
-    bezeichnet. $p$ und $q$ sind dann teilerfremde natürliche Zahlen. Wenn man nun $b = pt$ und $d = qt$ in 
-    (\refeq{frac_manip}) einsetzt, erhält man:
-    \begin{align*}
-        50 \cdot (db)^2 &= (ad)^2 + abcd + (cb)^2\\
-        = 50 \cdot p^2t^2 \cdot q^2 t^2 &= a^2 \cdot q^2 t^2 + ac \cdot pt \cdot qt + c^2 \cdot p^2t^2 \quad \| \cdot \frac{1}{t^2}\\
-        \iff 50 \cdot t^2 \cdot  p^2 q^2 &= a^2 q^2 + acpq +c^2p^2 \numberthis \label{divisib}
-    \end{align*}\\
-    Nun ist in (\refeq{divisib}) offensichtlich die linke Seit durch $p$ und durch $q$ teilbar, also muss es die 
-    rechte Seite auch sein. Der mittlere Summand $acpq$ muss dabei nicht beachtet werden, schließlich ist er bereits 
-    durch sowohl $p$ als auch $q$ teilbar. Es muss also $p \mid a^2 q^2 + c^2 p^2$ und $q \mid a^2 q^2 + c^2 p^2$. 
-    Aus $p \mid a^2 q^2 + c^2 p^2$ folgt wegen $p \mid c^2 p^2$ offenbar, dass $p \mid a^2 q^2$, während aus $q \mid 
-    a^2 q^2 + c^2 p^2$ wegen $q \mid a^2 q^2$ folgt, dass $q \mid c^2 p^2$. Es gilt also:
-    \[ p \mid a^2 q^2 \text{ und } q \mid c^2 p^2 \]
-    Da aber $p$ und $q$ teilerfremd sind, folgt direkt:
-    \[ p \mid a^2 \text{ und } q \mid c^2 \iff \frac{b}{t} \mid a^2 \text{ und } \frac{d}{t} \mid c^2 \]
-    Nun sind aber $a$ und $b$ teilerfremd, d.h. kein Teiler von $b$ (was $\frac{b}{t}$ ja ist) außer 1 kann $a$ bzw. 
-    $a^2$ teilen. Es muss also $\frac{b}{t} = 1$ und damit $b = t$. Da auch $q$ und $c$ teilerfremd sind, folgt mit 
-    gleicher Begründung, dass $d = t$. Damit ist dann $b = d$. Setzt man dies in (\refeq{frac_manip}) ein, so erhält 
-    man:
-    \begin{align*}
-        50 \cdot b^2 \cdot b^2 &= a^2 b^2 + ac \cdot b^2 + c^2 b^2 \quad \| \cdot \frac{1}{b^2}\\
-        \iff 50b^2 &= a^2 + ac + c^2 \numberthis \label{even_odd}
-    \end{align*}
-    Nun ist die linke Seite von (\refeq{even_odd}) offensichtlich gerade und damit muss es die rechte auch sein. Wenn 
-    nun aber beide Zahlen $a, c$ ungerade sind, so sind alle drei Summanden ungerade (das Produkt zweier ungerader 
-    Zahlen ist stets eine ungerade Zahl) und damit dann die gesamte rechte Seite ungerade. Es muss also mindestens 
-    eine der beiden Zahlen gerade sein. Wenn nun aber nur genau eine gerade ist, so ist auch das Quadrat dieser und 
-    $ac$ gerade, jedoch nicht das Quadrat der anderen dann ungeraden Zahl. Die rechte Seite wäre die Summe zweier 
-    gerader und  einer ungeraden Zahl, also auch ungerade. Da nicht beide und nicht genau eine der beiden Zahlen 
-    ungerade sein können, müssen beide gerade sein. D.h., es gibt zwei Zahlen $r, s \in \N$, für die $a = 2r$ und 
-    $c = 2s$ ist. Setzt man dies in (\refeq{even_odd}) ein, so erhält man:
-    \begin{align*}
-        50 b^2 &= (2r)^2 + (2r)(2s) + (2s)^2 = 4 \left( r^2 + rs + s^2 \right) \quad \| \cdot \frac12\\
-        \iff 25b^2 &= 2 \left( r^2 + rs + s^2 \right)
-    \end{align*}
-    Da nun $25b^2$ anscheinend eine gerade Zahl ist (schließlich ist $2 \left( r^2 + rs + s^2 \right)$ offensichtlich 
-    gerade), muss (da 25 ungerade ist) $b^2$ und damit $b$ erade sein. Nun sind also sowohl $a$ also auch $b$ gerade, 
-    d.h. durch 2 teilbar. $a$ und $b$ haben also den gemeinsamen Teiler 2. Dies stellt aber einen Widerspruch zu 
-    $\gcd(a, b) = 1$ dar! Denn offensichtlich ist ihr größter gemeinsame Teiler nicht 1, wenn 2 ein gemeinsamer 
-    Teiler von $a$ und $b$ ist. Dies vervollständigt dann den Widerspruchsbeweis von Satz \ref{aufgabe_3}.
-\end{proof}
+\subsubsection*{Direkte Folgerungen aus der Definition des Koordinatensystems}
+
+Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
+$N=(x_N, 0)$. Die Gerade $m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich 
+eine Urspungsgerade. Im folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, 
+also nicht orthogonal zu $n$ ist. Dann ist $m$ eine Ursprungsgerade (da $P$ auf $m$ liegt) mit reeler Steigung, die 
+im Folgenden $r$ genannt wird. Ihre Geradengleichung ist also: $y=r\cdot x$. Sei nun $d_M$ die Distanz $\overline{PM}$, 
+allerdings mit negativem Vorzeichen, wenn $y_M$ ein negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert 
+hat.
