@@ -1,20 +1,30 @@
 \section{Aufgabe 3}
 
-\subsection*{Anmerkungen zur Notation}
+\subsection*{Anmerkungen zur Notation und einer häufig verwendeten Formel}
 
 Im Folgenden wird $x_A$ die $x$- und $y_A$ die $y$-Koordinate des allgemeinen Punktes $A$ bezeichnen. D.h. hier, dass 
 $P=(x_P, y_P), N=(x_N, y_N), M=(x_M, y_M), S=(x_S, y_S), Q=(x_Q, y_Q)$.\\
 $\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets positiv).
 
-\subsection*{"`Algebraisierung"' der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
+Sehr oft habe ich die Distanzformel 
+\[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{    (für alle $A,B$)}\] 
+verwendet. Ich habe bei den Gleichungen, bei denen ich sie verwendet habe, nicht dazugeschrieben, dass sich die 
+Gleichungen mit der Distanzformel ergeben. Diese Entscheidung habe ich getroffen, da ich diese Formel so oft verwendet 
+habe, dass, wenn ich sie jedes mal erwähnt hätte, dies einige Sätze deutlich komplizierter und teilweise sogar 
+relativ unverständlich gemacht hätte. Ich denke, dass dies nicht problematisch ist; ich habe ja auch nicht dazugeschrieben, 
+wenn ich z.B. einen Bruch gekürzt habe.
+
+\subsection*{Algebraisierung der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
 
 Um die Aufgabe von einer Geometrischen in eine eher Algebraische zu übersetzen, habe ich mich dazu entschieden, die 
 in der Aufgabenstellung beschriebene Konstruktion mit Hilfe eines kartesischen Koordinatensystems zu beschreiben. 
 Hierzu definiere man folgendermaßen ein kartesisches Koordinatensystem: $P$ sei der Urspung und $n$ die $x$-Achse; 
 dabei sei die $x$-Achse so beschriftet, dass der Punkt $N$ eine positive $x$-Koordinate hat, bevor er $P$ passiert, 
 und die $y$-Achse so, dass der Punkt $M$ eine positive $y$-Koordinate hat, bevor er $P$ passiert. Dies ist 
-offensichtlich möglich, da $P$ auf $n$ liegt. Offensichtlich ost auch die Beschriftung der $y$-Achse (also der 
-Orthonogonalen zu $m$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander.
+offensichtlich möglich, da $P$ auf $n$ liegt. Offensichtlich ist auch die Beschriftung der $y$-Achse (also der 
+Orthogonalen zu $n$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander (sonst 
+würden sie sich in mehr als einem Punkt schneiden); der Punkt $M$ muss also, bevor er $P$ passiert, auf einer Seite 
+der $x$-Achse liegen.
 
 Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
 $N=(x_N, 0)$. Sei nun $d_M$ die Distanz $\overline{PM}$, allerdings mit negativem Vorzeichen, wenn $y_M$ ein 
@@ -22,16 +32,16 @@ negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert hat. Nun ist $
 $\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. Offensichtlich ist 
 dann, da $N$ und $M$ sich mit der gleichen, konstanten Geschwindigkeit von $P$ weg/zu $P$ hin bewegen, $d_M-x_N$ 
 konstant. Sei diese Konstante mit $c$ bezeichnet. Dann ist $d_M-x_N=c\Leftrightarrow d_M=x_N+c$ und damit 
-$\overline{PM}=|x_N+c|$. Nun ist $|x_N+c|=\overline{PM}=\sqrt{(x_M-x_P)^2+(y_M-y_P)^2}=\sqrt{x_M^2+y_M^2}$. Die Gerade 
-$m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich eine Urspungsgerade. Im 
-Folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, also nicht orthogonal zu 
-$n$ ist. Dann hat $m$ eine reele Steigung, die nicht Null ist, da $m$ dann auf $n$ liegen würde, was einen Widerspruch 
-dazu darstellt, dass $m$ und $n$ sich nur in einem Punkt $P$ schneiden. Diese Steigung wird im Folgenden $r$ genannt. 
-Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf $m$ liegt, muss 
-$x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|=\sqrt{x_M^2+y_M^2}
-=\sqrt{(\frac{y_M}{r})^2+y_M^2}=\sqrt{\frac{1}{r^2}\cdot y_M^2+y_M^2}=\sqrt{(1+\frac{1}{r^2})\cdot y_m^2}
-=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, sind die Betragsstriche 
-nicht notwendig:
+$\overline{PM}=|x_N+c|$. Nun ist $|x_N+c|=\overline{PM}=\sqrt{(x_M-x_P)^2+(y_M-y_P)^2}=\sqrt{x_M^2+y_M^2}$, da 
+$y_P=x_P=0$. Die Gerade $m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich 
+eine Urspungsgerade. Im Folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, 
+also nicht orthogonal zu $n$ ist. Dann hat $m$ eine reele Steigung, die nicht Null ist, da $m$ sonst auf $n$ liegen 
+würde, was einen Widerspruch dazu darstellt, dass $m$ und $n$ sich nur in einem Punkt $P$ schneiden. Diese Steigung 
+wird im Folgenden $r$ genannt. Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf 
+$m$ liegt, muss $x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|
+=\sqrt{x_M^2+y_M^2}=\sqrt{(\frac{y_M}{r})^2+y_M^2}=\sqrt{\frac{1}{r^2}\cdot y_M^2+y_M^2}=\sqrt{(1+\frac{1}{r^2})
+\cdot y_m^2}=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, sind die 
+Betragsstriche nicht notwendig:
 \begin{alignat*}{2}
     x_N+c&=y_M\cdot\sqrt{1+\frac{1}{r^2}}&&\\
     \Leftrightarrow y_M&=\frac{x_N+c}{\sqrt{1+\frac{1}{r^2}}}&&=\frac{r\cdot (x_N+c)}{r\cdot\sqrt{1+\frac{1}{r^2}}}\\
@@ -50,3 +60,99 @@ Die Punkte $P, N, M$ haben also folgende Koordinaten, wenn $m$ nicht orthogonal 
 \[
 P=(0, 0); N=(x_N, 0); M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
 \]
+
+Wenn $m$ orthogonal zu $n$ ist, also $m$ auf der $y$-Achse liegt, hat $M$ natürlich eine $x$-Koordinate von 0. 
+Es gilt aber immer noch $|x_N+c|=\sqrt{x_M^2+y_M^2}$, was mit $x_M=0$ dann $|x_N+c|=\sqrt{y_M^2}=|y_M|$ ergibt. Da 
+$y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, gilt die Gleichung auch ohne die Betragsstriche; es ist also $y_M
+=x_N+c$. Zusammen mit $x_M=0$ ist dann also, wenn $m$ orthogonal zu $n$ ist, $M=(0, x_N+c)$.
+
+\subsection*{Beweis der zu zeigenden Aussage}
+
+Nun muss nur noch bewiesen werden, dass es einen Punkt $Q$ gibt, sodass $P, M, N, Q$ stets auf einem Kreis liegen. 
+Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den Gleichen Abstand haben.
+
+Folgender Satz wird später hilfreich sein:
+\begin{thm}\label{cor_hilfe}
+        $x_A^2+y_A^2=2x_Ax_S+2y_Ay_S$ ist äquivalent zu $\overline{AS}=\sqrt{x_S^2+y_S^2}$ für alle 
+        Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
+\end{thm}
+\begin{proof}
+    \begin{align*}
+        &\overline{AS}=\sqrt{(x_A-x_S)^2+(y_A-y_S)^2}=\sqrt{x_S^2+y_S^2}\quad\|(\ldots)^2\\
+        &\Leftrightarrow (x_A-x_S)^2+(y_A-y_S)^2=x_S^2+y_S^2\\
+        &=(x_A^2-2x_Ax_S+x_S^2)+(y_A^2-2y_Ay_S+y_S^2)\quad \|-x_S^2-y_S^2\\
+        &\Leftrightarrow x_A^2-2x_Ax_S+y_A^2-2y_Ay_S=0\quad \|+2x_Ax_S+2y_Ay_S\\
+        &\Leftrightarrow x_A^2+y_A^2=2x_Ax_S+2y_Ay_S
+    \end{align*}
+\end{proof}
+Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal zu $n$ ist:
+\begin{thm}\label{aufgabe_3}
+    Die Punkte $P, M, N$ haben stets den gleichen Abstand zu einem Punkt $S$ wie der Punkt $Q\neq P$, wenn $m$ 
+    orthogonal zu $n$ ist. Hierbei ist $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
+    \frac{c}{2}\right)$.
+\end{thm}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\square$}
+    Wenn $P=Q$ wäre, wäre offensichtlich auch $x_P=x_Q$, also $x_Q=0$. Dann wäre aber auch $c=0$ und damit $d_M
+    =x_N+c=x_N$. Wenn $N$ den Punkt $P$ passiert, also $x_N=0$ ist, wäre also auch $d_M=0$ und damit auch $|d_M|
+    =\overline{PM}=0$. Damit  würden aber $M$ und $N$ beide auf $P$ liegen, also würden $M$ und $N$ gleichzeitig 
+    den Punkt $P$ passieren, was ja nicht sein kann. Also muss $P\neq Q$ sein.
+    
+    Zunächst werde ich ein paar Gleichungen in den folgenden Lemmata beweisen, aus denen dann mit Satz \ref{cor_hilfe}
+    direkt die Korollare folgen:
+    \begin{lem}\label{no_P}
+        Es ist $x_P^2+y_P^2=2x_Px_S+2y_Py_S$.
+    \end{lem}
+    \begin{proof}
+        \begin{align*}
+            x_P^2+y_P^2&=0^2+0^2\\
+            =0=2\cdot 0\cdot x_S+2\cdot 0\cdot y_S&=2x_Px_S+2y_Py_S
+        \end{align*}
+    \end{proof}
+    \begin{cor}\label{noc_P}
+        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_P} direkt: $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
+    \end{cor}
+    \begin{lem}\label{no_M}
+        Es ist $x_M^2+y_M^2=2x_Mx_S+2y_My_S$.
+    \end{lem}
+    \begin{proof}
+        kommt noch
+        % TODO: Umformen!!!
+    \end{proof}
+    \begin{cor}\label{noc_M}
+        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_M} direkt: $\overline{MS}=\sqrt{x_S^2+y_S^2}$
+    \end{cor}
+    \begin{lem}\label{no_N}
+        Es ist $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$.
+    \end{lem}
+    \begin{proof}
+        kommt noch
+        % TODO: Umformen!!!
+    \end{proof}
+    \begin{cor}\label{noc_N}
+        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_N} direkt: $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
+    \end{cor}
+    \begin{lem}\label{no_Q}
+        Es ist $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$.
+    \end{lem}
+    \begin{proof}
+        kommt noch
+        % TODO: Umformen!!!
+    \end{proof}
+    \begin{cor}\label{noc_Q}
+        Mit Satz \ref{cor_hilfe}  folgt aus Lemma \ref{no_Q} direkt: $\overline{QS}=\sqrt{x_S^2+y_S^2}$
+    \end{cor}
+    Aus den Korollaren folgt direkt: $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}$. Die Punkte 
+    $P, M, N, Q$ haben also alle den gleichen Abstand zu $S$, wenn $m$ orthogonal zu $n$ ist.
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+\end{proof}
+
+Wenn $n$ orthogonal zu $m$ ist, gibt es also eine Punkt $Q$, sodass $P, M, N, Q$ den gleichen Abstand zu einem Punkt 
+$S$ haben, also auf einem Kreis liegen.
+
+Nun muss noch bewiesen werden, dass es auch einen solchen Punkt $Q$ gibt, wenn $m$ nicht orthogonal zu $m$ ist:
+
+\begin{thm}
+    Wenn $m$ nicht orthogonal zu $n$ ist, haben die Punkte $P, M, N$ den gleichen Abstand zu einem Punkt $S$ wie 
+    ein Punkt $Q\neq P$
+\end{thm}
