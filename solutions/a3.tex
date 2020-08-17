@@ -77,15 +77,16 @@ Folgender Satz wird später hilfreich sein:
         Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
 \end{thm}
 \begin{proof}
-    \begin{align*}
-        &\overline{AS}=\sqrt{(x_A-x_S)^2+(y_A-y_S)^2}=\sqrt{x_S^2+y_S^2}\quad\|(\ldots)^2\\
-        &\Leftrightarrow (x_A-x_S)^2+(y_A-y_S)^2=x_S^2+y_S^2\\
-        &=(x_A^2-2x_Ax_S+x_S^2)+(y_A^2-2y_Ay_S+y_S^2)\quad \|-x_S^2-y_S^2\\
-        &\Leftrightarrow x_A^2-2x_Ax_S+y_A^2-2y_Ay_S=0\quad \|+2x_Ax_S+2y_Ay_S\\
-        &\Leftrightarrow x_A^2+y_A^2=2x_Ax_S+2y_Ay_S
-    \end{align*}
+    Die Behauptung ergibt sich direkt durch Umformen:
+    \begin{alignat*}{3}
+        &\overline{AS}=\sqrt{(x_A-x_S)^2+(y_A-y_S)^2}&&=\sqrt{x_S^2+y_S^2}\quad&&\|(\ldots)^2\\
+        &\Leftrightarrow (x_A-x_S)^2+(y_A-y_S)^2&&=x_S^2+y_S^2\quad &&\|\text{2. Binomische Formel}\\
+        &\Leftrightarrow (x_A^2-2x_Ax_S+x_S^2)+(y_A^2-2y_Ay_S+y_S^2)&&=x_S^2+y_S^2\quad &&\|-x_S^2-y_S^2\\
+        &\Leftrightarrow x_A^2-2x_Ax_S+y_A^2-2y_Ay_S&&=0\quad &&\|+2x_Ax_S+2y_Ay_S\\
+        &\Leftrightarrow x_A^2+y_A^2&&=2x_Ax_S+2y_Ay_S&&
+    \end{alignat*}
 \end{proof}
-Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal zu $n$ ist:
+Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
 \begin{thm}\label{aufgabe_3}
     Die Punkte $P, M, N$ haben stets den gleichen Abstand zu einem Punkt $S$ wie der Punkt $Q\neq P$, wenn $m$ 
     orthogonal zu $n$ ist. Hierbei ist $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
@@ -96,7 +97,8 @@ Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal 
     Wenn $P=Q$ wäre, wäre offensichtlich auch $x_P=x_Q$, also $x_Q=0$. Dann wäre aber auch $c=0$ und damit $d_M
     =x_N+c=x_N$. Wenn $N$ den Punkt $P$ passiert, also $x_N=0$ ist, wäre also auch $d_M=0$ und damit auch $|d_M|
     =\overline{PM}=0$. Damit  würden aber $M$ und $N$ beide auf $P$ liegen, also würden $M$ und $N$ gleichzeitig 
-    den Punkt $P$ passieren, was ja nicht sein kann. Also muss $P\neq Q$ sein.
+    den Punkt $P$ passieren, was ja nicht sein kann. Also muss $P\neq Q$ sein. Auch bewegt sich $Q$ offensichtlich 
+    nicht, da $c$ und damit auch $\frac{c}{2}$ und $-\frac{c}{2}$ konstant sind.
     
     Zunächst werde ich ein paar Gleichungen in den folgenden Lemmata beweisen, aus denen dann mit Satz \ref{cor_hilfe}
     direkt die Korollare folgen:
@@ -104,6 +106,7 @@ Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal 
         Es ist $x_P^2+y_P^2=2x_Px_S+2y_Py_S$.
     \end{lem}
     \begin{proof}
+        Die Behauptung ergibt sich direkt durch Umformen:
         \begin{align*}
             x_P^2+y_P^2&=0^2+0^2\\
             =0=2\cdot 0\cdot x_S+2\cdot 0\cdot y_S&=2x_Px_S+2y_Py_S
@@ -116,8 +119,11 @@ Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal 
         Es ist $x_M^2+y_M^2=2x_Mx_S+2y_My_S$.
     \end{lem}
     \begin{proof}
-        kommt noch
-        % TODO: Umformen!!!
+        Die Behauptung ergibt sich direkt durch Umformen:
+        \begin{align*}
+            x_M^2+y_M^2&=0^2+(x_N+c)^2=0+2\cdot \frac{(x_N+c)^2}{2}=0+2\cdot (x_N+c)\cdot\frac{x_N+c}{2}\\
+            &=2\cdot 0\cdot \frac{x_N}{2}+2\cdot y_M\cdot y_S=2x_Mx_S+2y_My_S
+        \end{align*}
     \end{proof}
     \begin{cor}\label{noc_M}
         Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_M} direkt: $\overline{MS}=\sqrt{x_S^2+y_S^2}$
@@ -126,8 +132,11 @@ Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal 
         Es ist $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$.
     \end{lem}
     \begin{proof}
-        kommt noch
-        % TODO: Umformen!!!
+        Die Behauptung ergibt sich direkt durch Umformen:
+        \begin{align*}
+            x_N^2+y_N^2&=x_N^2+0^2=x_N^2+0=2\cdot \frac{x_N^2}{2}+0=2x_N\frac{x_N}{2}+0\\
+            &=2x_Nx_S+2\cdot 0\cdot \frac{x_N+c}{2}=2x_Nx_S+2y_Ny_S
+        \end{align*}
     \end{proof}
     \begin{cor}\label{noc_N}
         Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_N} direkt: $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
@@ -136,19 +145,26 @@ Der folgende Satz beschäftigt sich in mit den Fällen, in denen $m$ orthogonal 
         Es ist $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$.
     \end{lem}
     \begin{proof}
-        kommt noch
-        % TODO: Umformen!!!
+        Die Behauptung ergibt sich direkt durch Umformen:
+        \begin{align*}
+            x_Q^2+y_Q^2&=\left(-\frac{c}{2}\right)^2+\left(\frac{c}{2}\right)^2=\frac{c^2}{4}+\frac{c^2}{4}\\
+            &=2\cdot \frac{c^2}{4}=\frac{c^2}{2}=0\cdot \frac{c}{2}+\frac{c^2}{2}=(-x_N+x_N)\frac{c}{2}+\frac{c^2}{2}\\
+            &=-x_N\frac{c}{2}+x_N\frac{c}{2}+c\cdot\frac{c}{2}=x_N\left(-\frac{c}{2}\right)+(x_N+c)\frac{c}{2}\\
+            &=2\frac{x_N}{2}\left(-\frac{c}{2}\right)+2\frac{x_N+c}{2}\frac{c}{2}=2x_Sx_Q+2y_Sy_Q\\
+            &=2x_Qx_S+2y_Qy_S
+        \end{align*}
     \end{proof}
     \begin{cor}\label{noc_Q}
         Mit Satz \ref{cor_hilfe}  folgt aus Lemma \ref{no_Q} direkt: $\overline{QS}=\sqrt{x_S^2+y_S^2}$
     \end{cor}
-    Aus den Korollaren folgt direkt: $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}$. Die Punkte 
-    $P, M, N, Q$ haben also alle den gleichen Abstand zu $S$, wenn $m$ orthogonal zu $n$ ist.
+    Aus den Korollaren \ref{noc_P}, \ref{noc_M}, \ref{noc_N} und \ref{noc_Q} folgt direkt: 
+    $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}$, da sie alle gleich $\sqrt{x_S^2+y_S^2}$ sind. Die 
+    Punkte $P, M, N, Q$ haben also alle den gleichen Abstand zu $S$, wenn $m$ orthogonal zu $n$ ist.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
 
-Wenn $n$ orthogonal zu $m$ ist, gibt es also eine Punkt $Q$, sodass $P, M, N, Q$ den gleichen Abstand zu einem Punkt 
-$S$ haben, also auf einem Kreis liegen.
+Wenn $n$ orthogonal zu $m$ ist, gibt es also eine Punkt $Q$, der sich nicht bewegt, sodass $P, M, N, Q$ den gleichen 
+Abstand zu einem Punkt $S$ haben, also auf einem Kreis liegen.
 
 Nun muss noch bewiesen werden, dass es auch einen solchen Punkt $Q$ gibt, wenn $m$ nicht orthogonal zu $m$ ist:
 
