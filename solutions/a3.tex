@@ -8,22 +8,45 @@ $\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets positiv).
 
 \subsection*{"`Algebraisierung"' der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
 
-\subsubsection*{Definition des Koordinatensystems}
-
 Um die Aufgabe von einer Geometrischen in eine eher Algebraische zu übersetzen, habe ich mich dazu entschieden, die 
 in der Aufgabenstellung beschriebene Konstruktion mit Hilfe eines kartesischen Koordinatensystems zu beschreiben. 
 Hierzu definiere man folgendermaßen ein kartesisches Koordinatensystem: $P$ sei der Urspung und $n$ die $x$-Achse; 
 dabei sei die $x$-Achse so beschriftet, dass der Punkt $N$ eine positive $x$-Koordinate hat, bevor er $P$ passiert, 
 und die $y$-Achse so, dass der Punkt $M$ eine positive $y$-Koordinate hat, bevor er $P$ passiert. Dies ist 
 offensichtlich möglich, da $P$ auf $n$ liegt. Offensichtlich ost auch die Beschriftung der $y$-Achse (also der 
-Orthonogonalen zu $m$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander
-
-\subsubsection*{Direkte Folgerungen aus der Definition des Koordinatensystems}
+Orthonogonalen zu $m$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander.
 
 Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
-$N=(x_N, 0)$. Die Gerade $m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich 
-eine Urspungsgerade. Im folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, 
-also nicht orthogonal zu $n$ ist. Dann ist $m$ eine Ursprungsgerade (da $P$ auf $m$ liegt) mit reeler Steigung, die 
-im Folgenden $r$ genannt wird. Ihre Geradengleichung ist also: $y=r\cdot x$. Sei nun $d_M$ die Distanz $\overline{PM}$, 
-allerdings mit negativem Vorzeichen, wenn $y_M$ ein negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert 
-hat.
+$N=(x_N, 0)$. Sei nun $d_M$ die Distanz $\overline{PM}$, allerdings mit negativem Vorzeichen, wenn $y_M$ ein 
+negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert hat. Nun ist $x_N$ wegen $y_N=0$ die Distanz 
+$\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. Offensichtlich ist 
+dann, da $N$ und $M$ sich mit der gleichen, konstanten Geschwindigkeit von $P$ weg/zu $P$ hin bewegen, $d_M-x_N$ 
+konstant. Sei diese Konstante mit $c$ bezeichnet. Dann ist $d_M-x_N=c\Leftrightarrow d_M=x_N+c$ und damit 
+$\overline{PM}=|x_N+c|$. Nun ist $|x_N+c|=\overline{PM}=\sqrt{(x_M-x_P)^2+(y_M-y_P)^2}=\sqrt{x_M^2+y_M^2}$. Die Gerade 
+$m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich eine Urspungsgerade. Im 
+Folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, also nicht orthogonal zu 
+$n$ ist. Dann hat $m$ eine reele Steigung, die nicht Null ist, da $m$ dann auf $n$ liegen würde, was einen Widerspruch 
+dazu darstellt, dass $m$ und $n$ sich nur in einem Punkt $P$ schneiden. Diese Steigung wird im Folgenden $r$ genannt. 
+Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf $m$ liegt, muss 
+$x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|=\sqrt{x_M^2+y_M^2}
+=\sqrt{(\frac{y_M}{r})^2+y_M^2}=\sqrt{\frac{1}{r^2}\cdot y_M^2+y_M^2}=\sqrt{(1+\frac{1}{r^2})\cdot y_m^2}
+=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, sind die Betragsstriche 
+nicht notwendig:
+\begin{alignat*}{2}
+    x_N+c&=y_M\cdot\sqrt{1+\frac{1}{r^2}}&&\\
+    \Leftrightarrow y_M&=\frac{x_N+c}{\sqrt{1+\frac{1}{r^2}}}&&=\frac{r\cdot (x_N+c)}{r\cdot\sqrt{1+\frac{1}{r^2}}}\\
+    &=\frac{r(x_N+c)}{\sqrt{r^2\left(1+\frac{1}{r^2}\right)}}&&=\frac{r(x_N+c)}{\sqrt{r^2+1}}
+\end{alignat*}
+Es ist also: $y_M=\frac{r(x_N+c)}{\sqrt{r^2+1}}$.\\
+Nun ist $x_M=\frac{y_M}{r}$, also mit $y_M=\frac{r(x_N+c)}{\sqrt{r^2+1}}$:
+\[
+x_M=\frac{1}{r}\cdot y_M=\frac{1}{r}\cdot \frac{r(x_N+c)}{\sqrt{r^2+1}}=\frac{x_N+c}{\sqrt{r^2+1}}
+\]
+Es ist also:
+\[
+M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
+\]
+Die Punkte $P, N, M$ haben also folgende Koordinaten, wenn $m$ nicht orthogonal zu $n$ ist:
+\[
+P=(0, 0); N=(x_N, 0); M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
+\]
