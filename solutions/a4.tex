@@ -1,41 +1,59 @@
 \section{Aufgabe 4}
 
-\subsection*{Vorbemerkungen zu meiner Lösung von Aufgabe 4}
-
 \subsection*{Einführung hilfreicher Begriffe}
 
-Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch leichter lesbar machen:\\
-Mit einer "`proportionierten Tabelle"' ist eine Tabelle gemeint, die mehr Spalten als Zeilen hat.\\
-Mit einer "`fast-positiv-reell-wertigen Tabelle"' ist eine Tabelle gemeint, für die in jeder ihrer Felder eine nicht-negative 
-reelle Zahl steht, und dabei in jeder Spalte der Tabelle mindestens eine Positive.\\
-Mit $n_T$ ist die Anzahl der Spalten der Tabelle $T$ gemeint.\\
-Mit $m_T$ ist die Anzahl der Zeilen der Tabelle $T$ gemeint.\\
-Mit $(i, j)$, wobei $1 \leq i \leq m_T$ und $1 \leq j \leq n_T$, ist das Feld in der $i$-ten Zeile und $j$-ten 
-Spalte der Tabelle $T$ gemeint (wichtig ist natürlich, dadss hierbei immer klar ist, welche Tabelle $T$ gerdade 
-betrachtet wird).\\
-Wenn $'$ die Feldwertfunktion der Tabelle $T$ ist, ist mit $(i, j)'$, wobei $1 \leq i \leq m_T$ und $1 \leq j \leq 
-n_T$, der Wert, der im Feld $(i, j)$ steht, gemeint.\\
-Wenn $R$ die Rechtecksfunktion der Tabelle $T$ ist, dann ist mit $R(a_1, a_2; b_1, b_2)$, wobei $1\leq a_1\leq b_1 
-\leq m_T$ und $1 \leq a_2 \leq b_2 \leq n_T$,  die folgende Summe gemeint (bei der $'$ wieder die Feldwertfunktion 
-von $T$ ist):
-\begin{alignat*}{6}
-    R(a_1, a_2; b_1, b_2) = &(a_1, &&a_2)' + &&(a_1, &&a_2+1)' + \quad \cdots \quad + &&(a_1, &&b_2)'\\
-    &(a_1+1, &&a_2)' + &&(a_1+1, &&a_2+1)' +\quad \cdots \quad + &&(a_1+1, &&b_2)'\\
-    &(a_1+2, &&a_2)' + &&(a_1+2, &&a_2+1)' +\quad \cdots \quad + &&(a_1+2, &&b_2)'\\
-    & &&\vdotswithin{a} && &&\vdotswithin{a} && &&\vdotswithin{b} \\
-    &(b_1-1, &&a_2)' + &&(b_1-1, &&a_2+1)' +\quad \cdots \quad + &&(b_1-1, &&b_2)'\\
-    &(b_1, &&a_2)' + &&(b_1, &&a_2+1)' + \quad \cdots \quad + &&(b_1, &&b_2)
-\end{alignat*}
-Mit einer "`spaltenweise geordneten"' bzw. "`zeilenweise geordneten Tabelle"' $T$ ist eine Tabelle gemeint, für die 
-stets $S(j) \geq S(j+1)$, wobei $1 \leq j < n_T$, bzw. für die stets $Z(i) \geq Z(i+1)$, wobei $1 \leq i < m_T$.\\
-Eine Tabelle, die zeilenweise und spaltenweise geordnet ist, sei kurz auch mit "`wohlgeordnet"' bezeichnet.\\
+Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch leichter lesbar machen:
+\begin{definition}
+    Mit einer "`proportionierten"' Tabelle ist eine Tabelle gemeint, die mehr Spalten als Zeilen hat.
+\end{definition}
+\begin{definition}
+    Mit einer "`fast-positiv-reell-wertigen"' (kurz f.p.r.w.) Tabelle ist eine Tabelle gemeint, für die gilt, dass 
+    in jedem ihrer Felder eine nicht-negative reelle Zahl steht, und dabei in jeder Spalte der Tabelle mindestens 
+    eine positive.
+\end{definition}
+\begin{definition}
+    Das Feld $(i, j)$ einer Tabelle ist das Feld in der $i$-ten Zeile und der $j$-ten Spalte dieser Tabelle.
+\end{definition}
+\begin{definition}
+    Wenn $'$ die Feldwertfunktion einer Tabelle ist, ist $(i, j)'$ der Wert, der im Feld $(i, j)$ dieser Tabelle 
+    steht.
+\end{definition}
+\begin{definition}\label{rfunktion}
+    Wenn $R$ die Rechtecksfunktion und $'$ die Feldwertfunktion einer Tabelle ist, ist $R(a_1, b_1; a_2, b_2)$ kurz 
+    für die folgende Summe, wobei $a_1\leq b_1$ und $a_2\leq b_2$ gelten muss:
+    \begin{alignat*}{6}
+        R(a_1, a_2; b_1, b_2) &= (a_1, &&a_2)' + &&(a_1, &&a_2+1)' + \quad \cdots \quad + &&(a_1, &&b_2)'\\
+        &+(a_1+1, &&a_2)' + &&(a_1+1, &&a_2+1)' +\quad \cdots \quad + &&(a_1+1, &&b_2)'\\
+        &+(a_1+2, &&a_2)' + &&(a_1+2, &&a_2+1)' +\quad \cdots \quad + &&(a_1+2, &&b_2)'\\
+        & &&\vdotswithin{a} && &&\vdotswithin{a}\quad\quad\quad\quad\quad \ddots && &&\vdotswithin{b} \\
+        &+(b_1-1, &&a_2)' + &&(b_1-1, &&a_2+1)' +\quad \cdots \quad + &&(b_1-1, &&b_2)'\\
+        &+(b_1, &&a_2)' + &&(b_1, &&a_2+1)' + \quad \cdots \quad + &&(b_1, &&b_2)
+    \end{alignat*}    
+\end{definition}
+\begin{definition}
+    Mit einer "`spaltenweise geordneten"' Tabelle ist eine Tabelle gemeint, für die stets $R(s, 1; s, m)\geq 
+    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen dieser Tabelle ist. Äquivalent ist mit einer 
+    "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets $R(z, 1; z, n)\geq R(z+1, 1; z+1, n)$ gilt, 
+    wobei $n$ die Anzahl an Spalten dieser Tabelle ist. Ist eine Tabelle zeilen- und spaltenweise geordneten, heißt 
+    sie kurz auch "`wohlgeordnet"'.
+\end{definition}
 
-\subsection*{Die tatsächliche Lösung von Aufgabe 4}
+\subsection*{Sätze über die eingeführten Begriffe (insb. Rechtecksfunktion)}
+
+\begin{thm}\label{r_summe}
+    Wenn $R$ die Rechtecksfunktion einer Tabelle ist, gilt, wobei $a_1\leq b_1\leq c_1$ und $a_2\leq b_2\leq c_2$: 
+    $R(a_1, a_2; b_1, b_2)+R(b_1+1, a_2; c_1, b_2)=R(a_1, a_2; c_1, b_2)$ und 
+    $R(a_1, a_2; b_1, b_2)+R(a_1, b_2+1; b_1, c_2)=R(a_1, a_2; b_1, c_2)$.
+\end{thm}
+\begin{proof}
+    beweis
+\end{proof}
+
+\subsection*{Beweis der zu zeigenden Ausssage von Aufgabe 4}
 
 \begin{thm}\label{haupt4}
-    In jeder proportionierten und fast-positiv-reell-wertigen Tabelle $T$ gibt es ein Feld $T(i, j)$, wobei $1 \leq 
-    i \leq m_T$ und $1 \leq j \leq n_T$, sodass $f(i, j) > 0$ und $Z(i) > S(j)$, wobei $f, S, Z$ die Feld- bzw. Spalten- 
-    bzw. Zeilenwertfunktionen von $T$ sind.
+    In jeder proportionierten und f.p.r.w. Tabelle gibt es ein Feld $(i, j)$, sodass $(i, j)'>0$ und $Z(i) > S(j)$, 
+    wobei $'$ die Feld- und $R$ die Rechtecksfunktion dieser Tabelle ist.
 \end{thm}
 
 \begin{proof}

@@ -17,24 +17,23 @@ Die in Aufgabe 2 zu zeigende Aussage habe ich in folgenden Satz "`umformuliert"'
     Es gibt keine drei Zahlen $x, y, z \in \Q$ mit $x + y + z = 0$ und $x^2 + y^2 + z^2 = 100$. \label{aufgabe_2}
 \end{thm}
 
-\begin{proof}
-    Es folgt ein Beweis durch Widerspruch. Nehme man hierzu an, es gäbe drei Zahlen $x, y, z \in \Q$, 
-    die beide Gleichungen erfüllen. Offenbar können nicht alle drei Zahlen $x, y, z$ nicht-positiv und auch 
-    nicht alle drei Zahlen $x, y, z$ nicht-negativ sein, denn damit dann $x+y+z = 0$ erfüllt wäre, müsste $x = y = z 
-    = 0$, was der zweiten Gleichung $x^2+y^2+z^2 = 100$ widerspricht. Es sind also entweder zwei der drei Zahlen $x, 
-    y, z$ nicht-negativ und eine nicht-positiv oder es sind zwei nicht-positiv und eine nicht-negativ. Unter der 
-    Annahme, dass es ein Lösungstripel $x, y, z$ gibt, müsste es auch eines mit zwei nicht-negativen und einer 
-    nicht-positiven Zahl geben. Denn zu jedem Lösungstripel $x, y, z$, dass zwei nicht-positive Zahlen und eine 
-    nicht-negative Zahl beinhaltet, gibt es ein Lösungstripel $-x,-y,-z$ (das, wenn $x, y, z$ hinreichend für die 
-    beiden Gleichungen ist, dies offensichtlich ebenfalls ist), das dann zwei nicht-negative Zahlen und eine 
-    nicht-positive Zahl beinhaltet. Wenn es also überhaupt Lösungstripel gibt (wovon ja für den Widerspruchsbeweis 
-    ausgegangen wurde), so muss es also auch welche mit zwei nicht-negativen Zahlen und einer nicht-positiven Zahl 
-    geben. Sei nun $x, y, z$ ein solches Tripel und sei o.B.d.A. $z$ die nicht-positive Zahl (ansonsten benenne man 
-    einfach um, die Gleichungen ändern dadurch ihre Form nicht). Es ist also $z \leq 0$ und $x, y \geq 0$. Da $x, y$ 
-    nicht-negative rationale Zahlen sind, muss es vier Zahlen $a', b', c', d' \in \N_0$ ($b, d \neq 0$) geben, für die $x 
-    = \frac{a'}{b'}$ und $y = \frac{c'}{d'}$. Sei nun $\frac{a}{b}$ die vollständig gekürzte Form des Bruches 
-    $\frac{a'}{b'}$ und $\frac{c}{d}$ die des Bruches $\frac{c'}{d'}$. D.h., es ist $x = \frac{a}{b}$ und $y = 
-    \frac{c}{d}$ mit $\gcd(a, b) = \gcd(c, d) = 1$. 
+\begin{proof}[Beweis durch Widerspruch]
+    Nehme man an, es gäbe drei Zahlen $x, y, z \in \Q$, die beide Gleichungen erfüllen. Offenbar können nicht alle 
+    drei Zahlen $x, y, z$ nicht-positiv und auch nicht alle drei Zahlen $x, y, z$ nicht-negativ sein, denn damit 
+    dann $x+y+z = 0$ erfüllt wäre, müsste $x = y = z = 0$, was der zweiten Gleichung $x^2+y^2+z^2 = 100$ 
+    widerspricht. Es sind also entweder zwei der drei Zahlen $x, y, z$ nicht-negativ und eine nicht-positiv oder es 
+    sind zwei nicht-positiv und eine nicht-negativ. Unter der Annahme, dass es ein Lösungstripel $x, y, z$ gibt, 
+    müsste es auch eines mit zwei nicht-negativen und einer nicht-positiven Zahl geben. Denn zu jedem Lösungstripel 
+    $x, y, z$, dass zwei nicht-positive Zahlen und eine nicht-negative Zahl beinhaltet, gibt es ein Lösungstripel 
+    $-x,-y,-z$ (das, wenn $x, y, z$ hinreichend für die beiden Gleichungen ist, dies offensichtlich ebenfalls ist), 
+    das dann zwei nicht-negative Zahlen und eine nicht-positive Zahl beinhaltet. Wenn es also überhaupt 
+    Lösungstripel gibt (wovon ja für den Widerspruchsbeweis ausgegangen wurde), so muss es also auch welche mit zwei 
+    nicht-negativen Zahlen und einer nicht-positiven Zahl geben. Sei nun $x, y, z$ ein solches Tripel und sei 
+    o.B.d.A. $z$ die nicht-positive Zahl (ansonsten benenne man einfach um, die Gleichungen ändern dadurch ihre Form 
+    nicht). Es ist also $z \leq 0$ und $x, y \geq 0$. Da $x, y$ nicht-negative rationale Zahlen sind, muss es vier 
+    Zahlen $a', b', c', d' \in \N_0$ ($b, d \neq 0$) geben, für die $x = \frac{a'}{b'}$ und $y = \frac{c'}{d'}$. 
+    Sei nun $\frac{a}{b}$ die vollständig gekürzte Form des Bruches $\frac{a'}{b'}$ und $\frac{c}{d}$ die des 
+    Bruches $\frac{c'}{d'}$. D.h., es ist $x = \frac{a}{b}$ und $y = \frac{c}{d}$ mit $\gcd(a, b) = \gcd(c, d) = 1$. 
     %Sei nun o.B.d.A. $b \geq d$ (ansonsten bennen man einfach um, die Bedingungen für $x$ und $y$ und den jeweils 
     %zugehörigen Variablen $a, b, c, d$ ändern dadurch ihre Form nicht). 
     Nun ist wegen $x+y+z=0$ offenbar $z = -x-y = -\frac{a}{b} - \frac{c}{d} = -\frac{a \cdot d}{b \cdot d} - 
