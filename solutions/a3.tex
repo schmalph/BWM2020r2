@@ -68,13 +68,14 @@ $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, gilt die Gleichung auch ohne d
 
 \subsection*{Beweis der zu zeigenden Aussage}
 
-Nun muss nur noch bewiesen werden, dass es einen Punkt $Q$ gibt, sodass $P, M, N, Q$ stets auf einem Kreis liegen. 
-Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den Gleichen Abstand haben.
+Nun muss nur noch bewiesen werden, dass es stets einen festen Punkt $Q\neq P$ gibt, sodass $P, M, N, Q$ zu jedem 
+Zeitpunkt auf einem Kreis gemeinsamen liegen. Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den 
+Gleichen Abstand haben.
 
 Folgender Satz wird später hilfreich sein:
 \begin{thm}\label{cor_hilfe}
-        $x_A^2+y_A^2=2x_Ax_S+2y_Ay_S$ ist äquivalent zu $\overline{AS}=\sqrt{x_S^2+y_S^2}$ für alle 
-        Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
+    $x_A^2+y_A^2=2x_Ax_S+2y_Ay_S$ ist äquivalent zu $\overline{AS}=\sqrt{x_S^2+y_S^2}$ für alle 
+    Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
 \end{thm}
 \begin{proof}
     Die Behauptung ergibt sich direkt durch Umformen:
@@ -88,87 +89,177 @@ Folgender Satz wird später hilfreich sein:
 \end{proof}
 Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
 \begin{thm}\label{aufgabe_3}
-    Die Punkte $P, M, N$ haben stets den gleichen Abstand zu einem Punkt $S$ wie der Punkt $Q\neq P$, wenn $m$ 
-    orthogonal zu $n$ ist. Hierbei ist $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
-    \frac{c}{2}\right)$.
+    Wenn $m$ nicht orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ 
+    den gleichen Abstand zu einem Punkt $S$ haben, also stets auf einem gemeinsamen Kreis liegen. 
+    Hierbei sind $S$ und $Q$ durch $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
+    \frac{c}{2}\right)$ gegeben.
 \end{thm}
 \begin{proof}
     \renewcommand{\qedsymbol}{$\square$}
+    Anm.: Im folgenden Beweis ist natürlich $M=(0, x_N+c)$, da in Satz \ref{aufgabe_3} davon ausgegangen wird, dass 
+    $m$ orthogonal zu $n$ ist.
+
     Wenn $P=Q$ wäre, wäre offensichtlich auch $x_P=x_Q$, also $x_Q=0$. Dann wäre aber auch $c=0$ und damit $d_M
     =x_N+c=x_N$. Wenn $N$ den Punkt $P$ passiert, also $x_N=0$ ist, wäre also auch $d_M=0$ und damit auch $|d_M|
     =\overline{PM}=0$. Damit  würden aber $M$ und $N$ beide auf $P$ liegen, also würden $M$ und $N$ gleichzeitig 
     den Punkt $P$ passieren, was ja nicht sein kann. Also muss $P\neq Q$ sein. Auch bewegt sich $Q$ offensichtlich 
     nicht, da $c$ und damit auch $\frac{c}{2}$ und $-\frac{c}{2}$ konstant sind.
+
+    Offensichtlich bewegt sich der Punkt $Q$ nicht, denn seine Koordinaten sind nur von der Konstanten $c$ abhängig. 
+    $Q$ ist also ein fester, von $P$ verschiedener Punkt.
     
     Zunächst werde ich ein paar Gleichungen in den folgenden Lemmata beweisen, aus denen dann mit Satz \ref{cor_hilfe}
     direkt die Korollare folgen:
     \begin{lem}\label{no_P}
-        Es ist $x_P^2+y_P^2=2x_Px_S+2y_Py_S$.
+        Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
     \begin{proof}
-        Die Behauptung ergibt sich direkt durch Umformen:
-        \begin{align*}
-            x_P^2+y_P^2&=0^2+0^2\\
-            =0=2\cdot 0\cdot x_S+2\cdot 0\cdot y_S&=2x_Px_S+2y_Py_S
-        \end{align*}
+        Die Behauptung ergibt sich direkt mit der Distanzformel:
+        \[
+        \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S-0)^2}=\sqrt{x_S^2+y_S^2}    
+        \]
     \end{proof}
-    \begin{cor}\label{noc_P}
-        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_P} direkt: $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
-    \end{cor}
     \begin{lem}\label{no_M}
-        Es ist $x_M^2+y_M^2=2x_Mx_S+2y_My_S$.
+        Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
     \begin{proof}
-        Die Behauptung ergibt sich direkt durch Umformen:
+        Durch Umformen ergibt sich direkt die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$:
         \begin{align*}
             x_M^2+y_M^2&=0^2+(x_N+c)^2=0+2\cdot \frac{(x_N+c)^2}{2}=0+2\cdot (x_N+c)\cdot\frac{x_N+c}{2}\\
             &=2\cdot 0\cdot \frac{x_N}{2}+2\cdot y_M\cdot y_S=2x_Mx_S+2y_My_S
         \end{align*}
+        Aus der Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    \begin{cor}\label{noc_M}
-        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_M} direkt: $\overline{MS}=\sqrt{x_S^2+y_S^2}$
-    \end{cor}
     \begin{lem}\label{no_N}
-        Es ist $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$.
+        Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
     \begin{proof}
-        Die Behauptung ergibt sich direkt durch Umformen:
+        Durch Umformen ergibt sich direkt die Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$:
         \begin{align*}
             x_N^2+y_N^2&=x_N^2+0^2=x_N^2+0=2\cdot \frac{x_N^2}{2}+0=2x_N\frac{x_N}{2}+0\\
             &=2x_Nx_S+2\cdot 0\cdot \frac{x_N+c}{2}=2x_Nx_S+2y_Ny_S
         \end{align*}
+        Aus der Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    \begin{cor}\label{noc_N}
-        Mit Satz \ref{cor_hilfe} folgt aus Lemma \ref{no_N} direkt: $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
-    \end{cor}
     \begin{lem}\label{no_Q}
-        Es ist $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$.
+        Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
     \begin{proof}
-        Die Behauptung ergibt sich direkt durch Umformen:
+        Durch Umformen ergibt sich direkt die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$:
         \begin{align*}
-            x_Q^2+y_Q^2&=\left(-\frac{c}{2}\right)^2+\left(\frac{c}{2}\right)^2=\frac{c^2}{4}+\frac{c^2}{4}\\
-            &=2\cdot \frac{c^2}{4}=\frac{c^2}{2}=0\cdot \frac{c}{2}+\frac{c^2}{2}=(-x_N+x_N)\frac{c}{2}+\frac{c^2}{2}\\
-            &=-x_N\frac{c}{2}+x_N\frac{c}{2}+c\cdot\frac{c}{2}=x_N\left(-\frac{c}{2}\right)+(x_N+c)\frac{c}{2}\\
-            &=2\frac{x_N}{2}\left(-\frac{c}{2}\right)+2\frac{x_N+c}{2}\frac{c}{2}=2x_Sx_Q+2y_Sy_Q\\
-            &=2x_Qx_S+2y_Qy_S
+            x_Q^2+y_Q^2&=\left(-\frac{c}{2}\right)^2+\left(\frac{c}{2}\right)^2=\frac{c^2}{4}+\frac{c^2}{4}
+            =2\cdot \frac{c^2}{4}=\frac{c^2}{2}=0\cdot \frac{c}{2}+\frac{c^2}{2}\\
+            &=(-x_N+x_N)\frac{c}{2}+\frac{c^2}{2}=-x_N\frac{c}{2}+x_N\frac{c}{2}+c\cdot\frac{c}{2}\\
+            &=x_N\left(-\frac{c}{2}\right)+(x_N+c)\frac{c}{2}=2\frac{x_N}{2}
+            \left(-\frac{c}{2}\right)+2\frac{x_N+c}{2}\frac{c}{2}\\
+            &=2x_Sx_Q+2y_Sy_Q=2x_Qx_S+2y_Qy_S
         \end{align*}
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    \begin{cor}\label{noc_Q}
-        Mit Satz \ref{cor_hilfe}  folgt aus Lemma \ref{no_Q} direkt: $\overline{QS}=\sqrt{x_S^2+y_S^2}$
-    \end{cor}
-    Aus den Korollaren \ref{noc_P}, \ref{noc_M}, \ref{noc_N} und \ref{noc_Q} folgt direkt: 
-    $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}$, da sie alle gleich $\sqrt{x_S^2+y_S^2}$ sind. Die 
-    Punkte $P, M, N, Q$ haben also alle den gleichen Abstand zu $S$, wenn $m$ orthogonal zu $n$ ist.
+    Aus den Lemmata \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
+    $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ orthogonal zu $m$ ist, 
+    gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ haben, 
+    also stets auf einem gemeinsamen Kreis liegen.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
 
-Wenn $n$ orthogonal zu $m$ ist, gibt es also eine Punkt $Q$, der sich nicht bewegt, sodass $P, M, N, Q$ den gleichen 
-Abstand zu einem Punkt $S$ haben, also auf einem Kreis liegen.
+Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $m$ nicht orthogonal zu $m$ ist:
 
-Nun muss noch bewiesen werden, dass es auch einen solchen Punkt $Q$ gibt, wenn $m$ nicht orthogonal zu $m$ ist:
-
-\begin{thm}
-    Wenn $m$ nicht orthogonal zu $n$ ist, haben die Punkte $P, M, N$ den gleichen Abstand zu einem Punkt $S$ wie 
-    ein Punkt $Q\neq P$
+\begin{thm}\label{augabe_3_dumm}
+    Wenn $m$ nicht orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ 
+    den gleichen Abstand zu einem Punkt $S$ haben, also stets auf einem gemeinsamen Kreis liegen. 
+    Hierbei sind $S$ und $Q$ durch
+    \[
+    S=\left(\frac{x_N}{2},\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2r}\right)\text{ und}
+    \]
+    \[
+    Q=\left(\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}, 
+    \frac{cr\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\right)
+    \]
+    gegeben.
 \end{thm}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\square$}
+    Anm.: Im folgenden Beweis ist natürlich $M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} 
+    \right)$, da in Satz \ref{augabe_3_dumm} davon ausgegangen wird, dass $m$ nicht orthogonal zu $n$ ist.
+
+    Wenn $P=Q$ wäre, müsste auch $y_Q=y_P=0$ seinn. Es müsste also $\frac{cr\sqrt{r^2+1}}{(1-\sqrt{r^2+1})^2+r^2}
+    =0$ gelten. Nach dem Satz vom Nullprodukt muss dann mindestens einer der Faktoren $c, r, \sqrt{r^2+1}, 
+    \frac{1}{(1-\sqrt{r^2+1})^2+r^2}$ gleich 0 sein. Offensichtlich kann $\frac{1}{(1-\sqrt{r^2+1})^2+r^2}$ nicht 0 
+    sein. Auch $\sqrt{r^2+1}$ ist offensichtlich positiv, also nicht 0. Wenn $r$, die Steigung von $m$, 0 wäre, 
+    würde das bedeuten, dass $m$ auf der $x$-Achse, also $n$, liegt. Das kann aber ebenfalls nicht sein, denn $n$ 
+    und $m$ schneiden sich nur in einem Punkt. Es muss also, damit $y_Q=0$ sein kann, $c=0$ gelten. Dann müssten 
+    aber (wie am Anfang des Beweises von Satz \ref{aufgabe_3} bewiesen) $M$ und $N$ gleichzeitig den Punkt $P$ 
+    passieren, was ebenfalls nicht sein kann! Es kann also nicht $y_M=0$ sein, also kann auch nicht $P=Q$ sein.
+
+    Auch bewegt sich der Punkt $Q$ offensichtlich nicht, denn seine Koordinaten sind nur von den Konstanten $c$ und 
+    $r$ abhängig. Also ist $Q$ ein fester, von $P$ verschiedener Punkt.
+
+    Wie im Beweis von Satz \ref{aufgabe_3} folgen nun Beweise von ein paar Gleichungen:
+    \begin{lem}\label{dumm_P}
+        Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
+    \end{lem}
+    \begin{proof}
+        Die Behauptung ergibt sich direkt mit der Distanzformel:
+        \[
+        \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S+0)^2}=\sqrt{x_S^2+y_S^2}    
+        \]
+    \end{proof}
+    \begin{lem}\label{dumm_M}
+        Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
+    \end{lem}
+    \begin{proof}
+        Zunächst ergibt sich durch Umformen die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$. Diese Umformung ist 
+        zwar etwas länger, allerdings in jedem Schritt elementar genug, dass ich einen Kommentar für überflüssig 
+        halte.
+
+        \begin{align*}
+            x_M^2+y_M^2&=\left(\frac{x_N+c}{\sqrt{r^2+1}}\right)^2+\left(\frac{r(x_N+c)}{\sqrt{r^2+1}}\right)^2
+            =\frac{(x_N+c)^2}{r^2+1}+\frac{r^2(x_N+c)^2}{r^2+1}\\
+            &=\frac{(x_N+c)^2+r^2(x_N+c)^2}{r^2+1}=\frac{(1+r^2)(x_N+c)^2}{r^2+1}=(x_N+c)^2\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}-\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+(x_N+c)^2\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}-\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{(x_N+c)^2\sqrt{r^2+1}}{\sqrt{r^2+1}}\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{-(x_N+c)x_N+(x_N+c)^2\sqrt{r^2+1}}{\sqrt{r^2+1}}\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{(x_N+c)^2\sqrt{r^2+1}-(x_N+c)x_N}{\sqrt{r^2+1}}\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{(x_N+c)\cdot(x_N+c)\sqrt{r^2+1}-(x_N+c)\cdot x_N}{\sqrt{r^2+1}}\\
+            &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{x_N+c}{\sqrt{r^2+1}}\cdot \left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            &=\frac{x_N+c}{\sqrt{r^2+1}}\cdot x_N+2r\cdot\frac{x_N+c}{\sqrt{r^2+1}}\cdot\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2r}\\
+            &=2\cdot x_M\cdot\frac{x_N}{2}+2\cdot\frac{r(x_N+c)}{\sqrt{r^2+1}}\cdot y_S\\
+            &=2x_Mx_S+2y_My_S
+        \end{align*}
+
+        Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
+    \end{proof}
+    \begin{lem}\label{dumm_N}
+        Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
+    \end{lem}
+    \begin{proof}
+        Die Behauptung ergibt sich direkt mit der Distanzformel:
+        \begin{align*}
+            \overline{NS}&=\sqrt{(x_N-x_S)^2+(y_N-y_S)^2}=\sqrt{\left(x_N-\frac{x_N}{2}\right)^2+(0-y_S)^2}\\
+            &=\sqrt{\left(\frac{x_N}{2}\right)^2+(-y_S)^2}=\sqrt{x_S^2+y_S^2}
+        \end{align*}
+    \end{proof}
+    \begin{lem}\label{dumm_Q}
+        Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
+    \end{lem}
+    \begin{proof}
+        Zunächst ergibt sich durch simples Umformen die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$. Auch diese 
+        Umformung ist ziemlich lang, aber auch hier ist wieder jeder Schritt sehr elementar; die Umformung sollte 
+        also trotz ihre Länge nachvollziehbar sein.
+
+        % TODO: Umformung einfügen. Zu finden unter Downloads --> Umformung.jpeg
+
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Satz \eqref{cor_hilfe} direkt die Behauptung.
+    \end{proof}
+    Aus den Lemmata \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
+    $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ nicht orthogonal zu $m$ 
+    ist, gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ 
+    haben, also stets auf einem gemeinsamen Kreis liegen.
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+\end{proof}
+
+Nach Satz \ref{aufgabe_3} gibt es also,  wenn $m$ orthogonal zu $n$ ist, einen festen Punkt $Q\neq P$ so, dass $P, M, 
+N, Q$ stets den gleichen Abstand zu einem Punkt $S$ haben, also stets auf einem gemeinsamen Kreis liegen. 
+Nach Satz \ref{augabe_3_dumm} gibt es einen solchen Punkt $Q$ auch, wenn $m$ nicht orthogonal zu $n$ ist. Es gibt 
+also stets einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ zu jedem Zeitpunkt auf einem gemeinsamen Kreis liegen!
