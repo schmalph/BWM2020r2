@@ -3,9 +3,8 @@
 \subsection*{Einführung hilfreicher Begriffe}
 
 Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch leichter lesbar machen:
-\begin{definition}
-    Mit einer "`proportionierten"' Tabelle ist eine Tabelle gemeint, die mehr Spalten als Zeilen hat.
-\end{definition}
+
+[Im Folgenden ist die $k$-te Spalte immer die $k$-te Spalte von links und die $k$-Zeile immer die $k$-te Zeile von oben.]
 \begin{definition}
     Mit einer "`fast-positiv-reell-wertigen"' (kurz f.p.r.w.) Tabelle ist eine Tabelle gemeint, für die gilt, dass 
     in jedem ihrer Felder eine nicht-negative reelle Zahl steht, und dabei in jeder Spalte der Tabelle mindestens 
@@ -40,78 +39,93 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 
 \subsection*{Sätze über die eingeführten Begriffe (insb. Rechtecksfunktion)}
 
-\begin{thm}\label{r_summe}
-    Wenn $R$ die Rechtecksfunktion einer Tabelle ist, gilt, wobei $a_1\leq b_1\leq c_1$ und $a_2\leq b_2\leq c_2$: 
+\renewcommand{\qedsymbol}{$\square$}
+
+\begin{lem}\label{r_summe}
+    Wenn $R$ die Rechtecksfunktion einer Tabelle ist und $a_1\leq b_1\leq c_1$ und $a_2\leq b_2\leq c_2$ ist, gilt: 
     $R(a_1, a_2; b_1, b_2)+R(b_1+1, a_2; c_1, b_2)=R(a_1, a_2; c_1, b_2)$ und 
     $R(a_1, a_2; b_1, b_2)+R(a_1, b_2+1; b_1, c_2)=R(a_1, a_2; b_1, c_2)$.
-\end{thm}
-\begin{proof}
+\end{lem}
+\begin{proof}[Beweis des Hilfssatzes]
     beweis
+    % TODO: einfach für beide R-FUnktionen die Definiiton einsetzen
+\end{proof}
+\begin{lem}\label{r_zeile_spalte}
+    Wenn $R$ die Rechtecksfunktion einer Tabelle mit $m$ Zeilen und $n$ Spalten ist, ist $R(i, 1; i, n)$ die Summe 
+    der Werte in den Feldern der $i$-ten Zeile und $R(1, j; m, j)$ die Summe der Werte in den Feldern der $j$-ten 
+    Spalte.
+\end{lem}
+\begin{proof}[Beweis des Hilfssatzes]
+    beweis
+    % TODO: Felder in R mit Feldern der Zeile/Spalte vergleichen  (werden die gleichen sein)
+\end{proof}
+\begin{lem}\label{mehr_nuller}
+    Wenn in einer wohlgeordneten Tabelle $T$ mit Rechtecksfunktion $R$ für zwei Zahlen $i, j$, $R(i, 1; i, n)>
+    R(1, j; m, j)$ gilt, so gilt auch $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$ für alle $a, b\geq0$, für die es eine 
+    $i-a$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, dass für 
+    alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: $R(i+c, 1; i+c, n)\leq 
+    R(1, j-d; m, j-d)$. 
+\end{lem}
+\begin{proof}[Beweis des Hilfssatzes]
+    folgt aus wohlgeordnetheit % TODO
 \end{proof}
 
 \subsection*{Beweis der zu zeigenden Ausssage von Aufgabe 4}
 
 \begin{thm}\label{haupt4}
-    In jeder proportionierten und f.p.r.w. Tabelle gibt es ein Feld $(i, j)$, sodass $(i, j)'>0$ und $Z(i) > S(j)$, 
-    wobei $'$ die Feld- und $R$ die Rechtecksfunktion dieser Tabelle ist.
+    In jeder f.p.r.w. Tabelle mit $m$ Zeilen und $n$ Spalten, wobei $m>n$, gibt es ein Feld $(i, j)$, sodass 
+    $(i, j)'>0$ und $R(i, 1; i, n) > R(1, j; m, j)$, wobei $'$ die Feld- und $R$ die Rechtecksfunktion dieser 
+    Tabelle ist.
 \end{thm}
 
-\begin{proof}
-    Um den Kern des Beweises besser erkennbar zu machen, lohnt es sich, zunächst ein paar Lemmata zu beweisen:
-    \renewcommand{\qedsymbol}{$\square$}
+\begin{proof}[Beweis des Satzes durch Widerspruch]
+    Nehme man zunächst an, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt. Nach folgendem Lemma kann man 
+    davon ausgehen, dass diese Tabelle wohlgeordnet ist.
     \begin{lem}\label{fallbeschrank}
         Wenn es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt, so gibt es überhaupt keine 
         Tabellen, für die Satz \ref{haupt4} nicht gilt.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         beweis von diesem lemma (zuerst zeilen umordnen, dann spalten umordnen und gültigkeit von satz 3 ändert sich 
         dabei nicht) %TODO
     \end{proof}
-    \begin{lem}\label{rechteckkke}
-        Wenn in einer wohlgeordneten Tabelle $T$ für zwei Zahlen $i, j$, wobei $1 \leq i \leq m_T$ und $1 \leq j \leq 
-        n_T$, $Z(i) > S(j)$ gilt, so gilt auch $Z(i-a) > S(j+b)$ für alle $a, b$ mit $0 \leq a < i$ und $0 \leq b 
-        \leq n_T-j$. Umgekehrt folgt aus $Z(i) \leq S_T(j)$, dass für alle $c,d$ mit $0 \leq c \leq m_T$ und
-        $0 \leq d < j$ gilt: $Z(i+c) \leq S(j-d)$. 
-    \end{lem}
-    \begin{proof}
-        beweis für dieses lemma (folgt direkt aus wohlgeordnetheit von $T$)%TODO
-    \end{proof}
-    Nun folgt das Herzstück dieses Beweises, denn sobald dieses bewiesen ist, folgt Satz \ref{haupt4} quasi von selbst 
-    mit vollständiger Induktion:
-    \begin{lem}
-        Wenn es eine wohlgeordnete fast-positiv-reelwertige Tabelle gibt, für die Satz \ref{haupt4} nicht gilt, so 
-        
-    \end{lem}
-    \begin{proof}
-        Nehme man zunächst an, $T^*$ sei eine solche Tabelle mit $m_{T^*}=m^*$ Zeilen und $n_{T^*}n^*$ Spalten.\\
-        \underline{Induktionsanfang ($t=0$)}: Wenn $S^*(n^*) < Z^*(m^*)$ wäre, müsste nach Lemma \ref{rechteckkke} 
-        auch $S^*(n^*) < Z^*(m^*-a)$ für alle $a$ mit $0 \leq a \leq m$ gelten. Da $T^*$ aber eine Tabelle 
-        sein soll, für die Satz \ref{haupt4} nicht gilt, müssten dann alle Felder $T^*(m^*-a, n^*)$ den Wert 0 haben. 
-        Da dies aber alle Felder der $n^*$-ten Spalte sind, müssten sie gleichzeitig auch mindestens ein Feld 
-        mit einem positiven Wert haben ($T^*$ ist ja fast-positiv-reell-wertig). Da aus der Annahme $S^*(n^*) < Z^*(m)$ 
-        also ein Widerspruch folgt, muss gelten: $S^*(n^*-t) \leq Z^*(m^*-t)$ für $t=0$.\\
-        \underline{Induktionsschritt (von $t$ zu $t+1$)}: (Unter der Induktionsannahme, dass $S^*(n^*-r) \geq 
-        Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) Nehme man nun an, dass $S^*(n^*-(t+1)) < Z^*(m^*-(t+1))$. 
-        Da $T^*$ wohlgeordnet und fast-positiv-reell-wertig ist, folgt dann aus Lemma \ref{rechteckkke}, 
-        dass auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$ für alle $a, b$ mit $0\leq a\leq m^*-(t+1)$ und 
-        $0\leq b\leq t+1$. Nun würde aber für $T^*$ Satz \ref{haupt4} gelten, wenn es zwei Zahlen $a', b'$ mit 
-        $0\leq a'\leq m^*-(t+1)$ und $0\leq b'\leq t+1$ geben würde, für die $f^*(m^*-(t+1)-a', n^*-(t+1)+b') >0$, 
-        denn für diese wäre dann ja auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$. Da die Tabelle $T^*$ aber ein 
-        Gegenbeispiel für Satz \ref{haupt4} darstellen soll, kann das nicht sein und es muss damit für alle $a, b$ 
-        mit $0\leq a\leq m^*-(t+1)$ und $0\leq b\leq t+1$ gelten: $f^*(m^*-(t+1)-a, n^*-(t+1)+b)=0$, wobei $f^*$ die 
-        Feldwertfunktion von $T^*$ ist. Sei nun $A=m^*-(t+1)-a$ und $B=(t+1)-b$, dann muss wegen $0\leq a\leq m^*-(t+1)$ 
-        für $A=m^*-(t+1)-a$ gelten: $0\leq A\leq m^*-(t+1)$. Und wegen $0\leq b\leq t+1$ muss für $B=(t+1)-b$ gelten: 
-        $0 \leq B\leq t+1$. Es ist also $f^*(A, n^*-B) =0$ für alle $A,B$ mit $0\leq A\leq m^*-(t+1)$ und $0 \leq B
-        \leq t+1$.\\
-        Nun lässt sich die Induktionsannahme ($S^*(n^*-r) \geq Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) wegen 
-        $S^*(n^*-r)=f^*(1,n^*-r) + f^*(2,n^*-r)+\cdots +f^*(m^*,n^*-r)$ und $Z^*(m^*-r)=f^*(m^*-r, 1) + f^*(m^*-r, 2) 
-        + \cdots + f^*(m^*-r, n^*)$ zu Folgender Umformen:
-        \begin{align*}
-            &f^*(1,n^*-r)+f^*(2,n^*-r)+\cdots+f^*(m^*,n^*-r)\\ 
-            \geq &f^*(m^*-r, 1)+f^*(m^*-r, 2)+\cdots +f^*(m^*-r, n^*)\text{, wobei $0 \leq r \leq t$}
-        \end{align*}
+    Da es nach Lemma \ref{fallbeschrank} überhaupt keine Tabellen gibt, für die Satz \ref{haupt4} 
+    nicht gilt, wenn es keine wohlgeordneten gibt, genügt es, zu beweisen, dass es keine wohlgeordneten Tabellen 
+    gibt, für die Satz \ref{haupt4} nicht gilt, um zu beweisen, dass es überheupt keine gibt. Es folgt also ein 
+    Widerspruchsbeweis dafür, dass es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt:
 
-    \end{proof}
+    Nehme man für den Widerspruchsbeweis an, es gäbe eine wohlgeordnete, f.p.r.w. Tabelle $T^*$ mit $m$ Zeilen und $n$ 
+    Spalten, wobei $m>n$, für die Satz \ref{haupt4} nicht gilt; in der es also kein Feld $(i, j)$ mit $(i, j)'>0$ 
+    und $R(i, 1; i, n)>R(1, j; m, j)$ gibt, wobei $'$ die Feldwert- und $R$ die Rechtecksfunktion der Tabelle $T^*$ 
+    ist. Dann folgt mit vollständiger Induktion, dass $R(1, n-t; m, n)\geq R(m-t, 1; m, n)$ für alle $t$ mit $0\leq 
+    t<n$:
+
+    \textit{Induktionsanfang ($t=0$)}: Wenn $S^*(n^*) < Z^*(m^*)$ wäre, müsste nach Satz \ref{mehr_nuller} 
+    auch $S^*(n^*) < Z^*(m^*-a)$ für alle $a$ mit $0 \leq a \leq m$ gelten. Da $T^*$ aber eine Tabelle 
+    sein soll, für die Satz \ref{haupt4} nicht gilt, müssten dann alle Felder $T^*(m^*-a, n^*)$ den Wert 0 haben. 
+    Da dies aber alle Felder der $n^*$-ten Spalte sind, müssten sie gleichzeitig auch mindestens ein Feld 
+    mit einem positiven Wert haben ($T^*$ ist ja fast-positiv-reell-wertig). Da aus der Annahme $S^*(n^*) < Z^*(m)$ 
+    also ein Widerspruch folgt, muss gelten: $S^*(n^*-t) \leq Z^*(m^*-t)$ für $t=0$.\\
+    \underline{Induktionsschritt (von $t$ zu $t+1$)}: (Unter der Induktionsannahme, dass $S^*(n^*-r) \geq 
+    Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) Nehme man nun an, dass $S^*(n^*-(t+1)) < Z^*(m^*-(t+1))$. 
+    Da $T^*$ wohlgeordnet und fast-positiv-reell-wertig ist, folgt dann aus Satz \ref{mehr_nuller}, 
+    dass auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$ für alle $a, b$ mit $0\leq a\leq m^*-(t+1)$ und 
+    $0\leq b\leq t+1$. Nun würde aber für $T^*$ Satz \ref{haupt4} gelten, wenn es zwei Zahlen $a', b'$ mit 
+    $0\leq a'\leq m^*-(t+1)$ und $0\leq b'\leq t+1$ geben würde, für die $f^*(m^*-(t+1)-a', n^*-(t+1)+b') >0$, 
+    denn für diese wäre dann ja auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$. Da die Tabelle $T^*$ aber ein 
+    Gegenbeispiel für Satz \ref{haupt4} darstellen soll, kann das nicht sein und es muss damit für alle $a, b$ 
+    mit $0\leq a\leq m^*-(t+1)$ und $0\leq b\leq t+1$ gelten: $f^*(m^*-(t+1)-a, n^*-(t+1)+b)=0$, wobei $f^*$ die 
+    Feldwertfunktion von $T^*$ ist. Sei nun $A=m^*-(t+1)-a$ und $B=(t+1)-b$, dann muss wegen $0\leq a\leq m^*-(t+1)$ 
+    für $A=m^*-(t+1)-a$ gelten: $0\leq A\leq m^*-(t+1)$. Und wegen $0\leq b\leq t+1$ muss für $B=(t+1)-b$ gelten: 
+    $0 \leq B\leq t+1$. Es ist also $f^*(A, n^*-B) =0$ für alle $A,B$ mit $0\leq A\leq m^*-(t+1)$ und $0 \leq B
+    \leq t+1$.\\
+    Nun lässt sich die Induktionsannahme ($S^*(n^*-r) \geq Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) wegen 
+    $S^*(n^*-r)=f^*(1,n^*-r) + f^*(2,n^*-r)+\cdots +f^*(m^*,n^*-r)$ und $Z^*(m^*-r)=f^*(m^*-r, 1) + f^*(m^*-r, 2) 
+    + \cdots + f^*(m^*-r, n^*)$ zu Folgender Umformen:
+    \begin{align*}
+        &f^*(1,n^*-r)+f^*(2,n^*-r)+\cdots+f^*(m^*,n^*-r)\\ 
+        \geq &f^*(m^*-r, 1)+f^*(m^*-r, 2)+\cdots +f^*(m^*-r, n^*)\text{, wobei $0 \leq r \leq t$}
+    \end{align*}
     noch mehr beweissssssss
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}

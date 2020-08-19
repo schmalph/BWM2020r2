@@ -72,12 +72,13 @@ Nun muss nur noch bewiesen werden, dass es stets einen festen Punkt $Q\neq P$ gi
 Zeitpunkt auf einem Kreis gemeinsamen liegen. Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den 
 Gleichen Abstand haben.
 
-Folgender Satz wird später hilfreich sein:
-\begin{thm}\label{cor_hilfe}
+Zunächst beweise ich hierzu den folgenden Hilfssatz:
+\begin{lem}\label{cor_hilfe}
     $x_A^2+y_A^2=2x_Ax_S+2y_Ay_S$ ist äquivalent zu $\overline{AS}=\sqrt{x_S^2+y_S^2}$ für alle 
     Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
-\end{thm}
-\begin{proof}
+\end{lem}
+\begin{proof}[Beweis des Hilfssatzes]
+    \renewcommand{\qedsymbol}{$\square$}
     Die Behauptung ergibt sich direkt durch Umformen:
     \begin{alignat*}{3}
         &\overline{AS}=\sqrt{(x_A-x_S)^2+(y_A-y_S)^2}&&=\sqrt{x_S^2+y_S^2}\quad&&\|(\ldots)^2\\
@@ -94,8 +95,7 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     Hierbei sind $S$ und $Q$ durch $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
     \frac{c}{2}\right)$ gegeben.
 \end{thm}
-\begin{proof}
-    \renewcommand{\qedsymbol}{$\square$}
+\begin{proof}[Beweis des Satzes]
     Anm.: Im folgenden Beweis ist natürlich $M=(0, x_N+c)$, da in Satz \ref{aufgabe_3} davon ausgegangen wird, dass 
     $m$ orthogonal zu $n$ ist.
 
@@ -108,12 +108,13 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     Offensichtlich bewegt sich der Punkt $Q$ nicht, denn seine Koordinaten sind nur von der Konstanten $c$ abhängig. 
     $Q$ ist also ein fester, von $P$ verschiedener Punkt.
     
-    Zunächst werde ich ein paar Gleichungen in den folgenden Lemmata beweisen, aus denen dann mit Satz \ref{cor_hilfe}
+    Zunächst werde ich ein paar Gleichungen in den folgenden Hilfssätzen beweisen, aus denen dann mit Hilfssatz 
+    \ref{cor_hilfe}
     direkt die Korollare folgen:
     \begin{lem}\label{no_P}
         Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \[
         \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S-0)^2}=\sqrt{x_S^2+y_S^2}    
@@ -122,29 +123,29 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     \begin{lem}\label{no_M}
         Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Durch Umformen ergibt sich direkt die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$:
         \begin{align*}
             x_M^2+y_M^2&=0^2+(x_N+c)^2=0+2\cdot \frac{(x_N+c)^2}{2}=0+2\cdot (x_N+c)\cdot\frac{x_N+c}{2}\\
             &=2\cdot 0\cdot \frac{x_N}{2}+2\cdot y_M\cdot y_S=2x_Mx_S+2y_My_S
         \end{align*}
-        Aus der Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{no_N}
         Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Durch Umformen ergibt sich direkt die Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$:
         \begin{align*}
             x_N^2+y_N^2&=x_N^2+0^2=x_N^2+0=2\cdot \frac{x_N^2}{2}+0=2x_N\frac{x_N}{2}+0\\
             &=2x_Nx_S+2\cdot 0\cdot \frac{x_N+c}{2}=2x_Nx_S+2y_Ny_S
         \end{align*}
-        Aus der Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{no_Q}
         Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Durch Umformen ergibt sich direkt die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$:
         \begin{align*}
             x_Q^2+y_Q^2&=\left(-\frac{c}{2}\right)^2+\left(\frac{c}{2}\right)^2=\frac{c^2}{4}+\frac{c^2}{4}
@@ -154,9 +155,9 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
             \left(-\frac{c}{2}\right)+2\frac{x_N+c}{2}\frac{c}{2}\\
             &=2x_Sx_Q+2y_Sy_Q=2x_Qx_S+2y_Qy_S
         \end{align*}
-        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    Aus den Lemmata \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
+    Aus den Hilfssätzen \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ orthogonal zu $m$ ist, 
     gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ haben, 
     also stets auf einem gemeinsamen Kreis liegen.
@@ -178,7 +179,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \]
     gegeben.
 \end{thm}
-\begin{proof}
+\begin{proof}[Beweis des Satzes]
     \renewcommand{\qedsymbol}{$\square$}
     Anm.: Im folgenden Beweis ist natürlich $M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} 
     \right)$, da in Satz \ref{augabe_3_dumm} davon ausgegangen wird, dass $m$ nicht orthogonal zu $n$ ist.
@@ -199,7 +200,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_P}
         Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \[
         \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S+0)^2}=\sqrt{x_S^2+y_S^2}    
@@ -208,7 +209,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_M}
         Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Zunächst ergibt sich durch Umformen die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$. Diese Umformung ist 
         zwar etwas länger, allerdings in jedem Schritt elementar genug, dass ich einen Kommentar für überflüssig 
         halte.
@@ -228,12 +229,12 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             &=2x_Mx_S+2y_My_S
         \end{align*}
 
-        Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Satz \ref{cor_hilfe} direkt die Behauptung.
+        Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{dumm_N}
         Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \begin{align*}
             \overline{NS}&=\sqrt{(x_N-x_S)^2+(y_N-y_S)^2}=\sqrt{\left(x_N-\frac{x_N}{2}\right)^2+(0-y_S)^2}\\
@@ -243,16 +244,16 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_Q}
         Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}
+    \begin{proof}[Beweis des Hilfssatzes]
         Zunächst ergibt sich durch simples Umformen die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$. Auch diese 
         Umformung ist ziemlich lang, aber auch hier ist wieder jeder Schritt sehr elementar; die Umformung sollte 
         also trotz ihre Länge nachvollziehbar sein.
 
         % TODO: Umformung einfügen. Zu finden unter Downloads --> Umformung.jpeg
 
-        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Satz \eqref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    Aus den Lemmata \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
+    Aus den Hilfssätzen \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ nicht orthogonal zu $m$ 
     ist, gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ 
     haben, also stets auf einem gemeinsamen Kreis liegen.
