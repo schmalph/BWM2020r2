@@ -62,7 +62,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 \begin{lem}\label{mehr_nuller}
     Wenn in einer wohlgeordneten Tabelle $T$ mit Rechtecksfunktion $R$ für zwei Zahlen $i, j$, $R(i, 1; i, n)>
     R(1, j; m, j)$ gilt, so gilt auch $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$ für alle $a, b\geq0$, für die es eine 
-    $i-a$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, dass für 
+    $(i-a)$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, dass für 
     alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: $R(i+c, 1; i+c, n)\leq 
     R(1, j-d; m, j-d)$. 
 \end{lem}
@@ -97,35 +97,30 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     Nehme man für den Widerspruchsbeweis an, es gäbe eine wohlgeordnete, f.p.r.w. Tabelle $T^*$ mit $m$ Zeilen und $n$ 
     Spalten, wobei $m>n$, für die Satz \ref{haupt4} nicht gilt; in der es also kein Feld $(i, j)$ mit $(i, j)'>0$ 
     und $R(i, 1; i, n)>R(1, j; m, j)$ gibt, wobei $'$ die Feldwert- und $R$ die Rechtecksfunktion der Tabelle $T^*$ 
-    ist. Dann folgt mit vollständiger Induktion, dass $R(1, n-t; m, n)\geq R(m-t, 1; m, n)$ für alle $t$ mit $0\leq 
+    ist. Dann folgt mit vollständiger Induktion, dass $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq 
     t<n$:
 
-    \textit{Induktionsanfang ($t=0$)}: Wenn $S^*(n^*) < Z^*(m^*)$ wäre, müsste nach Satz \ref{mehr_nuller} 
-    auch $S^*(n^*) < Z^*(m^*-a)$ für alle $a$ mit $0 \leq a \leq m$ gelten. Da $T^*$ aber eine Tabelle 
-    sein soll, für die Satz \ref{haupt4} nicht gilt, müssten dann alle Felder $T^*(m^*-a, n^*)$ den Wert 0 haben. 
-    Da dies aber alle Felder der $n^*$-ten Spalte sind, müssten sie gleichzeitig auch mindestens ein Feld 
-    mit einem positiven Wert haben ($T^*$ ist ja fast-positiv-reell-wertig). Da aus der Annahme $S^*(n^*) < Z^*(m)$ 
-    also ein Widerspruch folgt, muss gelten: $S^*(n^*-t) \leq Z^*(m^*-t)$ für $t=0$.\\
-    \underline{Induktionsschritt (von $t$ zu $t+1$)}: (Unter der Induktionsannahme, dass $S^*(n^*-r) \geq 
-    Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) Nehme man nun an, dass $S^*(n^*-(t+1)) < Z^*(m^*-(t+1))$. 
-    Da $T^*$ wohlgeordnet und fast-positiv-reell-wertig ist, folgt dann aus Satz \ref{mehr_nuller}, 
-    dass auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$ für alle $a, b$ mit $0\leq a\leq m^*-(t+1)$ und 
-    $0\leq b\leq t+1$. Nun würde aber für $T^*$ Satz \ref{haupt4} gelten, wenn es zwei Zahlen $a', b'$ mit 
-    $0\leq a'\leq m^*-(t+1)$ und $0\leq b'\leq t+1$ geben würde, für die $f^*(m^*-(t+1)-a', n^*-(t+1)+b') >0$, 
-    denn für diese wäre dann ja auch $S^*(n^*-(t+1)+b) < Z^*(m^*-(t+1)-a)$. Da die Tabelle $T^*$ aber ein 
-    Gegenbeispiel für Satz \ref{haupt4} darstellen soll, kann das nicht sein und es muss damit für alle $a, b$ 
-    mit $0\leq a\leq m^*-(t+1)$ und $0\leq b\leq t+1$ gelten: $f^*(m^*-(t+1)-a, n^*-(t+1)+b)=0$, wobei $f^*$ die 
-    Feldwertfunktion von $T^*$ ist. Sei nun $A=m^*-(t+1)-a$ und $B=(t+1)-b$, dann muss wegen $0\leq a\leq m^*-(t+1)$ 
-    für $A=m^*-(t+1)-a$ gelten: $0\leq A\leq m^*-(t+1)$. Und wegen $0\leq b\leq t+1$ muss für $B=(t+1)-b$ gelten: 
-    $0 \leq B\leq t+1$. Es ist also $f^*(A, n^*-B) =0$ für alle $A,B$ mit $0\leq A\leq m^*-(t+1)$ und $0 \leq B
-    \leq t+1$.\\
-    Nun lässt sich die Induktionsannahme ($S^*(n^*-r) \geq Z^*(m^*-r)$ für alle $r$ mit $0 \leq r \leq t$) wegen 
-    $S^*(n^*-r)=f^*(1,n^*-r) + f^*(2,n^*-r)+\cdots +f^*(m^*,n^*-r)$ und $Z^*(m^*-r)=f^*(m^*-r, 1) + f^*(m^*-r, 2) 
-    + \cdots + f^*(m^*-r, n^*)$ zu Folgender Umformen:
-    \begin{align*}
-        &f^*(1,n^*-r)+f^*(2,n^*-r)+\cdots+f^*(m^*,n^*-r)\\ 
-        \geq &f^*(m^*-r, 1)+f^*(m^*-r, 2)+\cdots +f^*(m^*-r, n^*)\text{, wobei $0 \leq r \leq t$}
-    \end{align*}
+    \textit{Induktionsanfang ($t=0$)}: Es folgt ein beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach dem ersten Satz von 
+    Hilfssatz \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
+    $a$ mit $0\leq a<m$, denn nur für diese gibt es eine $(m-a)$-te Zeile. Nun sind die Felder $(m-a, n)$ für $0\leq 
+    a<m$ genau die Felder der $n$-ten Spalte (ein beliebiges Feld der $n$-ten Spalte $(j, n)$ ergibt sich mit $a=m-j$, 
+    was wegen $j>0$ kleiner als $m$ und wegen $j\leq m$ nicht negativ sein kann). Natürlich muss in mindestens einem 
+    der Felder der $n$-ten Spalte eine positive Zahl stehen, da $T^*$ f.p.r.w. ist. Es gibt also ein Feld $(j, n)$ 
+    mit $(j, n)'>0$ und $R(j, 1; j, n)>R(1, n; m, n)$. Das stellt aber einen Widerspruch dazu dar, dass für $T^*$ nicht 
+    Satz \ref{haupt4} gilt! Da aus $R(m, 1; m, n)>R(1, n; m, n)$ ein Widerspruch folgt, kann nicht $R(m, 1; m, n)>
+    R(1, n; m, n)$ sein; es muss also $R(m, 1; m, n)\leq R(1, n; m, n)$. Das entspricht $R(m-t, 1; m, n)\leq 
+    R(1, n-t; m, n)$ mit $t=0$, die Aussage gilt also für $t=0$.
+
+
+    \textit{Induktionsschritt}: (Beweis, dass aus der Induktionsannahme, $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für 
+    ein $t$ mit $0\leq t<n-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man nun an, es sei 
+
+
+
+
+
+
     noch mehr beweissssssss
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
