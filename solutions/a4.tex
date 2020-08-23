@@ -26,7 +26,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
         &+(a_1+2, &&a_2)' + &&(a_1+2, &&a_2+1)' +\quad \cdots \quad + &&(a_1+2, &&b_2)'\\
         & &&\vdotswithin{a} && &&\vdotswithin{a}\quad\quad\quad\quad\quad \ddots && &&\vdotswithin{b} \\
         &+(b_1-1, &&a_2)' + &&(b_1-1, &&a_2+1)' +\quad \cdots \quad + &&(b_1-1, &&b_2)'\\
-        &+(b_1, &&a_2)' + &&(b_1, &&a_2+1)' + \quad \cdots \quad + &&(b_1, &&b_2)
+        &+(b_1, &&a_2)' + &&(b_1, &&a_2+1)' + \quad \cdots \quad + &&(b_1, &&b_2)'
     \end{alignat*}    
 \end{definition}
 \begin{definition}
@@ -37,7 +37,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     sie kurz auch "`wohlgeordnet"'.
 \end{definition}
 
-\subsection*{Sätze über die eingeführten Begriffe (insb. Rechtecksfunktion)}
+\subsection*{Hilfssätze über die eingeführten Begriffe}
 
 \renewcommand{\qedsymbol}{$\square$}
 
@@ -70,7 +70,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     folgt aus wohlgeordnetheit % TODO
 \end{proof}
 
-\subsection*{Beweis der zu zeigenden Ausssage von Aufgabe 4}
+\subsection*{Lösung von Aufgabe 4}
 
 \begin{thm}\label{haupt4}
     In jeder f.p.r.w. Tabelle mit $m$ Zeilen und $n$ Spalten, wobei $m>n$, gibt es ein Feld $(i, j)$, sodass 
@@ -95,10 +95,10 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     Widerspruchsbeweis dafür, dass es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt:
 
     Nehme man für den Widerspruchsbeweis an, es gäbe eine wohlgeordnete, f.p.r.w. Tabelle $T^*$ mit $m$ Zeilen und $n$ 
-    Spalten, wobei $m>n$, für die Satz \ref{haupt4} nicht gilt; in der es also kein Feld $(i, j)$ mit $(i, j)'>0$ 
+    Spalten, wobei $m<n$, für die Satz \ref{haupt4} nicht gilt; in der es also kein Feld $(i, j)$ mit $(i, j)'>0$ 
     und $R(i, 1; i, n)>R(1, j; m, j)$ gibt, wobei $'$ die Feldwert- und $R$ die Rechtecksfunktion der Tabelle $T^*$ 
     ist. Dann folgt mit vollständiger Induktion, dass $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq 
-    t<n$:
+    t<m$:
 
     \textit{Induktionsanfang ($t=0$)}: Es folgt ein beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
     $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach dem ersten Satz von 
@@ -114,13 +114,26 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 
 
     \textit{Induktionsschritt}: (Beweis, dass aus der Induktionsannahme, $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für 
-    ein $t$ mit $0\leq t<n-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man nun an, es sei 
+    ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man nun an, es sei 
+    $R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))$. Dann muss gemäß Hilfssatz \ref{mehr_nuller} auch 
+    $R()$
 
 
 
 
-
-
-    noch mehr beweissssssss
+    Mit dem Induktionsprinzip (Gültigkeit der Aussage für $t=0$ wurde im Induktionsanfang bewiesen, mit dem 
+    Induktionsschritt folgt dann Gültigkeit für $t=1$, damit dann auch für $t=2$, \dots, für $t=m$) folgt also, dass 
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq t<m$.Insbesondere ist also auch $R(m-t, 1; m, n)
+    \leq R(1, n-t; m, n)$ für $t=m-1$, also $R(m-(m-1), 1; m, n)\leq R(1, n-(m-1); m, n)\Leftrightarrow R(1, 1; 
+    m, n)\leq R(1, n-m+1; m, n)$. Offensichtlich ist $R(1, 1; m, n)$ die Summe der Werte aller Felder der gesamten 
+    Tabelle. Denn es ist:
+    \begin{alignat*}{6}
+        R(1, 1; m, n) &= (1, &&1)' + &&(1, &&2)' + \quad \cdots \quad + &&(1, &&n)'\\
+        &+(2, &&1)' + &&(2, &&2)' +\quad \cdots \quad + &&(2, &&n)'\\
+        &+(3, &&1)' + &&(3, &&2)' +\quad \cdots \quad + &&(3, &&n)'\\
+        & &&\vdotswithin{1} && &&\vdotswithin{2}\quad\quad\quad \ddots && &&\vdotswithin{n} \\
+        &+(m-1, &&1)' + &&(m-1, &&2)' +\quad \cdots \quad + &&(m-1, &&n)'\\
+        &+(m, &&1)' + &&(m, &&2)' + \quad \cdots \quad + &&(m, &&n)'
+    \end{alignat*}
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
