@@ -92,15 +92,22 @@ nicht eingeschränkt.
     der $j$-ten Spalte dieser Tabelle.
 \end{lem}
 \begin{proof}[Beweis des HS]
-    beweis
-    % TODO: Felder in R mit Feldern der Zeile/Spalte vergleichen  (werden die gleichen sein)
+    Per Defintion ist $R(i, 1; i, n)=(i, 1)'+(i, 2)'+\cdots+(i, n-1)'+(i, n)$. Die Felder der $i$-ten Zeile sind die 
+    der Form $(i, a)$, wobei $0<a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufsummiert 
+    werden, um $R(i, 1; i, n)$ zu berechnen. $R(i, 1; i, n)$ ist also die Summe der Werte in den Feldern der $i$-ten 
+    Zeile.
+
+    Ähnlich ist per Definition $R(1, j; m, j)=(1, j)'+(2, j)'+\cdots+(m-1, j)'+(m, j)'$. Die Felder der $j$-ten Spalte 
+    sind die der Form $(a, j)$, wobei $0<a\leq m$. Offensichtlich sind diese genau die Felder, deren Feldwerte 
+    aufsummiert werden, um $R(1, j; m, j)$ zu berechnen. $R(1, j; m, j)$ ist also die Summe der Werte in den Feldern 
+    der $j$-ten Spalte.
 \end{proof}
 \begin{lem}\label{mehr_nuller}
-    Wenn in einer wohlgeordneten Tabelle $T$ mit Rechtecksfunktion $R$ für zwei Zahlen $i, j$, $R(i, 1; i, n)>
-    R(1, j; m, j)$ gilt, so gilt auch $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$ für alle $a, b\geq0$, für die es eine 
-    $(i-a)$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, dass für 
-    alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: $R(i+c, 1; i+c, n)\leq 
-    R(1, j-d; m, j-d)$. 
+    Wenn in einer wohlgeordneten Tabelle mit Rechtecksfunktion $R$ für zwei Zahlen $i, j$ die Ungleichungen 
+    $R(i, 1; i, n)>R(1, j; m, j)$ gilt, so gilt auch $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$ für alle $a, b\geq0$, für 
+    die es eine $(i-a)$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, 
+    dass für alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: 
+    $R(i+c, 1; i+c, n)\leq R(1, j-d; m, j-d)$. 
 \end{lem}
 \begin{proof}[Beweis des HS]
     folgt aus wohlgeordnetheit % TODO
@@ -136,7 +143,7 @@ nicht eingeschränkt.
     ist. Dann folgt mit vollständiger Induktion, dass $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq 
     t<m$:
 
-    \textit{Induktionsanfang ($t=0$)}: Es folgt ein beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
+    \textit{Induktionsanfang ($t=0$)}: Es folgt ein Beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
     $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach dem ersten Satz von 
     HS \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
     $a$ mit $0\leq a<m$, denn nur für diese gibt es eine $(m-a)$-te Zeile. Nun sind die Felder $(m-a, n)$ für $0\leq 
@@ -147,7 +154,6 @@ nicht eingeschränkt.
     Satz \ref{haupt4} gilt! Da aus $R(m, 1; m, n)>R(1, n; m, n)$ ein Widerspruch folgt, kann nicht $R(m, 1; m, n)>
     R(1, n; m, n)$ sein; es muss also $R(m, 1; m, n)\leq R(1, n; m, n)$. Das entspricht $R(m-t, 1; m, n)\leq 
     R(1, n-t; m, n)$ mit $t=0$, die Aussage gilt also für $t=0$.
-
 
     \textit{Induktionsschritt}: (Beweis, dass aus der Induktionsannahme, $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für 
     ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man hierzu an, es sei 
@@ -186,7 +192,7 @@ nicht eingeschränkt.
     \]
     Insbesondere also $R(1, 1; m, 1)\leq 0$. Wegen $R(1, 1; m, n-m)\leq 0$ gilt, wenn $n=m+1$, $R(1, 1; m, (m+1)-m)
     \leq 0$, also $R(1, 1; m, 1)\leq 0$. Es gilt also stets $R(1, 1; m, 1)\leq 0$, egal, ob $n>m+1$ oder $n=m+1$. 
-    Nun ist $R(1, 1; m, 1)$ nach HS \ref{r_zeile_spalte} die Summme der Werte in den Feldern der ersten Spalte. Da 
+    Nun ist $R(1, 1; m, 1)$ nach HS \ref{r_zeile_spalte} die Summe der Werte in den Feldern der ersten Spalte. Da 
     all diese Werte nicht-negativ sind, muss auch $R(1, 1; m, 1)$ nicht-negativ sein. Weil gleichzeitig aber auch 
     $R(1, 1; m, 1)\leq 0$ ist, kann $R(1, 1; m, 1)$ nicht positiv sein. Es muss also:
     \[
@@ -196,6 +202,6 @@ nicht eingeschränkt.
     negativen sind und gleichzeitig ihre Summe 0 ist. Nun ist aber $T^*$ eine f.p.r.w. Tabelle, also muss es in jeder 
     Spalte von $T^*$ mindestens ein Feld geben, in dem eine positive Zahl steht. Aber ein solches Feld gibt es in 
     der ersten Spalte nicht! Die Annahme, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt, führt also zu 
-    einem Widerspruch. Eine solche Tabelle gibt es also nicht, was den Beweis von Satz \ref{haupt4} vollendet.
+    einem Widerspruch. Eine solche Tabelle gibt es also nicht, was den Widerspruchsbeweis von Satz \ref{haupt4} vollendet.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
