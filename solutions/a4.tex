@@ -2,7 +2,7 @@
 
 \subsection*{Einführung hilfreicher Begriffe}
 
-Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch leichter lesbar machen:
+Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch besser lesbar machen:
 
 [Im Folgenden ist die $k$-te Spalte immer die $k$-te Spalte von links und die $k$-Zeile immer die $k$-te Zeile von oben.]
 \begin{definition}
@@ -46,16 +46,52 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     $R(a_1, a_2; b_1, b_2)+R(b_1+1, a_2; c_1, b_2)=R(a_1, a_2; c_1, b_2)$ und 
     $R(a_1, a_2; b_1, b_2)+R(a_1, b_2+1; b_1, c_2)=R(a_1, a_2; b_1, c_2)$.
 \end{lem}
-\begin{proof}[Beweis des Hilfssatzes]
-    beweis
-    % TODO: einfach für beide R-FUnktionen die Definiiton einsetzen
+\begin{proof}[Beweis des HS]
+    Erstere Aussage ergibt sich direkt aus der Definition der Rechtecksfunktion:
+    \begin{alignat*}{3}
+        &R(a_1, a_2; b_1, b_2)&& +R(b_1+1, a_2; c_1, b_2)&&\\
+        &=(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
+        &+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
+        & &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
+        &+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
+        &+R(b_1+1, a_2; &&c_1, b_2) &&\\
+        &=(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
+        &+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
+        & &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
+        &+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
+        &+(b_1+1, a_2)' &&+ (b_1+1, a_2+1)' &&+\cdots+ (b_1+1, b_2)'\\
+        &+(b_1+2, a_2)' &&+ (b_1+2, a_2+1)' &&+\cdots+ (b_1+2, b_2)'\\
+        & &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &+(c_1-1, a_2)' &&+ (c_1-1, a_2+1)' &&+\cdots + (c_1-1, b_2)'\\
+        &+(c_1, a_2)' &&+ (c_1, a_2+1)' &&+ \cdots + (c_1, b_2)'\\
+        &=R(a_1, a_2; c_1, &&b_2)&&
+    \end{alignat*}
+    Auch letztere Aussage ergibt sich direkt durch Einsetzen der Definition der Rechtecksfunktion:
+    \begin{alignat*}{4}
+        &R(a_1, a_2; b_1, b_2)&& &&+R(a_1, b_2+1; b_1, &&c_2)\\
+        &=(a_1, a_2)' &&+\cdots+ (a_1, b_2)'
+        &&+(a_1, b_2+1)'&&+\cdots+(a_1, c_2)'\\
+        &+(a_1+1, a_2)'&&+\cdots+ (a_1+1, b_2)'
+        &&+(a_1+1, b_2+1)'&&+\cdots+(a_1+1, c_2)'\\
+        & \quad\vdots&&\quad\vdots&&+\quad\vdots&&\quad\vdots\\
+        &+(b_1-1, a_2)'&&+\cdots + (b_1-1, b_2)'
+        &&+(b_1-1, b_2+1)'&&+\cdots+(b_1-1, c_2)'\\
+        &+(b_1, a_2)'&&+ \cdots + (b_1, b_2)'
+        &&+(b_1, b_2+1)'&&+\cdots+(b_1, c_2)'\\
+        &=R(a_1, a_2; b_1, &&c_2)
+    \end{alignat*}
 \end{proof}
+Anm.  zu HS \ref{r_summe}: Wenn die für die Gültigkeit dieses HS nötigen Ungleichungen offensichtlich wahr waren, 
+habe ich sie oft gar nicht erwähnt. Da sie so offensichtlich sind, wird hierdurch die mathematische Vollständigkeit 
+nicht eingeschränkt.
 \begin{lem}\label{r_zeile_spalte}
     Wenn $R$ die Rechtecksfunktion einer Tabelle mit $m$ Zeilen und $n$ Spalten ist, ist $R(i, 1; i, n)$ die Summe 
-    der Werte in den Feldern der $i$-ten Zeile und $R(1, j; m, j)$ die Summe der Werte in den Feldern der $j$-ten 
-    Spalte.
+    der Werte in den Feldern der $i$-ten Zeile dieser Tabelle und $R(1, j; m, j)$ die Summe der Werte in den Feldern 
+    der $j$-ten Spalte dieser Tabelle.
 \end{lem}
-\begin{proof}[Beweis des Hilfssatzes]
+\begin{proof}[Beweis des HS]
     beweis
     % TODO: Felder in R mit Feldern der Zeile/Spalte vergleichen  (werden die gleichen sein)
 \end{proof}
@@ -66,7 +102,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: $R(i+c, 1; i+c, n)\leq 
     R(1, j-d; m, j-d)$. 
 \end{lem}
-\begin{proof}[Beweis des Hilfssatzes]
+\begin{proof}[Beweis des HS]
     folgt aus wohlgeordnetheit % TODO
 \end{proof}
 
@@ -79,17 +115,17 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 \end{thm}
 
 \begin{proof}[Beweis des Satzes durch Widerspruch]
-    Nehme man zunächst an, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt. Nach folgendem Lemma kann man 
+    Nehme man zunächst an, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt. Nach folgendem HS kann man 
     davon ausgehen, dass diese Tabelle wohlgeordnet ist.
     \begin{lem}\label{fallbeschrank}
         Wenn es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt, so gibt es überhaupt keine 
         Tabellen, für die Satz \ref{haupt4} nicht gilt.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         beweis von diesem lemma (zuerst zeilen umordnen, dann spalten umordnen und gültigkeit von satz 3 ändert sich 
         dabei nicht) %TODO
     \end{proof}
-    Da es nach Lemma \ref{fallbeschrank} überhaupt keine Tabellen gibt, für die Satz \ref{haupt4} 
+    Da es nach HS \ref{fallbeschrank} überhaupt keine Tabellen gibt, für die Satz \ref{haupt4} 
     nicht gilt, wenn es keine wohlgeordneten gibt, genügt es, zu beweisen, dass es keine wohlgeordneten Tabellen 
     gibt, für die Satz \ref{haupt4} nicht gilt, um zu beweisen, dass es überheupt keine gibt. Es folgt also ein 
     Widerspruchsbeweis dafür, dass es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt:
@@ -102,7 +138,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 
     \textit{Induktionsanfang ($t=0$)}: Es folgt ein beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
     $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach dem ersten Satz von 
-    Hilfssatz \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
+    HS \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
     $a$ mit $0\leq a<m$, denn nur für diese gibt es eine $(m-a)$-te Zeile. Nun sind die Felder $(m-a, n)$ für $0\leq 
     a<m$ genau die Felder der $n$-ten Spalte (ein beliebiges Feld der $n$-ten Spalte $(j, n)$ ergibt sich mit $a=m-j$, 
     was wegen $j>0$ kleiner als $m$ und wegen $j\leq m$ nicht negativ sein kann). Natürlich muss in mindestens einem 
@@ -114,8 +150,8 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 
 
     \textit{Induktionsschritt}: (Beweis, dass aus der Induktionsannahme, $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für 
-    ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man nun an, es sei 
-    $R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))$. Dann muss gemäß Hilfssatz \ref{mehr_nuller} auch 
+    ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man hierzu an, es sei 
+    $R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))$. Dann muss gemäß HS \ref{mehr_nuller} auch 
     $R()$
 
 
@@ -123,17 +159,43 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 
     Mit dem Induktionsprinzip (Gültigkeit der Aussage für $t=0$ wurde im Induktionsanfang bewiesen, mit dem 
     Induktionsschritt folgt dann Gültigkeit für $t=1$, damit dann auch für $t=2$, \dots, für $t=m$) folgt also, dass 
-    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq t<m$.Insbesondere ist also auch $R(m-t, 1; m, n)
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq t<m$. Insbesondere ist also auch $R(m-t, 1; m, n)
     \leq R(1, n-t; m, n)$ für $t=m-1$, also $R(m-(m-1), 1; m, n)\leq R(1, n-(m-1); m, n)\Leftrightarrow R(1, 1; 
-    m, n)\leq R(1, n-m+1; m, n)$. Offensichtlich ist $R(1, 1; m, n)$ die Summe der Werte aller Felder der gesamten 
-    Tabelle. Denn es ist:
-    \begin{alignat*}{6}
-        R(1, 1; m, n) &= (1, &&1)' + &&(1, &&2)' + \quad \cdots \quad + &&(1, &&n)'\\
-        &+(2, &&1)' + &&(2, &&2)' +\quad \cdots \quad + &&(2, &&n)'\\
-        &+(3, &&1)' + &&(3, &&2)' +\quad \cdots \quad + &&(3, &&n)'\\
-        & &&\vdotswithin{1} && &&\vdotswithin{2}\quad\quad\quad \ddots && &&\vdotswithin{n} \\
-        &+(m-1, &&1)' + &&(m-1, &&2)' +\quad \cdots \quad + &&(m-1, &&n)'\\
-        &+(m, &&1)' + &&(m, &&2)' + \quad \cdots \quad + &&(m, &&n)'
+    m, n)\leq R(1, n-m+1; m, n)$. Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=n-m, b_2=n$  und 
+    $c_2=m$) aber (offensichtlich sind die für die Gültigkeit von HS \ref{r_summe} Ungleichungen mit diesen 
+    Werten gegeben):
+    \[
+    R(1, 1; m, n)=R(1, 1; m, n-m)+R(1, n-m+1; m, n)
+    \]
+    Also ist, da $R(1, 1; m, n)\leq R(1, n-m+1; m, n)$, auch:
+    \begin{alignat*}{2}
+        &R(1, 1; m, n-m)+R(1, n-m+1; m, n)&&\leq R(1, n-m+1; m, n)\\
+        \Leftrightarrow &R(1, 1; m, n-m)&&\leq 0
     \end{alignat*}
+    Nun kann nicht $n<m+1$, denn wegen $m<n$ wäre dann auch $m+1<n+1$ und somit $n<m+1<n+1$, also 
+    $n<n+1$, was nicht sein kann. Es ist demnach $n\geq m+1$, also entweder $n=m+1$ oder $n>m+1$. Nehme man zunächst 
+    an, es sei $n>m+1$. Dann ist gemäß HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=1$ und $c_2=n-m$) 
+    offenbar $R(1, 1; m, n-m)=R(1, 1; m, 1)+R(1, 2; m, n-m)$. Hierbei ist wegen $n>m+1$ natürlich $n-m>1$, also 
+    $n-m\geq 2$; das ist ja notwendige Bedingung für $R(1, 2; n, n-m)$. Da nun $R(1, 1; m, n-m)\leq 0$, ist auch 
+    $R(1, 1; m, 1)+R(1, 2; m, n-m)\leq 0$ und damit $R(1, 1; m, 1)\leq -R(1, 2; m, n-m)$. Weil die Tabelle $T^*$ 
+    f.p.r.w. ist, stehen in ihren Feldern nur nicht-negative Zahlen. Eine Summe von nicht-negativen Zahlen kann 
+    natürlich nicht negativ sein. Da $R(1, 2; m, n-m)$ der Wert einer solchen Summe ist, muss also $R(1, 2; m, n-m)
+    \geq 0$ und damit $-R(1, 2; m, n-m)\leq 0$ gelten. Es ist also:
+    \[
+    R(1, 1; m, 1)\leq -R(1, 2; m, n-m)\leq 0
+    \]
+    Insbesondere also $R(1, 1; m, 1)\leq 0$. Wegen $R(1, 1; m, n-m)\leq 0$ gilt, wenn $n=m+1$, $R(1, 1; m, (m+1)-m)
+    \leq 0$, also $R(1, 1; m, 1)\leq 0$. Es gilt also stets $R(1, 1; m, 1)\leq 0$, egal, ob $n>m+1$ oder $n=m+1$. 
+    Nun ist $R(1, 1; m, 1)$ nach HS \ref{r_zeile_spalte} die Summme der Werte in den Feldern der ersten Spalte. Da 
+    all diese Werte nicht-negativ sind, muss auch $R(1, 1; m, 1)$ nicht-negativ sein. Weil gleichzeitig aber auch 
+    $R(1, 1; m, 1)\leq 0$ ist, kann $R(1, 1; m, 1)$ nicht positiv sein. Es muss also:
+    \[
+    R(1, 1; m, 1)= 0
+    \]
+    Dafür müssen dann all die Werte, die in den Feldern der ersten Spalte stehen, 0 sein, da unter ihnen keine 
+    negativen sind und gleichzeitig ihre Summe 0 ist. Nun ist aber $T^*$ eine f.p.r.w. Tabelle, also muss es in jeder 
+    Spalte von $T^*$ mindestens ein Feld geben, in dem eine positive Zahl steht. Aber ein solches Feld gibt es in 
+    der ersten Spalte nicht! Die Annahme, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt, führt also zu 
+    einem Widerspruch. Eine solche Tabelle gibt es also nicht, was den Beweis von Satz \ref{haupt4} vollendet.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}

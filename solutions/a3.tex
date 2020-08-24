@@ -4,15 +4,18 @@
 
 Im Folgenden wird $x_A$ die $x$- und $y_A$ die $y$-Koordinate des allgemeinen Punktes $A$ bezeichnen. D.h. hier, dass 
 $P=(x_P, y_P), N=(x_N, y_N), M=(x_M, y_M), S=(x_S, y_S), Q=(x_Q, y_Q)$.\\
-$\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets positiv).
+$\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets mit positivem Vorzeichen; es ist also stets $\overline{AB}
+\geq 0$).
 
 Sehr oft habe ich die Distanzformel 
-\[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{    (für alle $A,B$)}\] 
+\[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{, für alle Punkte $A,B$}\] 
 verwendet. Ich habe bei den Gleichungen, bei denen ich sie verwendet habe, nicht dazugeschrieben, dass sich die 
 Gleichungen mit der Distanzformel ergeben. Diese Entscheidung habe ich getroffen, da ich diese Formel so oft verwendet 
 habe, dass, wenn ich sie jedes mal erwähnt hätte, dies einige Sätze deutlich komplizierter und teilweise sogar 
-relativ unverständlich gemacht hätte. Ich denke, dass dies nicht problematisch ist; ich habe ja auch nicht dazugeschrieben, 
-wenn ich z.B. einen Bruch gekürzt habe.
+relativ unverständlich gemacht hätte. Ich denke, dass dies die mathematische Vollständigkeit nicht einschränkt, da 
+die Formel aus der Schule bekannt ist und es ziemlich offensichtlich ist, wann sie verwendet wurde; ähnlich, wie 
+die mathematische Vollstöndigkeit nicht daurch eingeschränkt wird, dass ich nie dazuschreibe, wenn ein Bruch 
+gekürzt wird.
 
 \subsection*{Algebraisierung der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
 
@@ -72,12 +75,12 @@ Nun muss nur noch bewiesen werden, dass es stets einen festen Punkt $Q\neq P$ gi
 Zeitpunkt auf einem Kreis gemeinsamen liegen. Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den 
 Gleichen Abstand haben.
 
-Zunächst beweise ich hierzu den folgenden Hilfssatz:
+Zunächst beweise ich hierzu den folgenden HS:
 \begin{lem}\label{cor_hilfe}
     $x_A^2+y_A^2=2x_Ax_S+2y_Ay_S$ ist äquivalent zu $\overline{AS}=\sqrt{x_S^2+y_S^2}$ für alle 
     Punkte $A=(x_A, y_A), S=(x_S, y_S)$.
 \end{lem}
-\begin{proof}[Beweis des Hilfssatzes]
+\begin{proof}[Beweis des HS]
     \renewcommand{\qedsymbol}{$\square$}
     Die Behauptung ergibt sich direkt durch Umformen:
     \begin{alignat*}{3}
@@ -90,7 +93,7 @@ Zunächst beweise ich hierzu den folgenden Hilfssatz:
 \end{proof}
 Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
 \begin{thm}\label{aufgabe_3}
-    Wenn $m$ nicht orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ 
+    Wenn $m$ orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ 
     den gleichen Abstand zu einem Punkt $S$ haben, also stets auf einem gemeinsamen Kreis liegen. 
     Hierbei sind $S$ und $Q$ durch $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
     \frac{c}{2}\right)$ gegeben.
@@ -109,13 +112,13 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     Offensichtlich bewegt sich der Punkt $Q$ nicht, denn seine Koordinaten sind nur von der Konstanten $c$ abhängig. 
     $Q$ ist also ein fester, von $P$ verschiedener Punkt.
     
-    Zunächst werde ich ein paar Gleichungen in den folgenden Hilfssätzen beweisen, aus denen dann mit Hilfssatz 
+    Zunächst werde ich ein paar Gleichungen in den folgenden Hilfssätzen beweisen, aus denen dann mit HS 
     \ref{cor_hilfe}
     direkt die Korollare folgen:
     \begin{lem}\label{no_P}
         Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \[
         \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S-0)^2}=\sqrt{x_S^2+y_S^2}    
@@ -124,29 +127,29 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     \begin{lem}\label{no_M}
         Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Durch Umformen ergibt sich direkt die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$:
         \begin{align*}
             x_M^2+y_M^2&=0^2+(x_N+c)^2=0+2\cdot \frac{(x_N+c)^2}{2}=0+2\cdot (x_N+c)\cdot\frac{x_N+c}{2}\\
             &=2\cdot 0\cdot \frac{x_N}{2}+2\cdot y_M\cdot y_S=2x_Mx_S+2y_My_S
         \end{align*}
-        Aus der Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{no_N}
         Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Durch Umformen ergibt sich direkt die Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$:
         \begin{align*}
             x_N^2+y_N^2&=x_N^2+0^2=x_N^2+0=2\cdot \frac{x_N^2}{2}+0=2x_N\frac{x_N}{2}+0\\
             &=2x_Nx_S+2\cdot 0\cdot \frac{x_N+c}{2}=2x_Nx_S+2y_Ny_S
         \end{align*}
-        Aus der Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_N^2+y_N^2=2x_Nx_S+2y_Ny_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{no_Q}
         Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Durch Umformen ergibt sich direkt die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$:
         \begin{align*}
             x_Q^2+y_Q^2&=\left(-\frac{c}{2}\right)^2+\left(\frac{c}{2}\right)^2=\frac{c^2}{4}+\frac{c^2}{4}
@@ -156,7 +159,7 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
             \left(-\frac{c}{2}\right)+2\frac{x_N+c}{2}\frac{c}{2}\\
             &=2x_Sx_Q+2y_Sy_Q=2x_Qx_S+2y_Qy_S
         \end{align*}
-        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     Aus den Hilfssätzen \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ orthogonal zu $m$ ist, 
@@ -201,7 +204,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_P}
         Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \[
         \overline{PS}=\sqrt{(x_S-x_P)^2+(y_S-y_P)^2}=\sqrt{(x_S-0)^2+(y_S+0)^2}=\sqrt{x_S^2+y_S^2}    
@@ -210,7 +213,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_M}
         Es ist $\overline{MS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Zunächst ergibt sich durch Umformen die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$. Diese Umformung ist 
         zwar etwas länger, allerdings in jedem Schritt elementar genug, dass ich einen Kommentar für überflüssig 
         halte.
@@ -230,12 +233,12 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             &=2x_Mx_S+2y_My_S
         \end{align*}
 
-        Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
+        Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{dumm_N}
         Es ist $\overline{NS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Die Behauptung ergibt sich direkt mit der Distanzformel:
         \begin{align*}
             \overline{NS}&=\sqrt{(x_N-x_S)^2+(y_N-y_S)^2}=\sqrt{\left(x_N-\frac{x_N}{2}\right)^2+(0-y_S)^2}\\
@@ -245,14 +248,49 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{lem}\label{dumm_Q}
         Es ist $\overline{QS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
-    \begin{proof}[Beweis des Hilfssatzes]
+    \begin{proof}[Beweis des HS]
         Zunächst ergibt sich durch simples Umformen die Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$. Auch diese 
         Umformung ist ziemlich lang, aber auch hier ist wieder jeder Schritt sehr elementar; die Umformung sollte 
-        also trotz ihre Länge nachvollziehbar sein.
-
-        % TODO: Umformung einfügen. Zu finden unter Downloads --> Umformung.jpeg
-
-        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit Hilfssatz \ref{cor_hilfe} direkt die Behauptung.
+        also trotz ihrer Länge nachvollziehbar sein. Um sie etwas übersichtlicher zu machen, habe ich in folgender 
+        Umformung zwischendurch für $\left(1-\sqrt{r^2+1}\right)^2+r^2$ kurz $d$ geschrieben:
+        \begin{align*}
+            x_Q^2+y_Q^2&= \left(\frac{c\cdot\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}
+            {\left(1-\sqrt{r^2+1}\right)^2+r^2}\right)^2+\left(\frac{cr\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2
+            +r^2}\right)^2\\
+            &=\frac{c^2(r^2+1)\left(1-\sqrt{r^2+1}\right)^2}{\left(\left(1-\sqrt{r^2+1}\right)^2+r^2\right)^2}+
+            \frac{c^2r^2(r^2+1)}{\left(\left(1-\sqrt{r^2+1}\right)^2+r^2\right)^2}\\
+            &=\frac{c^2(r^2+1)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\cdot\frac{\left(1-\sqrt{r^2+1}\right)^2}
+            {\left(1-\sqrt{r^2+1}\right)^2+r^2}\\
+            &\quad+\frac{c^2(r^2+1)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\cdot
+            \frac{r^2}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\\
+            &=\frac{c^2(r^2+1)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\cdot
+            \left(\frac{\left(1-\sqrt{r^2+1}\right)^2}{\left(1-\sqrt{r^2+1}\right)^2+r^2}+\frac{r^2}
+            {\left(1-\sqrt{r^2+1}\right)^2+r^2}\right)\\
+            &=\frac{c^2(r^2+1)}{d}\cdot\left(\frac{\left(1-\sqrt{r^2+1}\right)^2+r^2}{\left(1-\sqrt{r^2+1}\right)^2
+            +r^2}\right)\\
+            &=\frac{c^2(r^2+1)}{d}=\frac{1}{d}\cdot\left(c^2(r^2+1)\right)=\frac{1}{d}\left(0+c^2(r^2+1)\right)\\
+            &=\frac{1}{d}\left(-cx_N\left(r^2+1\right)+x_N\cdot c\left(r^2+1\right)+c\cdot c\left(r^2+1\right)\right)\\
+            &=\frac{1}{d}\left(-cx_N\left(r^2+1\right)+\left(x_N+c\right)c\left(r^2+1\right)\right)\\
+            &=\frac{1}{d}\left(-cx_N\sqrt{r^2+1}+cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)+
+            \left(x_N+c\right)c\left(r^2+1\right)\right)\\
+            &=\frac{1}{d}\left(cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)+\left(x_N+c\right)c\left(r^2+1\right)
+            -cx_N\sqrt{r^2+1}\right)\\
+            &=\frac{1}{d}\left(cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)\right)\\
+            &\quad+\frac{1}{d}\left(\left(x_N+c\right)c\left(r^2+1\right)-cx_N\sqrt{r^2+1}\right)\\
+            &=\frac{1}{d}\left(1\cdot cx_N\sqrt{r^2+1}+\left(-\sqrt{r^2+1}\right)\cdot cx_N\sqrt{r^2+1}\right)\\
+            &\quad+\frac{1}{d}\left((x_N+c)\sqrt{r^2+1}\cdot c\sqrt{r^2+1}-x_N\cdot c\sqrt{r^2+1}\right)\\
+            &=\frac{1}{d}\left(1-\sqrt{r^2+1}\right)\left(cx_N\sqrt{r^2+1}\right)+\frac{1}{d}\left((x_N+c)\sqrt{r^2+1}
+            -x_N\right)\left(c\sqrt{r^2+1}\right)\\
+            &=\frac{1}{d}\left(c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)\right)x_N+\frac{1}{d}\left(c\sqrt{r^2+1}\right)
+            \left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            &=\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{d}x_N+ \frac{c\sqrt{r^2+1}}{d}\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            &=\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}x_N+
+            \frac{c\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            &=x_Qx_N+y_Q\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            &=2x_Q\frac{x_N}{2}+2y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2}\\
+            &=2x_Qx_S+2y_Qy_S
+        \end{align*}
+        Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     Aus den Hilfssätzen \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ nicht orthogonal zu $m$ 
