@@ -105,18 +105,61 @@ nicht eingeschränkt.
 \begin{lem}\label{mehr_nuller}
     Wenn in einer wohlgeordneten Tabelle mit Rechtecksfunktion $R$ für zwei Zahlen $i, j$ die Ungleichungen 
     $R(i, 1; i, n)>R(1, j; m, j)$ gilt, so gilt auch $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$ für alle $a, b\geq0$, für 
-    die es eine $(i-a)$-te Zeile und eine $(j+b)$-te Spalte gibt. Umgekehrt folgt aus $R(i, 1; i, n)\leq R(1, j; m, j)$, 
-    dass für alle $c,d\geq0$, für die es eine $(i+c)$-te Zeile und  eine $(j-d)$-te Spalte gibt, gilt: 
-    $R(i+c, 1; i+c, n)\leq R(1, j-d; m, j-d)$. 
+    die es eine $(i-a)$-te Zeile und eine $(j+b)$-te Spalte gibt.
 \end{lem}
 \begin{proof}[Beweis des HS]
-    folgt aus wohlgeordnetheit % TODO
+    Zunächst gilt, da die Tabelle wohlgeordnet ist:
+    \begin{align*}
+        R(i, 1; i, n)&\leq R(i-1, 1; i-1, n)\\
+        R(i-1, 1; i-1, n)&\leq R(i-2, 1; i-2, n)\\
+        &\quad\vdots\\
+        R(i-(a-1), 1; i-(a-1), n)&\leq R(i-a, 1; i-a, n)
+    \end{align*}
+    Diese Ungleichungen lassen sich folgendermaßen zusammenfassen:
+    \[
+        R(i, 1; i, n)\leq R(i-1, 1; i-1, n)\leq R(i-2, 1; i-2, n)\leq\cdots\leq R(i-a, 1; i-a, n)
+    \]
+    Insbesondere ist also $R(i-a, 1; i-a, n)\geq R(i, 1; i, n)$. Erneut aufgrund der Wohlgeordnethait der Tabelle 
+    gilt auch:
+    \begin{align*}
+        R(1, j; m, j)&\geq R(1, j+1; m, j+1)\\
+        R(1, j+1; m, j+1)&\geq R(1, j+2; m, j+2)\\
+        &\quad\vdots\\
+        R(1, j+(b-1); m, j+(b-1))&\geq R(1, j+b; m, j+b)
+    \end{align*}
+    Auch diese Gleichungen lassen sich in einer Zeile zusammenfassen:
+    \[
+        R(1, j; m, j)\geq R(1, j+1; m, j+1)\geq R(1, j+2; m, j+2)\geq\cdots\geq R(1, j+b; m, j+b)
+    \]
+    Insbesondere ist also $R(1, j; m, j)\geq R(1, j+b; m, j+b)$. Es gelten also die folgenden drei Ungleichungen:
+    \begin{align*}
+        R(i-a, 1; i-a, n)&\geq R(i, 1; i, n)\\
+        R(i, 1; i, n)&>R(1, j; m, j)\\
+        R(1, j; m, j)&\geq R(1, j+b; m, j+b)
+    \end{align*}
+    In einer Zeile zusammengefasst ergibt das:
+    \[
+        R(i-a, 1; i-a, n)\geq R(i, 1; i, n)>R(1, j; m, j)\geq R(1, j+b; m, j+b)
+    \]
+    Insbesondere ist also $R(i-a, 1; i-a, n)>R(1, j+b; m, j+b)$.
 \end{proof}
 
 \subsection*{Lösung von Aufgabe 4}
 
+In Aufgabe 4 werden Tabellen betrachtet, bei denen in jedem Feld eine nicht-negative reelle Zahl steht und dabei in 
+jeder Spalte mindestens eine positive. Es handelt sich also um f.p.r.w. Tabellen. Auch müssen die Tabellen mehr 
+Spalten als Zeilen haben. Es werden also f.p.r.w. Tabellen mit $m$ Zeilen und $n$ Spalten betrachtet, wobei $m<n$. 
+Es soll nun bewiesen werden, dass es ein Feld mit einer positiven Zahl derart gibt, dass die Summe der Zahlen in der 
+Zeile dieses Feldes größer als die Summe der Zahlen in der Spalte dieses Feldes ist. Nenne man dieses Feld $(i, j)$, 
+die Feldwertfunktion de betrachteten Tabelle $'$ und ihre Rechtecksfunktion $R$. Dann muss also der Feldwert von $(i, j)$ 
+positiv sein; es muss also $(i, j)'>0$ gelten. Auch muss die Summe der Zahlen in der Zeile dieses Feldes (welche 
+gemäß HS \ref{r_zeile_spalte} durch $R(i, 1; i, n)$ gegeben ist) größer als die Summe der Zahlen in der Spalte 
+dieses Feldes (welche gemäß HS \ref{r_zeile_spalte} durch $R(1, j; m, j)$ gegeben ist) sein; es muss also 
+$R(i, 1; i, n) > R(1, j; m, j)$. Insgesamt ist die in Aufgabe 4 zu zeigende Aussage also äquivalent zu folgendem 
+Satz:
+
 \begin{thm}\label{haupt4}
-    In jeder f.p.r.w. Tabelle mit $m$ Zeilen und $n$ Spalten, wobei $m>n$, gibt es ein Feld $(i, j)$, sodass 
+    In jeder f.p.r.w. Tabelle mit $m$ Zeilen und $n$ Spalten, wobei $m<n$, gibt es ein Feld $(i, j)$, sodass 
     $(i, j)'>0$ und $R(i, 1; i, n) > R(1, j; m, j)$, wobei $'$ die Feld- und $R$ die Rechtecksfunktion dieser 
     Tabelle ist.
 \end{thm}
@@ -128,13 +171,93 @@ nicht eingeschränkt.
         Wenn es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt, so gibt es überhaupt keine 
         Tabellen, für die Satz \ref{haupt4} nicht gilt.
     \end{lem}
-    \begin{proof}[Beweis des HS]
-        beweis von diesem lemma (zuerst zeilen umordnen, dann spalten umordnen und gültigkeit von satz 3 ändert sich 
-        dabei nicht) %TODO
+    \begin{proof}[Beweis des HS durchh Widerspruch]
+        Nehme man für den Widerspruchsbeweis an, es gäbe eine f.p.r.w. Tabelle $T$ mit mehr Spalten als Zeilen, für 
+        die Satz \ref{haupt4} nicht gilt, aber keine solchen Tabellen, die wohlgeordnet sind. 
+
+        Sei zunächst $\dot T$ die gleiche Tabelle wie $T$, allerdings mit den Zeilen so umgeordnet, dass sie 
+        zeilenweise geordnet ist. Da sich nur die Reihenfolge der Zeilen ändert, gibt es in jeder Spalte immer noch 
+        mindestens ein Feld mit einer positiven Zahl. Natürlich gibt es auch immer noch nur Felder mit nicht-negativen 
+        Zahlen, also ist $\dot T$ insgesamt f.p.r.w. Außerdem hat $\dot T$ genau wie $T$ mehr Spalten als Zeilen. 
+        Wenn für $\dot T$ Satz \ref{haupt4} gelten würde, müsste es ein Feld $(i, j)$ geben, sodass $(i, j)'>0$ 
+        und $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, wobei $'$ die Feld-, $\dot R$ die Rechtecksfunktion, 
+        $\dot m$ die Anzahl an Zeilen und $\dot n$ die Anzahl an Spalten von $\dot T$ ist. Sei nun die $l$-te Zeile 
+        von $T$ die Zeile, die nach der Umordnung die $i$-te Zeile von $\dot T$ bildet. Der Wert des Feldes $(l, j)$ 
+        von $T$ steht also nach der Umordnung im Feld $(i, j)$ von $\dot T$. Da $(i, j)'>0$, ist also:
+        \[
+            (l, j)^*>0,
+        \]
+        wobei $^*$ die Feldwertfunktion von $T$ ist. In der $j$-ten Spalte von $\dot T$ befinden sich offensichtlich 
+        die gleichen Zahlen wie in der $j$-ten Spalte von $T$; lediglich ihre Reihenfolge ändert sich durch die 
+        Umordnung der Zeilen. Ihre Summe (gemäß HS \ref{r_zeile_spalte} durch $R(1, j; m, j)$ bzw. $\dot R(1, j; 
+        \dot m, j)$ gegeben) ist also auch die gleiche:
+        \[
+            R(1, j; m, j)=\dot R(1, j; \dot m, j),
+        \]
+        wobei $R$ die Rechtecksfunktion $m$ die Anzahl an Zeilen und $n$ die Anzahl an Spalten von $T$ ist. 
+        Sämtliche Zahlen der $i$-ten Zeile von $\dot T$ standen vor der Umordnung in der $l$-ten Zeile von $T$. 
+        Die Summe der Zahlen in diesen beiden Zeilen muss also die gleiche sein. Es ist also (erneut ergeben sich die 
+        folgenden Werte direkt aus HS \ref{r_zeile_spalte}):
+        \[
+            R(i, 1; i, n)=\dot R(i, 1; i, \dot n)
+        \]
+        Insgesamt ist also $(l, j)^*>0$, $R(1, j; m, j)=\dot R(1, j; \dot m, j)$ und $R(i, 1; i, n)=\dot R(i, 1; i, 
+        \dot n)$. Da $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, muss also auch $R(i, 1; i, n) > \dot 
+        R(1, j; m, j)$. Damit gibt es dann aber das Feld $(i, j)$ der Tabelle $T$, für das $(l, j)^*>0$ und $R(i, 
+        1; i, n) > R(1, j; m, j)$. Für die Tabelle $T$ gilt also Satz \ref{haupt4}. Da das nicht sein kann, 
+        muss die Annahme, für $\dot T$ würde Satz \ref{haupt4} gelten, falsch sein! Für $\dot T$ gilt Satz 
+        \ref{haupt4} also nicht!
+
+        Sei nun $\ddot T$ die gleiche Tabelle wie $\dot T$, allerdings mit den Spalten so umgeordnet, dass $\ddot T$ 
+        spaltenweise geordnet ist. Da sich nur die Reihenfolge der Spalten ändert, gibt es in jeder Spalte immer noch 
+        mindestens ein Feld mit einer positiven Zahl. Natürlich gibt es auch immer noch nur Felder mit nicht-negativen 
+        Zahlen, also ist $\ddot T$ insgesamt f.p.r.w. Außerdem hat $\ddot T$ genau wie $\dot T$ mehr Spalten als Zeilen. 
+        Wenn für $\ddot T$ Satz \ref{haupt4} gelten würde, müsste es ein Feld $(i, j)$ geben, sodass $(i, j)^{**}>0$ 
+        und $\ddot R(i, 1; i, \ddot n) > \ddot R(1, j; \ddot m, j)$, wobei $^{**}$ die Feld-, $\ddot R$ die 
+        Rechtecksfunktion, $\ddot m$ die Anzahl an Zeilen und $\ddot n$ die Anzahl an Spalten von $\ddot T$ ist. 
+        Sei nun die $k$-te Spalte von $\dot T$ die Spalte, die nach der Umordnung die $j$-te Spalte von $\ddot T$ 
+        bildet. Der Wert des Feldes $(i, k)$ von $\dot T$ steht also nach der Umordnung im Feld $(i, j)$ von 
+        $\ddot T$. Da $(i, j)^{**}>0$, ist also:
+        \[
+            (i, k)^*>0
+        \]
+        In der $i$-ten Zeile von $\ddot T$ befinden sich offensichtlich die gleichen Zahlen wie in der $i$-ten Zeile 
+        von $\dot T$; lediglich ihre Reihenfolge ändert sich durch die Umordnung der Spalten. Ihre Summe (gemäß HS 
+        \ref{r_zeile_spalte} durch $\dot R(i, 1; i, \dot n)$ bzw. $\ddot R(i, 1; i, \ddot n)$ gegeben) ist also auch 
+        die gleiche:
+        \[
+            \dot R(i, 1; i, \dot n)=\ddot R(i, 1; i, \ddot n),
+        \]
+        wobei $\ddot R$ die Rechtecksfunktion von $\ddot T$ ist.
+        Sämtliche Zahlen der $j$-ten Spalte von $\ddot T$ standen vor der Umordnung in der $k$-ten Spalte von $\dot T$. 
+        Die Summe der Zahlen in diesen beiden Zeilen muss also die gleiche sein. Es ist also (erneut ergeben sich die 
+        folgenden Werte direkt aus HS \ref{r_zeile_spalte}):
+        \[
+            \dot R(1, k; \dot m, k)=\ddot R(1, j; \ddot m, j)
+        \]
+        Insgesamt ist also $(i, k)^*>0$, $\dot R(i, 1; i, \dot n)=\ddot R(i, 1; i, \ddot n)$ und $\dot R(1, k; 
+        \dot m, k)=\ddot R(1, j; \ddot m, j)$. Da $\ddot R(i, 1; i, \ddot n)>\ddot R(1, j; \ddot m, j)$, muss auch 
+        $\dot R(i, 1; i, \dot n)>\dot R(1, k; \dot m, k)$. Damit gibt es aber ein Feld $(i, k)$ mit $(i, k)^*>0$ und 
+        $\dot R(i, 1; i, \dot n)>\dot R(1, k; \dot m, k)$. Für $\dot T$ gilt also Satz \ref{haupt4}. Das kann aber--wie 
+        oben gezeigt--nicht sein. Die Annahme, für $\ddot T$ würde Satz \eqref{haupt4} gelten, führt also zu einem 
+        Widerspruch, d.h. sie muss falsch sein! Für $\ddot T$ kann Satz \ref{haupt4} also nicht gelten!
+
+        Während der Umordnung der Spalten von $\dot T$, um $\ddot T$ zu erhalten, wurden offensichtlich die Summen der 
+        Zahlen in den Spalten der Tabelle nicht geändert; jedes Feld blieb ja in der gleichen Zeile, da nur die 
+        Spalten entlang der Zeilen umgeordnet wurden. Also ist $\ddot T$, da $\dot T$ zeilenweise geordnet ist, 
+        ebenfalls zeilenweise geordnet. Nun ist $\ddot T$ aber auch spaltenweise geordnet, also ist $\ddot T$ 
+        wohlgeordnet!
+
+        $\ddot T$ ist also eine wohlgeordnete Tabelle, für die Satz \ref{haupt4} nicht gilt. Nun wurde am Anfang dieses 
+        Widerspruchsbeweises angenommen, es gäbe zwar Tabellen, für die Satz \ref{haupt4} nicht gilt, allerdings keine 
+        solchen wohlgeordneten. Da diese Annahme zu einem Widerspruch--nämlich einer wohlgeordneten Tabelle, für die 
+        Satz \ref{haupt4} nicht gilt--geführt hat, muss sie falsch sein! Wenn es also keine wohlgeordneten Tabellen 
+        gibt, für die Satz \eqref{haupt4} nicht gilt, kann es überhaupt keine Tabellen geben, für die Satz \ref{haupt4} 
+        nicht gilt!
     \end{proof}
     Da es nach HS \ref{fallbeschrank} überhaupt keine Tabellen gibt, für die Satz \ref{haupt4} 
     nicht gilt, wenn es keine wohlgeordneten gibt, genügt es, zu beweisen, dass es keine wohlgeordneten Tabellen 
-    gibt, für die Satz \ref{haupt4} nicht gilt, um zu beweisen, dass es überheupt keine gibt. Es folgt also ein 
+    gibt, für die Satz \ref{haupt4} nicht gilt, um zu beweisen, dass es überhaupt keine gibt. Es folgt also ein 
     Widerspruchsbeweis dafür, dass es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt:
 
     Nehme man für den Widerspruchsbeweis an, es gäbe eine wohlgeordnete, f.p.r.w. Tabelle $T^*$ mit $m$ Zeilen und $n$ 
@@ -144,7 +267,7 @@ nicht eingeschränkt.
     t<m$:
 
     \textit{Induktionsanfang ($t=0$)}: Es folgt ein Beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
-    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach dem ersten Satz von 
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach 
     HS \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
     $a$ mit $0\leq a<m$, denn nur für diese gibt es eine $(m-a)$-te Zeile. Nun sind die Felder $(m-a, n)$ für $0\leq 
     a<m$ genau die Felder der $n$-ten Spalte (ein beliebiges Feld der $n$-ten Spalte $(j, n)$ ergibt sich mit $a=m-j$, 
@@ -160,7 +283,7 @@ nicht eingeschränkt.
     $R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))$. Dann muss gemäß HS \ref{mehr_nuller} auch 
     $R()$
 
-
+    % TODO
 
 
     Mit dem Induktionsprinzip (Gültigkeit der Aussage für $t=0$ wurde im Induktionsanfang bewiesen, mit dem 
