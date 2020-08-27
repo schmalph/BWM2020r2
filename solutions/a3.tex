@@ -3,9 +3,12 @@
 \subsection*{Anmerkungen zur Notation und einer häufig verwendeten Formel}
 
 Im Folgenden wird $x_A$ die $x$- und $y_A$ die $y$-Koordinate des allgemeinen Punktes $A$ bezeichnen. D.h. hier, dass 
-$P=(x_P, y_P), N=(x_N, y_N), M=(x_M, y_M), S=(x_S, y_S), Q=(x_Q, y_Q)$.\\
+$P=(x_P, y_P), N=(x_N, y_N), M=(x_M, y_M), S=(x_S, y_S), Q=(x_Q, y_Q)$.
+
 $\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets mit positivem Vorzeichen; es ist also stets $\overline{AB}
 \geq 0$).
+
+"`HS"' ist kurz für (die entsprechend deklinierte Form von) "`Hilfssatz"'.
 
 Sehr oft habe ich die Distanzformel 
 \[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{, für alle Punkte $A,B$}\] 
@@ -14,7 +17,7 @@ Gleichungen mit der Distanzformel ergeben. Diese Entscheidung habe ich getroffen
 habe, dass, wenn ich sie jedes mal erwähnt hätte, dies einige Sätze deutlich komplizierter und teilweise sogar 
 relativ unverständlich gemacht hätte. Ich denke, dass dies die mathematische Vollständigkeit nicht einschränkt, da 
 die Formel aus der Schule bekannt ist und es ziemlich offensichtlich ist, wann sie verwendet wurde; ähnlich, wie 
-die mathematische Vollstöndigkeit nicht daurch eingeschränkt wird, dass ich nie dazuschreibe, wenn ein Bruch 
+die mathematische Vollständigkeit nicht daurch eingeschränkt wird, dass ich nie dazuschreibe, wenn ein Bruch 
 gekürzt wird.
 
 \subsection*{Algebraisierung der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
@@ -26,19 +29,21 @@ dabei sei die $x$-Achse so beschriftet, dass der Punkt $N$ eine positive $x$-Koo
 und die $y$-Achse so, dass der Punkt $M$ eine positive $y$-Koordinate hat, bevor er $P$ passiert. Dies ist 
 offensichtlich möglich, da $P$ auf $n$ liegt. Offensichtlich ist auch die Beschriftung der $y$-Achse (also der 
 Orthogonalen zu $n$, die durch $P$ geht) möglich, denn die Geraden $m$ und $n$ liegen nicht aufeinander (sonst 
-würden sie sich in mehr als einem Punkt schneiden); der Punkt $M$ muss also, bevor er $P$ passiert, auf einer Seite 
-der $x$-Achse liegen.
+würden sie sich in mehr als einem Punkt schneiden); der Punkt $M$ muss also, bevor er $P$ passiert, auf nur einer 
+Seite der $x$-Achse liegen.
 
 Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
 $N=(x_N, 0)$. Sei nun $d_M$ die Distanz $\overline{PM}$, allerdings mit negativem Vorzeichen, wenn $y_M$ ein 
 negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert hat. Nun ist $x_N$ wegen $y_N=0$ die Distanz 
 $\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. Offensichtlich ist 
 dann, da $N$ und $M$ sich mit der gleichen, konstanten Geschwindigkeit von $P$ weg/zu $P$ hin bewegen, $d_M-x_N$ 
-konstant. Sei diese Konstante mit $c$ bezeichnet. Dann ist $d_M-x_N=c\Leftrightarrow d_M=x_N+c$ und damit 
+konstant. Denn, wenn $d_M$ in einem gewissen Zeitintervall um $a$ kleiner wird, wird $x_N$ in dem gleichen 
+Zeitintervall ebenfalls um $a$  kleiner; wegen $(d_M-a)-(x_N-a)=d_M-x_N$ ändert sich diese Differenz nicht, bleibt 
+also stets konstant. Sei diese Konstante mit $c$ bezeichnet. Dann ist $d_M-x_N=c\Leftrightarrow d_M=x_N+c$ und damit 
 $\overline{PM}=|x_N+c|$. Nun ist $|x_N+c|=\overline{PM}=\sqrt{(x_M-x_P)^2+(y_M-y_P)^2}=\sqrt{x_M^2+y_M^2}$, da 
 $y_P=x_P=0$. Die Gerade $m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich 
 eine Urspungsgerade. Im Folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, 
-also nicht orthogonal zu $n$ ist. Dann hat $m$ eine reele Steigung, die nicht Null ist, da $m$ sonst auf $n$ liegen 
+also nicht orthogonal zu $n$ ist. Dann hat $m$ eine reelle Steigung, die nicht Null ist, da $m$ sonst auf $n$ liegen 
 würde, was einen Widerspruch dazu darstellt, dass $m$ und $n$ sich nur in einem Punkt $P$ schneiden. Diese Steigung 
 wird im Folgenden $r$ genannt. Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf 
 $m$ liegt, muss $x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|
@@ -53,15 +58,15 @@ Betragsstriche nicht notwendig:
 Es ist also: $y_M=\frac{r(x_N+c)}{\sqrt{r^2+1}}$.\\
 Nun ist $x_M=\frac{y_M}{r}$, also mit $y_M=\frac{r(x_N+c)}{\sqrt{r^2+1}}$:
 \[
-x_M=\frac{1}{r}\cdot y_M=\frac{1}{r}\cdot \frac{r(x_N+c)}{\sqrt{r^2+1}}=\frac{x_N+c}{\sqrt{r^2+1}}
+    x_M=\frac{1}{r}\cdot y_M=\frac{1}{r}\cdot \frac{r(x_N+c)}{\sqrt{r^2+1}}=\frac{x_N+c}{\sqrt{r^2+1}}
 \]
 Es ist also:
 \[
-M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
+    M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
 \]
 Die Punkte $P, N, M$ haben also folgende Koordinaten, wenn $m$ nicht orthogonal zu $n$ ist:
 \[
-P=(0, 0); N=(x_N, 0); M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
+    P=(0, 0); N=(x_N, 0); M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} \right)
 \]
 
 Wenn $m$ orthogonal zu $n$ ist, also $m$ auf der $y$-Achse liegt, hat $M$ natürlich eine $x$-Koordinate von 0. 
@@ -72,8 +77,8 @@ $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, gilt die Gleichung auch ohne d
 \subsection*{Beweis der zu zeigenden Aussage}
 
 Nun muss nur noch bewiesen werden, dass es stets einen festen Punkt $Q\neq P$ gibt, sodass $P, M, N, Q$ zu jedem 
-Zeitpunkt auf einem Kreis gemeinsamen liegen. Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den 
-Gleichen Abstand haben.
+Zeitpunkt auf einem gemeinsamen Kreis liegen. Es muss also stets einen Punkt $S$ geben, von dem $P, M, N, Q$ den 
+gleichen Abstand haben.
 
 Zunächst beweise ich hierzu den folgenden HS:
 \begin{lem}\label{cor_hilfe}
@@ -90,10 +95,11 @@ Zunächst beweise ich hierzu den folgenden HS:
         &\Leftrightarrow x_A^2-2x_Ax_S+y_A^2-2y_Ay_S&&=0\quad &&\|+2x_Ax_S+2y_Ay_S\\
         &\Leftrightarrow x_A^2+y_A^2&&=2x_Ax_S+2y_Ay_S&&
     \end{alignat*}
+    Anm.: Das Quadrieren ist hier eine Äquivalenzumformung, da sowieso beide Seiten nicht-negativ sind.
 \end{proof}
 Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
 \begin{thm}\label{aufgabe_3}
-    Wenn $m$ orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ 
+    Wenn $m$ orthogonal zu $n$ ist, gibt es einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ stets 
     den gleichen Abstand zu einem Punkt $S$ haben, also stets auf einem gemeinsamen Kreis liegen. 
     Hierbei sind $S$ und $Q$ durch $S=\left(\frac{x_N}{2}, \frac{x_N+c}{2}\right)$ und $Q=\left(-\frac{c}{2}, 
     \frac{c}{2}\right)$ gegeben.

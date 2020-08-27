@@ -93,13 +93,13 @@ nicht eingeschränkt.
 \end{lem}
 \begin{proof}[Beweis des HS]
     Per Defintion ist $R(i, 1; i, n)=(i, 1)'+(i, 2)'+\cdots+(i, n-1)'+(i, n)$. Die Felder der $i$-ten Zeile sind die 
-    der Form $(i, a)$, wobei $0<a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufsummiert 
+    der Form $(i, a)$, wobei $0<a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufaddiert 
     werden, um $R(i, 1; i, n)$ zu berechnen. $R(i, 1; i, n)$ ist also die Summe der Werte in den Feldern der $i$-ten 
     Zeile.
 
     Ähnlich ist per Definition $R(1, j; m, j)=(1, j)'+(2, j)'+\cdots+(m-1, j)'+(m, j)'$. Die Felder der $j$-ten Spalte 
     sind die der Form $(a, j)$, wobei $0<a\leq m$. Offensichtlich sind diese genau die Felder, deren Feldwerte 
-    aufsummiert werden, um $R(1, j; m, j)$ zu berechnen. $R(1, j; m, j)$ ist also die Summe der Werte in den Feldern 
+    aufaddiert werden, um $R(1, j; m, j)$ zu berechnen. $R(1, j; m, j)$ ist also die Summe der Werte in den Feldern 
     der $j$-ten Spalte.
 \end{proof}
 \begin{lem}\label{mehr_nuller}
@@ -267,36 +267,162 @@ Satz:
     t<m$:
 
     \textit{Induktionsanfang ($t=0$)}: Es folgt ein Beweis durch Widerspruch. Nehme man hierzu an, es sei nicht 
-    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also $R(m, 1; m, n)>R(1, n; m, n)$. Nach 
-    HS \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=0$, also:
+    \[
+        R(m, 1; m, n)>R(1, n; m, n)
+    \]
+    Nach HS \ref{mehr_nuller} (mit $i=m$, $j=n$, $b=0$) muss dann auch $R(m-a, 1; m-a, n) > R(1, n; m, n)$ für alle 
     $a$ mit $0\leq a<m$, denn nur für diese gibt es eine $(m-a)$-te Zeile. Nun sind die Felder $(m-a, n)$ für $0\leq 
     a<m$ genau die Felder der $n$-ten Spalte (ein beliebiges Feld der $n$-ten Spalte $(j, n)$ ergibt sich mit $a=m-j$, 
-    was wegen $j>0$ kleiner als $m$ und wegen $j\leq m$ nicht negativ sein kann). Natürlich muss in mindestens einem 
+    was wegen $j>0$ kleiner als $m$ ist und wegen $j\leq m$ nicht negativ sein kann). Natürlich muss in mindestens einem 
     der Felder der $n$-ten Spalte eine positive Zahl stehen, da $T^*$ f.p.r.w. ist. Es gibt also ein Feld $(j, n)$ 
-    mit $(j, n)'>0$ und $R(j, 1; j, n)>R(1, n; m, n)$. Das stellt aber einen Widerspruch dazu dar, dass für $T^*$ nicht 
+    mit $(j, n)'>0$ und $R(j, 1; j, n)>R(1, n; m, n)$. Wenn für $T^*$ Satz \ref{haupt4} nicht gelten würde, dürfte 
+    es ein solches Feld aber nicht geben. Das stellt also einen Widerspruch dazu dar, dass für $T^*$ nicht 
     Satz \ref{haupt4} gilt! Da aus $R(m, 1; m, n)>R(1, n; m, n)$ ein Widerspruch folgt, kann nicht $R(m, 1; m, n)>
-    R(1, n; m, n)$ sein; es muss also $R(m, 1; m, n)\leq R(1, n; m, n)$. Das entspricht $R(m-t, 1; m, n)\leq 
-    R(1, n-t; m, n)$ mit $t=0$, die Aussage gilt also für $t=0$.
+    R(1, n; m, n)$ sein; es muss also:
+    \[
+        R(m, 1; m, n)\leq R(1, n; m, n)
+    \]
+    Das entspricht $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ mit $t=0$; die Aussage gilt also für $t=0$.
 
     \textit{Induktionsschritt}: (Beweis, dass aus der Induktionsannahme, $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für 
-    ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man hierzu an, es sei 
-    $R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))$. Dann muss gemäß HS \ref{mehr_nuller} auch 
-    $R()$
+    ein $t$ mit $0\leq t<m-1$, folgt, dass $R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)$) Nehme man hierzu an, es sei:
+    \[
+        R(m-(t+1), 1; m-(t+1), n)>R(1, n-(t+1); m, n-(t+1))
+    \]
+    Dann muss gemäß HS \ref{mehr_nuller} auch:
+    \[
+        R(m-(t+1)-1-a, 1; m-(t+1)-a, n)>R(1, n-(t+1)+b; m, n-(t+1)+b), \numberthis \label{or_ecke}
+    \]
+    wobei $0\leq a<m-(t+1)$ und $0\leq b\leq t+1$. Offensichtlich ist mit $0\leq a$ auch $m-(t+1)\geq m-(t+1)-a$ und 
+    wegen $a<m-(t+1)$ auch $0<m-(t+1)-a$. Es ist also $0<m-(t+1)-a\leq m-(t+1)$, woraus zusammen mit $0\leq t<m-1$ 
+    folgt, dass es eine $(m-(t+1)-a)$-te Zeile gibt. Ähnlich ist mit $0\leq b\leq t+1$ auch $n-(t+1)+0\leq 
+    n-(t+1)+b\leq n-(t+1)+(t+1)=n$, woraus zusammen mit $0\leq t<m-1<n-1$, also $1\leq t+1<n$, folgt, dass es eine 
+    $(n-(t+1)+b)$-te Spalte gibt. Alle nötigen Bedingungen für HS \ref{mehr_nuller} sind also gegeben, weshalb 
+    \eqref{or_ecke} gilt. Ungleichungen \eqref{or_ecke} lässt sich wegen $0<m-(t+1)-a\leq m-(t+1)$ und $n-(t+1)\leq 
+    n-(t+1)+b\leq n$ kürzer schreiben, indem man $c=m-(t+1)-a$ und $d=n-(t+1)+b$ setzt:
+    \[
+        R(c, 1; c, n)>R(1, d; m, d), \numberthis \label{or_eck}
+    \]
+    wobei $0<c\leq m-(t+1)$ und $n-(t+1)\leq d\leq n$.
 
-    % TODO
+    Nehme man nun an, es gäbe ein Feld $(i, j)$ mit $0<i\leq m-(t+1)$, $n-(t+1)\leq j\leq n$ und $(i, j)'>0$. Dann 
+    ist wegen \eqref{or_eck} $R(i, 1; i, n)>R(1, j; m, j)$. Wenn es ein solches Feld $(i, j)$ gäbe, würde also für 
+    $T^*$ Satz \ref{haupt4} gelten. Das kann aber unter der Annahme des Widerspruchsbeweises nicht sein; es kann 
+    also kein Feld $(i, j)$ mit $0<i\leq m-(t+1)$, $n-(t+1)\leq j\leq n$ und $(i, j)'>0$ geben. D.h. es muss $(i, j)'
+    =0$ für alle $(i, j)$ mit $0<i\leq m-(t+1)$ und $n-(t+1)\leq j\leq n$ gelten. Diese lassen sich in zwei Gruppen 
+    unterteilen:
+    \begin{enumerate}
+        \item Die mit $0<i\leq m-(t+1)$ und $n-(t+1)<j\leq n$, also $n-(t+1)+1=n-t\leq j\leq n$
+        \item Die mit $0<i\leq m-(t+1)$ und $n-(t+1)=j$
+    \end{enumerate}
+    Erstere sind die Felder, deren Feldwerte aufaddiert werden, um $R(1, n-t; m-(t+1), n)$ zu berechnen. 
+    Letztere sind genau die Felder, deren Feldwerte aufaddiert werden, um $R(1, n-(t+1); m-(t+1), n-(t+1))$ zu berechnen. 
+    Beide sind also eine Summe von Nullern, also slebst 0:
+    \[
+        R(1, n-t; m-(t+1), n)=0 \numberthis \label{das_ne_null}
+    \]
+    \[
+        R(1, n-(t+1); m-(t+1), n-(t+1))=0 \numberthis \label{nuller_spalte}
+    \]
+    Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=n-t, b_1=m-(t+1), b_2=n$ und $c_1=m$):
+    \begin{align*}
+        R(1, n-t; m, n)&=R(1, n-t; m-(t+1), n)+R(m-(t+1)+1, n-t; m, n)\\
+        \Leftrightarrow R(1, n-t; m, n)&=R(1, n-t; m-(t+1), n)+R(m-t, n-t; m, n)
+    \end{align*}
+    Mit \eqref{das_ne_null} ergibt sich daraus direkt:
+    \[
+        R(1, n-t; m, n)=R(m-t, n-t; m, n)\numberthis \label{rechts_is_unrecht}
+    \]
+    Auch ergibt sich mit HS \ref{r_summe} (mit $a_1=m-t, a_2=1, b_1=m, b_2=n-t-1$ und $c_2=n$):
+    \[
+        R(m-t, 1; m, n)=R(m-t, 1; m, n-t-1)+R(m-t, n-t; m, n)
+    \]
+    Wenn man in diese Gleichung \eqref{rechts_is_unrecht} einsetzt, erhält man:
+    \begin{align*}
+        R(m-t, 1; m, n)&=R(m-t, 1; m, n-t-1)+R(m-t, n-t; m, n)\\
+        &=R(m-t, 1; m, n-t-1)+R(1, n-t; m, n) \numberthis \label{2.summ_is_0}
+    \end{align*}
+    Da $R(m-t, 1; m, n-t-1)$ die Summe nicht-negativer Zahlen ist, ist $R(m-t, 1; m, n-t-1)$ selbst eine nicht-negative 
+    Zahl. D.h., wenn man $R(m-t, 1; m, n-t-1)$ zu $R(1, n-t; m, n)$ addiert, macht man den Gesamtwert nicht kleiner. 
+    Es ist also:
+    \[
+        R(m-t, 1; m, n)\geq R(1, n-t; m, n)
+    \]
+    Da aber gleichzeitig die Induktionsannahme $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ gilt, muss gelten:
+    \[
+        R(m-t, 1; m, n)=R(1, n-t; m, n)
+    \]
+    Damit aber gleichzeitig diese Gleichung und \eqref{2.summ_is_0} gelten können, muss offensichtlich:
+    \[
+        R(m-t, 1; m, n-t-1)=0 \numberthis \label{rest_auch_0}
+    \]
+    Nun ist nach HS \ref{r_summe} (mit $a_1=m-t, a_2=1, b_1=m, b_2=n-t-2$ und $c_2=n-t-1$):
+    \[
+        R(m-t, 1; m, n-t-1)=R(m-t, 1; m, n-t-2)+R(m-t, n-t-1; m, n-t-1)
+    \]
+    Da die linke Seite nach \eqref{rest_auch_0} Null ist, muss es natürlich auch die rechte sein. Nun sind die beiden 
+    Summanden auf der rechten Seite nicht-negativ, da sie Summen von nicht-negativen Zahlen sind. Damit ihre Summe 
+    also Null sein kann, müssen sie beide Null sein. Es ist also insbesondere:
+    \[
+        R(m-t, n-t-1; m, n-t-1)=0 \numberthis \label{rest_spalte_0}
+    \]
+    Gemäß HS \ref{r_summe} (mit $a_1=1, a_2=n-t-1, b_1=m-t-1, b_2=n-t-1$ und $c_1=m$) ist nun:
+    \begin{align*}
+        R(1, n-t-1; m, n-t-1)&=R(1, n-t-1; m-t-1, n-t-1)\\
+        &\quad+R(m-t, n-t-1; m, n-t-1)\\
+        &=R(1, n-(t+1); m-(t+1), n-t(t+1))\\
+        &\quad+R(m-t, n-t-1; m, n-t-1)
+    \end{align*}
+    Wegen \eqref{nuller_spalte} ist der erste Summand gleich 0. Wegen \ref{rest_spalte_0} ist aber auch der zweite 
+    Summand gleich Null! Es muss also auch ihre Summe gleich Null sein:
+    \[
+        R(1, n-t-1; m, n-t-1)=0
+    \]
+    Nun ist $R(1, n-t-1; m, n-t-1)$ aber gemäß HS \ref{r_zeile_spalte} die Summe der Zahlen in der $(n-t-1)$-ten Spalte. 
+    Da all diese Zahlen nicht-negativ sind, müssen sie, damit ihre Summe gleich Null sein kann, alle gleich Null sein. 
+    Dies stellt aber einen Widerspruch dazu dar, dass $T^*$ eine f.p.r.w. Tabelle ist, denn in einer f.p.r.w. Tabelle 
+    gibt es in jeder Spalte mindestens ein Feld mit einer positiven Zahl! Die Annahme, es sei $R(m-(t+1), 1; m-(t+1), 
+    n)>R(1, n-(t+1); m, n-(t+1))$ führt also zu einem Widerspruch und muss dementsprechend falsch sein. Es ist also:
+    \[
+        R(m-(t+1), 1; m-(t+1), n)\leq R(1, n-(t+1); m, n-(t+1))
+    \]
+    Außerdem gilt natürlich--das ist die Induktionsannahme--folgende Ungleichung:
+    \[
+        R(m-t, 1; m, n)\leq R(1, n-t; m, n)
+    \]
+    Zusammen ergeben diese beiden Ungleichungen direkt:
+    \begin{alignat*}{2}
+        &R(m-(t+1), 1; m-(t+1), n)&&+R(m-t, 1; m, n)\\
+        \leq &R(1, n-(t+1); m, n-(t+1))&&+R(1, n-t; m, n) \numberthis \label{fast_schritt}
+    \end{alignat*}
+    Nun gelten nach HS \ref{r_summe} (mit bzw. ) folgende Gleichungen:
+    \begin{align*}
+        R(m-(t+1), 1; m-(t+1), n)+R(m-t, 1; m, n)&=R(m-(t+1), 1; m, n)\\
+        R(1, n-(t+1); m, n-(t+1))+R(1, n-t; m, n)&=R(1, n-(t+1); m, n)
+    \end{align*}
+    Setzt man diese in \eqref{fast_schritt} ein, erhält man:
+    \[
+        R(m-(t+1), 1; m, n)\leq R(1, n-(t+1); m, n)
+    \]
+    Insgesamt folgt also aus $R(m-t, 1; m, n)\leq R(1, n-t; m, m)$ (für ein $t$ mit $0\leq t<m-1$) die gleiche 
+    Ungleichung, allerdings mit $(t+1)$ statt $t$.
+
 
 
     Mit dem Induktionsprinzip (Gültigkeit der Aussage für $t=0$ wurde im Induktionsanfang bewiesen, mit dem 
     Induktionsschritt folgt dann Gültigkeit für $t=1$, damit dann auch für $t=2$, \dots, für $t=m$) folgt also, dass 
-    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq t<m$. Insbesondere ist also auch $R(m-t, 1; m, n)
-    \leq R(1, n-t; m, n)$ für $t=m-1$, also $R(m-(m-1), 1; m, n)\leq R(1, n-(m-1); m, n)\Leftrightarrow R(1, 1; 
-    m, n)\leq R(1, n-m+1; m, n)$. Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=n-m, b_2=n$  und 
-    $c_2=m$) aber (offensichtlich sind die für die Gültigkeit von HS \ref{r_summe} Ungleichungen mit diesen 
-    Werten gegeben):
+    $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für alle $t$ mit $0\leq t<m$. 
+    Insbesondere ist also auch $R(m-t, 1; m, n)\leq R(1, n-t; m, n)$ für $t=m-1$, also:
+    \begin{align*}
+        R(m-(m-1), 1; m, n)&\leq R(1, n-(m-1); m, n)\\
+        \Leftrightarrow R(1, 1; m, n)&\leq R(1, n-m+1; m, n)\numberthis \label{widerspruch}
+    \end{align*}
+    Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=n-m, b_2=n$ und $c_2=m$) aber:
     \[
     R(1, 1; m, n)=R(1, 1; m, n-m)+R(1, n-m+1; m, n)
     \]
-    Also ist, da $R(1, 1; m, n)\leq R(1, n-m+1; m, n)$, auch:
+    Also ist wegen \eqref{widerspruch} auch:
     \begin{alignat*}{2}
         &R(1, 1; m, n-m)+R(1, n-m+1; m, n)&&\leq R(1, n-m+1; m, n)\\
         \Leftrightarrow &R(1, 1; m, n-m)&&\leq 0
@@ -304,14 +430,17 @@ Satz:
     Nun kann nicht $n<m+1$, denn wegen $m<n$ wäre dann auch $m+1<n+1$ und somit $n<m+1<n+1$, also 
     $n<n+1$, was nicht sein kann. Es ist demnach $n\geq m+1$, also entweder $n=m+1$ oder $n>m+1$. Nehme man zunächst 
     an, es sei $n>m+1$. Dann ist gemäß HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=1$ und $c_2=n-m$) 
-    offenbar $R(1, 1; m, n-m)=R(1, 1; m, 1)+R(1, 2; m, n-m)$. Hierbei ist wegen $n>m+1$ natürlich $n-m>1$, also 
-    $n-m\geq 2$; das ist ja notwendige Bedingung für $R(1, 2; n, n-m)$. Da nun $R(1, 1; m, n-m)\leq 0$, ist auch 
-    $R(1, 1; m, 1)+R(1, 2; m, n-m)\leq 0$ und damit $R(1, 1; m, 1)\leq -R(1, 2; m, n-m)$. Weil die Tabelle $T^*$ 
-    f.p.r.w. ist, stehen in ihren Feldern nur nicht-negative Zahlen. Eine Summe von nicht-negativen Zahlen kann 
-    natürlich nicht negativ sein. Da $R(1, 2; m, n-m)$ der Wert einer solchen Summe ist, muss also $R(1, 2; m, n-m)
-    \geq 0$ und damit $-R(1, 2; m, n-m)\leq 0$ gelten. Es ist also:
+    offenbar:
     \[
-    R(1, 1; m, 1)\leq -R(1, 2; m, n-m)\leq 0
+        R(1, 1; m, n-m)=R(1, 1; m, 1)+R(1, 2; m, n-m)
+    \]
+    Hierbei ist wegen $n>m+1$ natürlich $n-m>1$, also $n-m\geq 2$; das ist ja notwendige Bedingung für $R(1, 2; n, 
+    n-m)$. Da nun $R(1, 1; m, n-m)\leq 0$, ist auch $R(1, 1; m, 1)+R(1, 2; m, n-m)\leq 0$ und damit $R(1, 1; m, 1)
+    \leq -R(1, 2; m, n-m)$. Weil die Tabelle $T^*$ f.p.r.w. ist, stehen in ihren Feldern nur nicht-negative Zahlen. 
+    Eine Summe von nicht-negativen Zahlen kann natürlich nicht negativ sein. Da $R(1, 2; m, n-m)$ der Wert einer 
+    solchen Summe ist, muss also $R(1, 2; m, n-m)\geq 0$ und damit $-R(1, 2; m, n-m)\leq 0$ gelten. Es ist also:
+    \[
+        R(1, 1; m, 1)\leq -R(1, 2; m, n-m)\leq 0
     \]
     Insbesondere also $R(1, 1; m, 1)\leq 0$. Wegen $R(1, 1; m, n-m)\leq 0$ gilt, wenn $n=m+1$, $R(1, 1; m, (m+1)-m)
     \leq 0$, also $R(1, 1; m, 1)\leq 0$. Es gilt also stets $R(1, 1; m, 1)\leq 0$, egal, ob $n>m+1$ oder $n=m+1$. 
