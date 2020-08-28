@@ -35,11 +35,32 @@ Seite der $x$-Achse liegen.
 Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
 $N=(x_N, 0)$. Sei nun $d_M$ die Distanz $\overline{PM}$, allerdings mit negativem Vorzeichen, wenn $y_M$ ein 
 negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert hat. Nun ist $x_N$ wegen $y_N=0$ die Distanz 
-$\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. Offensichtlich ist 
-dann, da $N$ und $M$ sich mit der gleichen, konstanten Geschwindigkeit von $P$ weg/zu $P$ hin bewegen, $d_M-x_N$ 
-konstant. Denn, wenn $d_M$ in einem gewissen Zeitintervall um $a$ kleiner wird, wird $x_N$ in dem gleichen 
-Zeitintervall ebenfalls um $a$  kleiner; wegen $(d_M-a)-(x_N-a)=d_M-x_N$ ändert sich diese Differenz nicht, bleibt 
-also stets konstant. Sei diese Konstante mit $c$ bezeichnet. Dann ist $d_M-x_N=c\Leftrightarrow d_M=x_N+c$ und damit 
+$\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. 
+\begin{lem}
+    Die Differenz $d_M-x_N$ ist konstant.
+\end{lem}
+\begin{proof}[Beweis des HS durch Widerspruch]
+    Nehme man für den Widerspruchsbeweis an, es gäbe zwei Zeitpunkte $t_0$ und $t_1$, von denen $t_0$ der frühere ist, 
+    zu denen $d_M-x_N$ unterschiedliche Werte annimmt. Sei $s$ die Geschwindigkeit, mit der sich $M$ und $N$ bewegen; 
+    diese ist natürlich gemäß der Aufgabenstellung konstant. Von $t_0$ bis $t_1$ vergeht natürlich eine Zeitspanne 
+    von $t_1-t_0$ [Zeiteinheiten]. Bei einer konstanten Geschwindigkeit von $s$ bewegen sich die Punkte also jeweils 
+    um $(t_1-t_0)\cdot s$ [Längeneinheiten]. Sei diese Länge mit $a$ bezeichnet. Nun werden sowohl $d_M$ als auch $x_N$ 
+    stets kleiner; denn bevor sie $P$ passieren, wird ihre Distanz zu $P$ immer kleiner und damit auch $d_M$ bzw. $x_N$, 
+    und danach wird die Distanz größer und damit, da $d_M$ und $x_N$ dann ein negatives Vorzeichen haben, werden $d_M$ 
+    und $x_N$ ebenfalls kleiner. Also werden $d_M$ und $x_N$ während der Zeitspanne zwischen $t_0$ und $t_1$ beide um 
+    $a$ kleiner. Wenn allerdings beide um das Gleiche kleiner werden, ändert sich ihre Differenz natürlich nicht:
+    \[
+        (d_M-a)-(x_N-a)=d_M-a-x_N+a=d_M-x_N
+    \]
+    Der Wert von $d_M-x_N$ ist also zu beiden Zeitpunkten der Gleiche, was einen Widerspruch zu der Annahme darstellt, 
+    dass $d_M-x_N$ zu den beiden Zeitpunkten unterschiedliche Werte annimmt. Die Annahme, es gäbe zwei Zeitpunkte, zu 
+    denen $d_M-x_N$ unterschiedliche Werte annimmt, führt also zu einem Widerspruch. Es kann also keine zwei 
+    Zeitpunkte geben, zu denen $d_M-x_N$ unterschiedliche Werte annimmt; $d_M-x_N$ muss also stets den gleichen Wert 
+    annehmen, d.h. konstant sein!
+\end{proof}
+
+
+Sei diese Konstante $d_M-x_N$ im Folgenden mit $c$ bezeichnet. Dann ist $d_M-x_N=c$, also auch $d_M=x_N+c$ und damit 
 $\overline{PM}=|x_N+c|$. Nun ist $|x_N+c|=\overline{PM}=\sqrt{(x_M-x_P)^2+(y_M-y_P)^2}=\sqrt{x_M^2+y_M^2}$, da 
 $y_P=x_P=0$. Die Gerade $m$ ist, da sie durch $P$, den Urspung des kartesischen Koordinatensystems, geht, natürlich 
 eine Urspungsgerade. Im Folgenden werde ich nur die Fälle betrachten, in denen $m$ nicht auf der $y$-Achse liegt, 
@@ -48,8 +69,8 @@ würde, was einen Widerspruch dazu darstellt, dass $m$ und $n$ sich nur in einem
 wird im Folgenden $r$ genannt. Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf 
 $m$ liegt, muss $x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|
 =\sqrt{x_M^2+y_M^2}=\sqrt{(\frac{y_M}{r})^2+y_M^2}=\sqrt{\frac{1}{r^2}\cdot y_M^2+y_M^2}=\sqrt{(1+\frac{1}{r^2})
-\cdot y_m^2}=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat, sind die 
-Betragsstriche nicht notwendig:
+\cdot y_m^2}=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat und 
+$\sqrt{1+\frac{1}{r^2}}$ stets positiv ist, gilt die Gleichung auch ohne Betragsstriche:
 \begin{alignat*}{2}
     x_N+c&=y_M\cdot\sqrt{1+\frac{1}{r^2}}&&\\
     \Leftrightarrow y_M&=\frac{x_N+c}{\sqrt{1+\frac{1}{r^2}}}&&=\frac{r\cdot (x_N+c)}{r\cdot\sqrt{1+\frac{1}{r^2}}}\\
@@ -112,15 +133,12 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     Wenn $P=Q$ wäre, wäre offensichtlich auch $x_P=x_Q$, also $x_Q=0$. Dann wäre aber auch $c=0$ und damit $d_M
     =x_N+c=x_N$. Wenn $N$ den Punkt $P$ passiert, also $x_N=0$ ist, wäre also auch $d_M=0$ und damit auch $|d_M|
     =\overline{PM}=0$. Damit  würden aber $M$ und $N$ beide auf $P$ liegen, also würden $M$ und $N$ gleichzeitig 
-    den Punkt $P$ passieren, was ja nicht sein kann. Also muss $P\neq Q$ sein. Auch bewegt sich $Q$ offensichtlich 
-    nicht, da $c$ und damit auch $\frac{c}{2}$ und $-\frac{c}{2}$ konstant sind.
-
-    Offensichtlich bewegt sich der Punkt $Q$ nicht, denn seine Koordinaten sind nur von der Konstanten $c$ abhängig. 
+    den Punkt $P$ passieren, was in der Aufgabenstellung ausgeschlossen wurde. Also muss $P\neq Q$ sein. Auch bewegt 
+    sich $Q$ offensichtlich nicht, ist also fest, da $c$ und damit auch $\frac{c}{2}$ und $-\frac{c}{2}$ konstant sind.
     $Q$ ist also ein fester, von $P$ verschiedener Punkt.
     
-    Zunächst werde ich ein paar Gleichungen in den folgenden Hilfssätzen beweisen, aus denen dann mit HS 
-    \ref{cor_hilfe}
-    direkt die Korollare folgen:
+    Zunächst werde ich ein paar Gleichungen in den folgenden HS beweisen, aus denen dann Satz \ref{aufgabe_3} quasi 
+    von selbst folgen wird:
     \begin{lem}\label{no_P}
         Es ist $\overline{PS}=\sqrt{x_S^2+y_S^2}$.
     \end{lem}
@@ -169,7 +187,7 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
     \end{proof}
     Aus den Hilfssätzen \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ orthogonal zu $m$ ist, 
-    gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ haben, 
+    gibt es also einen festen Punkt $Q\neq P$ so, dass $P,M,N,Q$ stets den gleichen Abstand zu einem Punkt $S$ haben, 
     also stets auf einem gemeinsamen Kreis liegen.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
@@ -194,14 +212,17 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     Anm.: Im folgenden Beweis ist natürlich $M=\left( \frac{x_N+c}{\sqrt{r^2+1}} , \frac{r(x_N+c)}{\sqrt{r^2+1}} 
     \right)$, da in Satz \ref{augabe_3_dumm} davon ausgegangen wird, dass $m$ nicht orthogonal zu $n$ ist.
 
-    Wenn $P=Q$ wäre, müsste auch $y_Q=y_P=0$ seinn. Es müsste also $\frac{cr\sqrt{r^2+1}}{(1-\sqrt{r^2+1})^2+r^2}
-    =0$ gelten. Nach dem Satz vom Nullprodukt muss dann mindestens einer der Faktoren $c, r, \sqrt{r^2+1}, 
-    \frac{1}{(1-\sqrt{r^2+1})^2+r^2}$ gleich 0 sein. Offensichtlich kann $\frac{1}{(1-\sqrt{r^2+1})^2+r^2}$ nicht 0 
-    sein. Auch $\sqrt{r^2+1}$ ist offensichtlich positiv, also nicht 0. Wenn $r$, die Steigung von $m$, 0 wäre, 
-    würde das bedeuten, dass $m$ auf der $x$-Achse, also $n$, liegt. Das kann aber ebenfalls nicht sein, denn $n$ 
-    und $m$ schneiden sich nur in einem Punkt. Es muss also, damit $y_Q=0$ sein kann, $c=0$ gelten. Dann müssten 
-    aber (wie am Anfang des Beweises von Satz \ref{aufgabe_3} bewiesen) $M$ und $N$ gleichzeitig den Punkt $P$ 
-    passieren, was ebenfalls nicht sein kann! Es kann also nicht $y_M=0$ sein, also kann auch nicht $P=Q$ sein.
+    Wenn $P=Q$ wäre, müsste auch $y_Q=y_P=0$ sein. Es müsste also gelten:
+    \[
+        y_Q=\frac{cr\sqrt{r^2+1}}{(1-\sqrt{r^2+1})^2+r^2}=0
+    \]
+    Nach dem Satz vom Nullprodukt muss dann mindestens einer der Faktoren $c, r, \sqrt{r^2+1}$ und $\frac{1}{(1-
+    \sqrt{r^2+1})^2+r^2}$ gleich 0 sein. Offensichtlich kann $\frac{1}{(1-\sqrt{r^2+1})^2+r^2}$ nicht 0 sein. Auch 
+    $\sqrt{r^2+1}$ ist offensichtlich positiv, also nicht 0. Wenn $r$, die Steigung von $m$, 0 wäre, würde das 
+    bedeuten, dass $m$ auf der $x$-Achse, also $n$, liegt. Das kann aber ebenfalls nicht sein, denn $n$ und $m$ 
+    schneiden sich nur in einem Punkt. Es muss also, damit $y_Q=0$ sein kann, $c=0$ gelten. Dann müssten aber (wie 
+    am Anfang des Beweises von Satz \ref{aufgabe_3} bewiesen) $M$ und $N$ gleichzeitig den Punkt $P$ passieren, was 
+    ebenfalls nicht sein kann! Es kann also nicht $y_M=0=y_P$ sein, also kann auch nicht $P=Q$ sein.
 
     Auch bewegt sich der Punkt $Q$ offensichtlich nicht, denn seine Koordinaten sind nur von den Konstanten $c$ und 
     $r$ abhängig. Also ist $Q$ ein fester, von $P$ verschiedener Punkt.
@@ -222,8 +243,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{proof}[Beweis des HS]
         Zunächst ergibt sich durch Umformen die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$. Diese Umformung ist 
         zwar etwas länger, allerdings in jedem Schritt elementar genug, dass ich einen Kommentar für überflüssig 
-        halte.
-
+        halte. Jedoch möchte ich anmerken, dass $\sqrt{r^2+1}^2=|r^2+1|=r^2+1$, da $r^2+1$ positiv ist.
         \begin{align*}
             x_M^2+y_M^2&=\left(\frac{x_N+c}{\sqrt{r^2+1}}\right)^2+\left(\frac{r(x_N+c)}{\sqrt{r^2+1}}\right)^2
             =\frac{(x_N+c)^2}{r^2+1}+\frac{r^2(x_N+c)^2}{r^2+1}\\
@@ -235,10 +255,8 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{(x_N+c)\cdot(x_N+c)\sqrt{r^2+1}-(x_N+c)\cdot x_N}{\sqrt{r^2+1}}\\
             &=\frac{(x_N+c)x_N}{\sqrt{r^2+1}}+\frac{x_N+c}{\sqrt{r^2+1}}\cdot \left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
             &=\frac{x_N+c}{\sqrt{r^2+1}}\cdot x_N+2r\cdot\frac{x_N+c}{\sqrt{r^2+1}}\cdot\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2r}\\
-            &=2\cdot x_M\cdot\frac{x_N}{2}+2\cdot\frac{r(x_N+c)}{\sqrt{r^2+1}}\cdot y_S\\
-            &=2x_Mx_S+2y_My_S
+            &=2\cdot x_M\cdot\frac{x_N}{2}+2\cdot\frac{r(x_N+c)}{\sqrt{r^2+1}}\cdot y_S=2x_Mx_S+2y_My_S
         \end{align*}
-
         Aus $x_M^2+y_M^2=2x_Mx_S+2y_My_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
     \begin{lem}\label{dumm_N}
@@ -293,6 +311,9 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             &=\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}x_N+
             \frac{c\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
             &=x_Qx_N+y_Q\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+        \end{align*}
+        \begin{align*}
+            x_Q^2+y_Q^2&=x_Qx_N+y_Q\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
             &=2x_Q\frac{x_N}{2}+2y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2}\\
             &=2x_Qx_S+2y_Qy_S
         \end{align*}
