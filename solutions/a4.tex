@@ -405,40 +405,46 @@ Satz:
     dann gemäß dem Induktionsschritt auch für $t=2$ (natürlich nur sofern $m\geq 2$) usw. usw. bis $t=m$. Für $t=m$ 
     lautet die Ungleichung dann:
     \[
-        R(1, 1; m, n)\leq R(1, 1; m, m)
+        R(1, 1; m, n)\leq R(1, 1; m, m) \numberthis \label{widerspruch}
     \]
-    Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=n-m, b_2=n$ und $c_2=m$) aber:
+    Nun ist nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=m$ und $c_2=n$) aber:
     \[
-    R(1, 1; m, n)=R(1, 1; m, n-m)+R(1, n-m+1; m, n) \numberthis \label{widerspruch}
+        R(1, 1; m, n)=R(1, 1; m, m)+R(1, m+1; m, n)
     \]
-    Also ist wegen \eqref{widerspruch} auch:
-    \begin{alignat*}{2}
-        &R(1, 1; m, n-m)+R(1, n-m+1; m, n)&&\leq R(1, n-m+1; m, n)\\
-        \Leftrightarrow &R(1, 1; m, n-m)&&\leq 0
-    \end{alignat*}
-    Nun kann nicht $n<m+1$, denn wegen $m<n$ wäre dann auch $m+1<n+1$ und somit $n<m+1<n+1$, also 
-    $n<n+1$, was nicht sein kann. Es ist demnach $n\geq m+1$, also entweder $n=m+1$ oder $n>m+1$. Nehme man zunächst 
-    an, es sei $n>m+1$. Dann ist gemäß HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=1$ und $c_2=n-m$) 
+    Setzt man dies in \eqref{widerspruch} ein, erhält man:
+    \begin{align*}
+        R(1, 1; m, m)+R(1, m+1; m, n)&\leq R(1, 1; m, m)\\
+        \Leftrightarrow R(1, m+1; m, n)&\leq 0 \numberthis \label{ulti}
+    \end{align*}
+    Wegen $m<n$ ist offensichtlich $n\geq m+1$, also entweder $n=m+1$ oder $n>m+1$. Nehme man zunächst 
+    an, es sei $n>m+1$, also $n=m+1+k$ mit $1\leq k$. Es ist also:
+    \[
+        R(1, m+1; m, n)=R(1, m+1; m, m+1+k)
+    \]
+    Dann ist unter Verwendung dieser Gleichung gemäß HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=m$ und $c_2=m+1$) 
     offenbar:
     \[
-        R(1, 1; m, n-m)=R(1, 1; m, 1)+R(1, 2; m, n-m)
+        R(1, m+1; m, n)=R(1, m+1; m, m+1)+R(1, m+2; m, m+1+k)
     \]
-    Hierbei ist wegen $n>m+1$ natürlich $n-m>1$, also $n-m\geq 2$; das ist ja notwendige Bedingung für $R(1, 2; n, 
-    n-m)$. Da nun $R(1, 1; m, n-m)\leq 0$, ist auch $R(1, 1; m, 1)+R(1, 2; m, n-m)\leq 0$ und damit $R(1, 1; m, 1)
-    \leq -R(1, 2; m, n-m)$. Weil die Tabelle $T^*$ f.p.r.w. ist, stehen in ihren Feldern nur nicht-negative Zahlen. 
-    Eine Summe von nicht-negativen Zahlen kann natürlich nicht negativ sein. Da $R(1, 2; m, n-m)$ der Wert einer 
-    solchen Summe ist, muss also $R(1, 2; m, n-m)\geq 0$ und damit $-R(1, 2; m, n-m)\leq 0$ gelten. Es ist also:
+    Da gemäß \eqref{ulti} die linke Seite nicht-positiv ist, muss es auch die rechte Seite sein. Da die beiden 
+    Summanden auf der rechten Seite Summen nicht-negativer Zahlen sind, also selbst nicht-negativ sind, müssen sie, 
+    damit ihre Summe nicht positiv wird, beide gleich Null sein. Insbesondere ist also:
     \[
-        R(1, 1; m, 1)\leq -R(1, 2; m, n-m)\leq 0
+        R(1, m+1; m, m+1)=0
     \]
-    Insbesondere also $R(1, 1; m, 1)\leq 0$. Wegen $R(1, 1; m, n-m)\leq 0$ gilt, wenn $n=m+1$, $R(1, 1; m, (m+1)-m)
-    \leq 0$, also $R(1, 1; m, 1)\leq 0$. Es gilt also stets $R(1, 1; m, 1)\leq 0$, egal, ob $n>m+1$ oder $n=m+1$. 
-    Nun ist $R(1, 1; m, 1)$ nach HS \ref{r_zeile_spalte} die Summe der Werte in den Feldern der ersten Spalte. Da 
-    all diese Werte nicht-negativ sind, muss auch $R(1, 1; m, 1)$ nicht-negativ sein. Weil gleichzeitig aber auch 
-    $R(1, 1; m, 1)\leq 0$ ist, kann $R(1, 1; m, 1)$ nicht positiv sein. Es muss also:
+    Wenn $n=m+1$ ist, erhält man, indem man das in \eqref{ulti} einsetzt:
     \[
-    R(1, 1; m, 1)= 0
+        R(1, m+1; m, n)=R(1, m+1; m, m+1)\leq 0
     \]
+    Da $R(1, m+1; m, m+1)$ die Summe nicht-negativer Zahlen ist, ist $R(1, m+1; m, m+1)$ selbst nicht-negativ. Damit 
+    $R(1, m+1; m, m+1)$ gleichzeitig auch nicht-positiv sein kann, muss also:
+    \[
+        R(1, m+1; m, m+1)=0
+    \]
+    Egal, ob $n=m+1$ oder $n>m+1$, es gilt also stets diese Gleichung.
+
+    AB HIER NOCH NICHT ANGEPASST
+    % TODO: ab hier anpassen
     Dafür müssen dann all die Werte, die in den Feldern der ersten Spalte stehen, 0 sein, da unter ihnen keine 
     negativen sind und gleichzeitig ihre Summe 0 ist. Nun ist aber $T^*$ eine f.p.r.w. Tabelle, also muss es in jeder 
     Spalte von $T^*$ mindestens ein Feld geben, in dem eine positive Zahl steht. Aber ein solches Feld gibt es in 
