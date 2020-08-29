@@ -1,14 +1,16 @@
 \section{Aufgabe 4}
 
+% TODO: Idee!!! Wohlgeordnetheit umdrehen, also nicht nach rechts unten größere Zeilen- und Spaltenwerte, sondern nach 
+% TODO: oben links! Dadurch wird u.a. z.B. aus vielen komplizieren Ausdrücken wie m-(t+1)-a einfach t+1+a.
+
 \subsection*{Einführung hilfreicher Begriffe}
 
 Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürzer, aber auch besser lesbar machen:
 
 [Im Folgenden ist die $k$-te Spalte immer die $k$-te Spalte von links und die $k$-Zeile immer die $k$-te Zeile von oben.]
 \begin{definition}
-    Mit einer "`fast-positiv-reell-wertigen"' (kurz f.p.r.w.) Tabelle ist eine Tabelle gemeint, für die gilt, dass 
-    in jedem ihrer Felder eine nicht-negative reelle Zahl steht, und dabei in jeder Spalte der Tabelle mindestens 
-    eine positive.
+    Mit einer "`fast-positiv-reell-wertigen"' (kurz f.p.r.w.) Tabelle ist eine Tabelle gemeint, in deren Feldern nur 
+    nicht-negative reelle Zahlen stehen und dabei in jeder Spalte der Tabelle mindestens eine positive steht.
 \end{definition}
 \begin{definition}
     Das Feld $(i, j)$ einer Tabelle ist das Feld in der $i$-ten Zeile und der $j$-ten Spalte dieser Tabelle.
@@ -18,7 +20,7 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     steht.
 \end{definition}
 \begin{definition}\label{rfunktion}
-    Wenn $R$ die Rechtecksfunktion und $'$ die Feldwertfunktion einer Tabelle ist, ist $R(a_1, b_1; a_2, b_2)$ kurz 
+    Wenn $R$ die Rechtecksfunktion und $'$ die Feldwertfunktion einer Tabelle ist, ist $R(a_1, a_2; b_1, b_2)$ kurz 
     für die folgende Summe, wobei $a_1\leq b_1$ und $a_2\leq b_2$ gelten muss:
     \begin{alignat*}{6}
         R(a_1, a_2; b_1, b_2) &= (a_1, &&a_2)' + &&(a_1, &&a_2+1)' + \quad \cdots \quad + &&(a_1, &&b_2)'\\
@@ -31,10 +33,10 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 \end{definition}
 \begin{definition}
     Mit einer "`spaltenweise geordneten"' Tabelle ist eine Tabelle gemeint, für die stets $R(s, 1; s, m)\geq 
-    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen dieser Tabelle ist. Äquivalent ist mit einer 
-    "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets $R(z, 1; z, n)\geq R(z+1, 1; z+1, n)$ gilt, 
-    wobei $n$ die Anzahl an Spalten dieser Tabelle ist. Ist eine Tabelle zeilen- und spaltenweise geordneten, heißt 
-    sie kurz auch "`wohlgeordnet"'.
+    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen dieser Tabelle ist und $1\leq s\leq m-1$. Ähnlich ist 
+    mit einer "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets $R(z, 1; z, n)\geq R(z+1, 1; z+1, n)$ 
+    gilt, wobei $n$ die Anzahl an Spalten dieser Tabelle ist und $1\leq z\leq n-1$. Ist eine Tabelle zeilen- und 
+    spaltenweise geordneten, heißt sie kurz auch "`wohlgeordnet"'.
 \end{definition}
 
 \subsection*{Hilfssätze über die eingeführten Begriffe}
@@ -151,7 +153,7 @@ jeder Spalte mindestens eine positive. Es handelt sich also um f.p.r.w. Tabellen
 Spalten als Zeilen haben. Es werden also f.p.r.w. Tabellen mit $m$ Zeilen und $n$ Spalten betrachtet, wobei $m<n$. 
 Es soll nun bewiesen werden, dass es ein Feld mit einer positiven Zahl derart gibt, dass die Summe der Zahlen in der 
 Zeile dieses Feldes größer als die Summe der Zahlen in der Spalte dieses Feldes ist. Nenne man dieses Feld $(i, j)$, 
-die Feldwertfunktion de betrachteten Tabelle $'$ und ihre Rechtecksfunktion $R$. Dann muss also der Feldwert von $(i, j)$ 
+die Feldwertfunktion der betrachteten Tabelle $'$ und ihre Rechtecksfunktion $R$. Dann muss also der Feldwert von $(i, j)$ 
 positiv sein; es muss also $(i, j)'>0$ gelten. Auch muss die Summe der Zahlen in der Zeile dieses Feldes (welche 
 gemäß HS \ref{r_zeile_spalte} durch $R(i, 1; i, n)$ gegeben ist) größer als die Summe der Zahlen in der Spalte 
 dieses Feldes (welche gemäß HS \ref{r_zeile_spalte} durch $R(1, j; m, j)$ gegeben ist) sein; es muss also 
