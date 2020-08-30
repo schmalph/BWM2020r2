@@ -316,10 +316,26 @@ Satz:
         \item Die mit $t+1\leq i\leq m$ und $1\leq j<t+1$, also $1\leq j\leq t$
         \item Die mit $t+1\leq i\leq m$ und $j=t+1$
     \end{enumerate}
-    Erstere sind die Felder, deren Feldwerte aufaddiert werden, um $R(t+1, 1; m, t)$ zu berechnen. 
-    % TODO: kurze begründung
-    Letztere sind genau die Felder, deren Feldwerte aufaddiert werden, um $R(t+1, t+1; m, t+1)$ zu berechnen. 
-    Beide sind also eine Summe von Nullern, also selbst 0:
+    Erstere sind genau die Felder, deren Feldwerte aufaddiert werden, um $R(t+1, 1; m, t)$ zu berechnen, denn:
+    \begin{itemize}
+        \item Sämtliche Felder $(i,j)$ (genauer gesagt, ihre Feldwerte) mit $t+1\leq i\leq m$ und $1\leq j\leq t$ 
+        sind offensichtlich in der Summe, die $R(t+1, 1; m, t)$ definiert, enthalten; nämlich im $j$-ten Summand 
+        der $(i-t)$-ten Zeile (und in keinem anderen):
+        \begin{alignat*}{3}
+            &\quad R(t+1, 1; m, t)&& &&\\
+            &=\quad(t+1, 1)' &&+ (t+1, 2)' &&+\cdots+ (t+1, t)'\\
+            &\quad+(t+2, 1)' &&+ (t+2, 2)' &&+\cdots+ (t+1, t)'\\
+            &\quad &&\vdots\quad\quad\quad\quad&&\vdots\\
+            &\quad+(m-1, 1)' &&+ (m-1, 2)' &&+\cdots + (m-1, t)'\\
+            &\quad+(m, 1)' &&+ (m, 2)' &&+ \cdots + (m, t)'
+        \end{alignat*}
+        \item Sämtliche Summanden dieser Summe sind offensichtlich von der Form $(i, j)'$ mit $t+1\leq i\leq m$ 
+        und $1\leq j\leq t$.
+    \end{itemize}
+    Also sind insgesamt die Felder der ersteren Gruppe genau die, deren Feldwerte aufaddiert werden, um $R(t+1, 1; 
+    m, t)$ zu berechnen. Die der letzteren Gruppe sind offensichtlich genau die Felder, deren Feldwerte aufaddiert 
+    werden, um $R(t+1, t+1; m, t+1)$ zu berechnen, denn es ist $R(t+1, t+1; m, t+1)=(t+1,t+1)'+(t+2, t+1)'+\cdots
+    +(m, t+1)'$. Beide sind also eine Summe von lauter Nullern, also selbst 0:
     \[
         R(t+1, 1; m, t)=0 \numberthis \label{das_ne_null}
     \]
@@ -391,7 +407,8 @@ Satz:
     \[
         R(1, 1; t, n)+R(t+1, 1; t+1, n)\leq R(1, 1; m, t)+R(1, t+1; m, t+1) \numberthis \label{fast_schritt}
     \]
-    Nun gelten nach HS \ref{r_summe} (mit bzw. ) folgende Gleichungen:
+    Nun gelten nach HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=t, b_2=n, c_1=t+1$ bzw. $a_1=1, a_2=1, b_1=m, b_2=t, 
+    c_2=t+1$) folgende Gleichungen:
     \begin{align*}
         R(1, 1; t, n)+R(t+1, 1; t+1, n)&=R(1, 1; t+1, n)\\
         R(1, 1; m, t)+R(1, t+1; m, t+1)&=R(1, 1; m, t+1)
@@ -423,8 +440,8 @@ Satz:
     \[
         R(1, m+1; m, n)=R(1, m+1; m, m+1+k)
     \]
-    Dann ist unter Verwendung dieser Gleichung gemäß HS \ref{r_summe} (mit $a_1=1, a_2=1, b_1=m, b_2=m$ und $c_2=m+1$) 
-    offenbar:
+    Dann ist unter Verwendung dieser Gleichung gemäß HS \ref{r_summe} (mit $a_1=1, a_2=m+1, b_1=m, b_2=m+1$ und 
+    $c_2=m+1+k=n$) offenbar:
     \[
         R(1, m+1; m, n)=R(1, m+1; m, m+1)+R(1, m+2; m, m+1+k)
     \]
@@ -445,12 +462,11 @@ Satz:
     \]
     Egal, ob $n=m+1$ oder $n>m+1$, es gilt also stets diese Gleichung.
 
-    AB HIER NOCH NICHT ANGEPASST
-    % TODO: ab hier anpassen
-    Dafür müssen dann all die Werte, die in den Feldern der ersten Spalte stehen, 0 sein, da unter ihnen keine 
-    negativen sind und gleichzeitig ihre Summe 0 ist. Nun ist aber $T^*$ eine f.p.r.w. Tabelle, also muss es in jeder 
-    Spalte von $T^*$ mindestens ein Feld geben, in dem eine positive Zahl steht. Aber ein solches Feld gibt es in 
-    der ersten Spalte nicht! Die Annahme, es gäbe eine Tabelle, für die Satz \ref{haupt4} nicht gilt, führt also zu 
-    einem Widerspruch. Eine solche Tabelle gibt es also nicht, was den Widerspruchsbeweis von Satz \ref{haupt4} vollendet.
+    Nun ist $R(1, m+1; m, m+1)$ aber gemäß HS \ref{r_zeile_spalte} die Summe der Zahlen in der $(m+1)$-ten Spalte. 
+    Da aber all diese Zahlen nicht-negativ sind, müssen sie alle Null sein, damit ihre Summe Null sein kann. Nun ist 
+    aber $T^*$ eine f.p.r.w. Tabelle, also muss es in jeder Spalte von $T^*$ mindestens ein Feld geben, in dem eine 
+    positive Zahl steht. Aber ein solches Feld gibt es in der $(m+1)$-ten Spalte nicht! Die Annahme, es gäbe eine 
+    Tabelle, für die Satz \ref{haupt4} nicht gilt, führt also zu einem Widerspruch. Eine solche Tabelle gibt es also 
+    nicht, was den Widerspruchsbeweis von Satz \ref{haupt4} vollendet.
     \renewcommand{\qedsymbol}{$\blacksquare$}
 \end{proof}
