@@ -12,12 +12,12 @@ $\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets mit positivem Vorzeichen; 
 
 Sehr oft habe ich die Distanzformel 
 \[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{, für alle Punkte $A,B$}\] 
-verwendet. Ich habe bei den Gleichungen, bei denen ich sie verwendet habe, nicht dazugeschrieben, dass sich die 
+verwendet. Ich habe bei den Gleichungen, bei denen ich sie verwendet habe, oft nicht dazugeschrieben, dass sich die 
 Gleichungen mit der Distanzformel ergeben. Diese Entscheidung habe ich getroffen, da ich diese Formel so oft verwendet 
 habe, dass, wenn ich sie jedes mal erwähnt hätte, dies einige Sätze deutlich komplizierter und teilweise sogar 
 relativ unverständlich gemacht hätte. Ich denke, dass dies die mathematische Vollständigkeit nicht einschränkt, da 
 die Formel aus der Schule bekannt ist und es ziemlich offensichtlich ist, wann sie verwendet wurde; ähnlich, wie 
-die mathematische Vollständigkeit nicht daurch eingeschränkt wird, dass ich nie dazuschreibe, wenn ein Bruch 
+die mathematische Vollständigkeit nicht dadurch eingeschränkt wird, dass ich nie dazuschreibe, wenn ein Bruch 
 gekürzt wird.
 
 \subsection*{Algebraisierung der Aufgabe mit Hilfe eines kartesischen Koordinatensystems}
@@ -35,20 +35,23 @@ Seite der $x$-Achse liegen.
 Der Punkt $N$ hat, da er auf $n$, also der $x$-Achse, liegt, natürlich eine $y$-Koordinate von 0. Es ist also: 
 $N=(x_N, 0)$. Sei nun $d_M$ die Distanz $\overline{PM}$, allerdings mit negativem Vorzeichen, wenn $y_M$ ein 
 negatives Vorzeichen hat, also nachdem $M$ den Punkt $P$ passiert hat. Nun ist $x_N$ wegen $y_N=0$ die Distanz 
-$\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. 
+$\overline{PN}$, allerdings mit negativem Vorzeichen, nachdem $N$ den Punkt $P$ passiert hat. Damit lässt sich folgender 
+HS beweisen:
 \begin{lem}
     Die Differenz $d_M-x_N$ ist konstant.
 \end{lem}
 \begin{proof}[Beweis des HS durch Widerspruch]
+    \renewcommand{\qedsymbol}{$\square$}
     Nehme man für den Widerspruchsbeweis an, es gäbe zwei Zeitpunkte $t_0$ und $t_1$, von denen $t_0$ der frühere ist, 
-    zu denen $d_M-x_N$ unterschiedliche Werte annimmt. Sei $s$ die Geschwindigkeit, mit der sich $M$ und $N$ bewegen; 
+    zu denen $d_M-x_N$ unterschiedliche Werte annimmt. Sei $v$ die Geschwindigkeit, mit der sich $M$ und $N$ bewegen; 
     diese ist natürlich gemäß der Aufgabenstellung konstant. Von $t_0$ bis $t_1$ vergeht natürlich eine Zeitspanne 
-    von $t_1-t_0$ [Zeiteinheiten]. Bei einer konstanten Geschwindigkeit von $s$ bewegen sich die Punkte also jeweils 
-    um $(t_1-t_0)\cdot s$ [Längeneinheiten]. Sei diese Länge mit $a$ bezeichnet. Nun werden sowohl $d_M$ als auch $x_N$ 
-    stets kleiner; denn bevor sie $P$ passieren, wird ihre Distanz zu $P$ immer kleiner und damit auch $d_M$ bzw. $x_N$, 
-    und danach wird die Distanz größer und damit, da $d_M$ und $x_N$ dann ein negatives Vorzeichen haben, werden $d_M$ 
-    und $x_N$ ebenfalls kleiner. Also werden $d_M$ und $x_N$ während der Zeitspanne zwischen $t_0$ und $t_1$ beide um 
-    $a$ kleiner. Wenn allerdings beide um das Gleiche kleiner werden, ändert sich ihre Differenz natürlich nicht:
+    von $t_1-t_0$. Bei einer konstanten Geschwindigkeit von $v$ bewegen sich die Punkte also (gemäß der aus dem 
+    Physikunterricht bekannten Formel "`$v \cdot\Delta t=\Delta s$"') jeweils um $(t_1-t_0)\cdot v$. 
+    Sei diese Länge mit $a$ bezeichnet. Nun werden sowohl $d_M$ als auch $x_N$ stets kleiner; denn bevor sie $P$ passieren, wird ihre Distanz zu $P$ immer 
+    kleiner und damit auch $d_M$ bzw. $x_N$, und danach wird die Distanz größer und damit, da $d_M$ und $x_N$ dann 
+    ein negatives Vorzeichen haben, werden $d_M$ und $x_N$ ebenfalls kleiner. Also werden $d_M$ und $x_N$ während 
+    der Zeitspanne zwischen $t_0$ und $t_1$ beide um $a$ kleiner. Wenn allerdings beide um das Gleiche kleiner 
+    werden, ändert sich ihre Differenz natürlich nicht:
     \[
         (d_M-a)-(x_N-a)=d_M-a-x_N+a=d_M-x_N
     \]
@@ -185,7 +188,7 @@ Der folgende Satz beschäftigt sich nur mit dem Fall "`$m$ orthogonal zu $n$"':
         \end{align*}
         Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    Aus den Hilfssätzen \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
+    Aus den HS \ref{no_P}, \ref{no_M}, \ref{no_N} und \ref{no_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ orthogonal zu $m$ ist, 
     gibt es also einen festen Punkt $Q\neq P$ so, dass $P,M,N,Q$ stets den gleichen Abstand zu einem Punkt $S$ haben, 
     also stets auf einem gemeinsamen Kreis liegen.
