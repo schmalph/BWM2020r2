@@ -30,10 +30,11 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 \end{definition}
 \begin{definition}
     Mit einer "`spaltenweise geordneten"' Tabelle ist eine Tabelle gemeint, für die stets $R(s, 1; s, m)\leq 
-    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen dieser Tabelle ist und $1\leq s\leq m-1$. Ähnlich ist 
-    mit einer "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets $R(z, 1; z, n)\leq R(z+1, 1; z+1, n)$ 
-    gilt, wobei $n$ die Anzahl an Spalten dieser Tabelle ist und $1\leq z\leq n-1$. Ist eine Tabelle zeilen- und 
-    spaltenweise geordneten, heißt sie kurz auch "`wohlgeordnet"'.
+    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen, $R$ die Rechtecksfunktion dieser Tabelle ist und 
+    $1\leq s\leq m-1$. Ähnlich ist mit einer "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets 
+    $R(z, 1; z, n)\leq R(z+1, 1; z+1, n)$ gilt, wobei $n$ die Anzahl an Spalten, $R$ die Rechtecksfunktion dieser 
+    Tabelle ist und $1\leq z\leq n-1$. Ist eine Tabelle zeilen- und spaltenweise geordneten, heißt sie kurz auch 
+    "`wohlgeordnet"'.
 \end{definition}
 
 \subsection*{Hilfssätze über die eingeführten Begriffe}
@@ -48,43 +49,45 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
 \begin{proof}[Beweis des HS]
     Erstere Aussage ergibt sich direkt aus der Definition der Rechtecksfunktion:
     \begin{alignat*}{3}
-        &R(a_1, a_2; b_1, b_2)&& +R(b_1+1, a_2; c_1, b_2)&&\\
-        &=(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
-        &+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
-        & &&\vdots\quad\quad\quad\quad&&\vdots\\
-        &+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
-        &+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
-        &+R(b_1+1, a_2; &&c_1, b_2) &&\\
-        &=(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
-        &+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
-        & &&\vdots\quad\quad\quad\quad&&\vdots\\
-        &+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
-        &+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
-        &+(b_1+1, a_2)' &&+ (b_1+1, a_2+1)' &&+\cdots+ (b_1+1, b_2)'\\
-        &+(b_1+2, a_2)' &&+ (b_1+2, a_2+1)' &&+\cdots+ (b_1+2, b_2)'\\
-        & &&\vdots\quad\quad\quad\quad&&\vdots\\
-        &+(c_1-1, a_2)' &&+ (c_1-1, a_2+1)' &&+\cdots + (c_1-1, b_2)'\\
-        &+(c_1, a_2)' &&+ (c_1, a_2+1)' &&+ \cdots + (c_1, b_2)'\\
-        &=R(a_1, a_2; c_1, &&b_2)&&
+        &\quad R(a_1, a_2; b_1, b_2)&& +R(b_1+1, a_2; c_1, b_2)&&\\
+        &=\quad(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
+        &\quad+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
+        &\quad &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &\quad+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
+        &\quad+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
+        &\quad+R(b_1+1, a_2; &&c_1, b_2) &&\\
+    \end{alignat*}
+    \begin{alignat*}{3}
+        &=\quad(a_1, a_2)' &&+ (a_1, a_2+1)' &&+\cdots+ (a_1, b_2)'\\
+        &\quad+(a_1+1, a_2)' &&+ (a_1+1, a_2+1)' &&+\cdots+ (a_1+1, b_2)'\\
+        &\quad &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &\quad+(b_1-1, a_2)' &&+ (b_1-1, a_2+1)' &&+\cdots + (b_1-1, b_2)'\\
+        &\quad+(b_1, a_2)' &&+ (b_1, a_2+1)' &&+ \cdots + (b_1, b_2)'\\
+        &\quad+(b_1+1, a_2)' &&+ (b_1+1, a_2+1)' &&+\cdots+ (b_1+1, b_2)'\\
+        &\quad+(b_1+2, a_2)' &&+ (b_1+2, a_2+1)' &&+\cdots+ (b_1+2, b_2)'\\
+        &\quad &&\vdots\quad\quad\quad\quad&&\vdots\\
+        &\quad+(c_1-1, a_2)' &&+ (c_1-1, a_2+1)' &&+\cdots + (c_1-1, b_2)'\\
+        &\quad+(c_1, a_2)' &&+ (c_1, a_2+1)' &&+ \cdots + (c_1, b_2)'\\
+        &=\quad R(a_1, a_2; c_1, &&b_2)&&
     \end{alignat*}
     Auch letztere Aussage ergibt sich direkt durch Einsetzen der Definition der Rechtecksfunktion:
     \begin{alignat*}{4}
-        &R(a_1, a_2; b_1, b_2)&& &&+R(a_1, b_2+1; b_1, &&c_2)\\
-        &=(a_1, a_2)' &&+\cdots+ (a_1, b_2)'
+        &\quad R(a_1, a_2; b_1, b_2)&& &&+R(a_1, b_2+1; b_1, &&c_2)\\
+        &=\quad(a_1, a_2)' &&+\cdots+ (a_1, b_2)'
         &&+(a_1, b_2+1)'&&+\cdots+(a_1, c_2)'\\
-        &+(a_1+1, a_2)'&&+\cdots+ (a_1+1, b_2)'
+        &\quad+(a_1+1, a_2)'&&+\cdots+ (a_1+1, b_2)'
         &&+(a_1+1, b_2+1)'&&+\cdots+(a_1+1, c_2)'\\
-        & \quad\vdots&&\quad\vdots&&+\quad\vdots&&\quad\vdots\\
-        &+(b_1-1, a_2)'&&+\cdots + (b_1-1, b_2)'
+        &\quad\quad\vdots&&\quad\vdots&&+\quad\vdots&&\quad\vdots\\
+        &\quad+(b_1-1, a_2)'&&+\cdots + (b_1-1, b_2)'
         &&+(b_1-1, b_2+1)'&&+\cdots+(b_1-1, c_2)'\\
-        &+(b_1, a_2)'&&+ \cdots + (b_1, b_2)'
+        &\quad+(b_1, a_2)'&&+ \cdots + (b_1, b_2)'
         &&+(b_1, b_2+1)'&&+\cdots+(b_1, c_2)'\\
-        &=R(a_1, a_2; b_1, &&c_2)
+        &=R(a_1, a_2; b_1, c_2)
     \end{alignat*}
 \end{proof}
-Anm.  zu HS \ref{r_summe}: Wenn die für die Gültigkeit dieses HS nötigen Ungleichungen offensichtlich wahr waren, 
-habe ich sie oft gar nicht erwähnt. Da sie so offensichtlich sind, wird hierdurch die mathematische Vollständigkeit 
-nicht eingeschränkt.
+Anm.  zu HS \ref{r_summe}: Wenn die für die Gültigkeit dieses HS nötigen Ungleichungen offensichtlich waren, habe 
+ich sie oft gar nicht erwähnt, wodurch die mathematiksce Vollständigkeit aber nicht eingeschränkt werden sollte, 
+da sie dann immer ohne Umformungsschritte überprüfbar sind.
 \begin{lem}\label{r_zeile_spalte}
     Wenn $R$ die Rechtecksfunktion einer Tabelle mit $m$ Zeilen und $n$ Spalten ist, ist $R(i, 1; i, n)$ die Summe 
     der Werte in den Feldern der $i$-ten Zeile dieser Tabelle und $R(1, j; m, j)$ die Summe der Werte in den Feldern 
@@ -92,12 +95,12 @@ nicht eingeschränkt.
 \end{lem}
 \begin{proof}[Beweis des HS]
     Per Defintion ist $R(i, 1; i, n)=(i, 1)'+(i, 2)'+\cdots+(i, n-1)'+(i, n)$. Die Felder der $i$-ten Zeile sind die 
-    der Form $(i, a)$, wobei $0<a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufaddiert 
+    der Form $(i, a)$, wobei $1\leq a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufaddiert 
     werden, um $R(i, 1; i, n)$ zu berechnen. $R(i, 1; i, n)$ ist also die Summe der Werte in den Feldern der $i$-ten 
     Zeile.
 
     Ähnlich ist per Definition $R(1, j; m, j)=(1, j)'+(2, j)'+\cdots+(m-1, j)'+(m, j)'$. Die Felder der $j$-ten Spalte 
-    sind die der Form $(a, j)$, wobei $0<a\leq m$. Offensichtlich sind diese genau die Felder, deren Feldwerte 
+    sind die der Form $(a, j)$, wobei $1\leq a\leq m$. Offensichtlich sind diese genau die Felder, deren Feldwerte 
     aufaddiert werden, um $R(1, j; m, j)$ zu berechnen. $R(1, j; m, j)$ ist also die Summe der Werte in den Feldern 
     der $j$-ten Spalte.
 \end{proof}
@@ -170,7 +173,7 @@ Satz:
         Wenn es keine wohlgeordneten Tabellen gibt, für die Satz \ref{haupt4} nicht gilt, so gibt es überhaupt keine 
         Tabellen, für die Satz \ref{haupt4} nicht gilt.
     \end{lem}
-    \begin{proof}[Beweis des HS durchh Widerspruch]
+    \begin{proof}[Beweis des HS durch Widerspruch]
         Nehme man für den Widerspruchsbeweis an, es gäbe eine f.p.r.w. Tabelle $T$ mit mehr Spalten als Zeilen, für 
         die Satz \ref{haupt4} nicht gilt, aber keine solchen Tabellen, die wohlgeordnet sind. 
 
@@ -178,32 +181,32 @@ Satz:
         zeilenweise geordnet ist. Da sich nur die Reihenfolge der Zeilen ändert, gibt es in jeder Spalte immer noch 
         mindestens ein Feld mit einer positiven Zahl. Natürlich gibt es auch immer noch nur Felder mit nicht-negativen 
         Zahlen, also ist $\dot T$ insgesamt f.p.r.w. Außerdem hat $\dot T$ genau wie $T$ mehr Spalten als Zeilen. 
-        Wenn für $\dot T$ Satz \ref{haupt4} gelten würde, müsste es ein Feld $(i, j)$ geben, sodass $(i, j)'>0$ 
-        und $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, wobei $'$ die Feld-, $\dot R$ die Rechtecksfunktion, 
+        Wenn für $\dot T$ Satz \ref{haupt4} gelten würde, müsste es ein Feld $(i, j)$ geben, sodass $(i, j)^*>0$ 
+        und $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, wobei $^*$ die Feld-, $\dot R$ die Rechtecksfunktion, 
         $\dot m$ die Anzahl an Zeilen und $\dot n$ die Anzahl an Spalten von $\dot T$ ist. Sei nun die $l$-te Zeile 
         von $T$ die Zeile, die nach der Umordnung die $i$-te Zeile von $\dot T$ bildet. Der Wert des Feldes $(l, j)$ 
-        von $T$ steht also nach der Umordnung im Feld $(i, j)$ von $\dot T$. Da $(i, j)'>0$, ist also:
+        von $T$ steht also nach der Umordnung im Feld $(i, j)$ von $\dot T$. Da $(i, j)^*>0$, ist also:
         \[
-            (l, j)^*>0,
+            (l, j)'>0,
         \]
-        wobei $^*$ die Feldwertfunktion von $T$ ist. In der $j$-ten Spalte von $\dot T$ befinden sich offensichtlich 
+        wobei $'$ die Feldwertfunktion von $T$ ist. In der $j$-ten Spalte von $\dot T$ befinden sich offensichtlich 
         die gleichen Zahlen wie in der $j$-ten Spalte von $T$; lediglich ihre Reihenfolge ändert sich durch die 
         Umordnung der Zeilen. Ihre Summe (gemäß HS \ref{r_zeile_spalte} durch $R(1, j; m, j)$ bzw. $\dot R(1, j; 
         \dot m, j)$ gegeben) ist also auch die gleiche:
         \[
             R(1, j; m, j)=\dot R(1, j; \dot m, j),
         \]
-        wobei $R$ die Rechtecksfunktion $m$ die Anzahl an Zeilen und $n$ die Anzahl an Spalten von $T$ ist. 
+        wobei $R$ die Rechtecksfunktion, $m$ die Anzahl an Zeilen und $n$ die Anzahl an Spalten von $T$ ist. 
         Sämtliche Zahlen der $i$-ten Zeile von $\dot T$ standen vor der Umordnung in der $l$-ten Zeile von $T$. 
         Die Summe der Zahlen in diesen beiden Zeilen muss also die gleiche sein. Es ist also (erneut ergeben sich die 
         folgenden Werte direkt aus HS \ref{r_zeile_spalte}):
         \[
-            R(i, 1; i, n)=\dot R(i, 1; i, \dot n)
+            R(l, 1; l, n)=\dot R(i, 1; i, \dot n)
         \]
-        Insgesamt ist also $(l, j)^*>0$, $R(1, j; m, j)=\dot R(1, j; \dot m, j)$ und $R(i, 1; i, n)=\dot R(i, 1; i, 
-        \dot n)$. Da $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, muss also auch $R(i, 1; i, n) > 
-        R(1, j; m, j)$. Damit gibt es dann aber das Feld $(i, j)$ der Tabelle $T$, für das $(l, j)^*>0$ und $R(i, 
-        1; i, n) > R(1, j; m, j)$. Für die Tabelle $T$ gilt also Satz \ref{haupt4}. Da das nicht sein kann, 
+        Insgesamt ist also $(l, j)'>0$, $R(1, j; m, j)=\dot R(1, j; \dot m, j)$ und $R(l, 1; l, n)=\dot R(i, 1; i, 
+        \dot n)$. Da $\dot R(i, 1; i, \dot n) > \dot R(1, j; \dot m, j)$, muss also auch $R(l, 1; l, n) > 
+        R(1, j; m, j)$. Damit gibt es dann aber das Feld $(l, j)$ der Tabelle $T$, für das $(l, j)'>0$ und $R(l, 
+        1; l, n) > R(1, j; m, j)$. Für die Tabelle $T$ gilt also Satz \ref{haupt4}. Da das nicht sein kann, 
         muss die Annahme, für $\dot T$ würde Satz \ref{haupt4} gelten, falsch sein! Für $\dot T$ gilt Satz 
         \ref{haupt4} also nicht!
 
@@ -227,7 +230,6 @@ Satz:
         \[
             \dot R(i, 1; i, \dot n)=\ddot R(i, 1; i, \ddot n),
         \]
-        wobei $\ddot R$ die Rechtecksfunktion von $\ddot T$ ist.
         Sämtliche Zahlen der $j$-ten Spalte von $\ddot T$ standen vor der Umordnung in der $k$-ten Spalte von $\dot T$. 
         Die Summe der Zahlen in diesen beiden Zeilen muss also die gleiche sein. Es ist also (erneut ergeben sich die 
         folgenden Werte direkt aus HS \ref{r_zeile_spalte}):
@@ -238,7 +240,7 @@ Satz:
         \dot m, k)=\ddot R(1, j; \ddot m, j)$. Da $\ddot R(i, 1; i, \ddot n)>\ddot R(1, j; \ddot m, j)$, muss auch 
         $\dot R(i, 1; i, \dot n)>\dot R(1, k; \dot m, k)$. Damit gibt es aber ein Feld $(i, k)$ mit $(i, k)^*>0$ und 
         $\dot R(i, 1; i, \dot n)>\dot R(1, k; \dot m, k)$. Für $\dot T$ gilt also Satz \ref{haupt4}. Das kann aber--wie 
-        oben gezeigt--nicht sein. Die Annahme, für $\ddot T$ würde Satz \eqref{haupt4} gelten, führt also zu einem 
+        oben gezeigt--nicht sein. Die Annahme, für $\ddot T$ würde Satz \ref{haupt4} gelten, führt also zu einem 
         Widerspruch, d.h. sie muss falsch sein! Für $\ddot T$ kann Satz \ref{haupt4} also nicht gelten!
 
         Während der Umordnung der Spalten von $\dot T$, um $\ddot T$ zu erhalten, wurden offensichtlich die Summen der 
@@ -251,8 +253,8 @@ Satz:
         Widerspruchsbeweises angenommen, es gäbe zwar Tabellen, für die Satz \ref{haupt4} nicht gilt, allerdings keine 
         solchen wohlgeordneten. Da diese Annahme zu einem Widerspruch--nämlich einer wohlgeordneten Tabelle, für die 
         Satz \ref{haupt4} nicht gilt--geführt hat, muss sie falsch sein! Wenn es also keine wohlgeordneten Tabellen 
-        gibt, für die Satz \eqref{haupt4} nicht gilt, kann es überhaupt keine Tabellen geben, für die Satz \ref{haupt4} 
-        nicht gilt!
+        gibt, für die Satz \ref{haupt4} nicht gilt, kann es überhaupt keine Tabellen geben, für die Satz \ref{haupt4} 
+        nicht gilt; da aus der Existenz letzterer die Existenz ersterer folgen würde!
     \end{proof}
     Da es nach HS \ref{fallbeschrank} überhaupt keine Tabellen gibt, für die Satz \ref{haupt4} 
     nicht gilt, wenn es keine wohlgeordneten gibt, genügt es, zu beweisen, dass es keine wohlgeordneten Tabellen 
@@ -275,7 +277,7 @@ Satz:
     a\leq m$. Dann sind die Felder $(\dot a, 1)$ offensichtlich genau die Felder der ersten Spalte. Natürlich muss 
     in mindestens einem der Felder der ersten Spalte eine positive Zahl stehen, da $T^*$ f.p.r.w. ist. Es gibt also 
     ein Feld $(\dot a, 1)$ mit $(\dot a, 1)'>0$ und $R(\dot a, 1; \dot a, n)>R(1, 1; m, 1)$. Wenn für $T^*$ nicht 
-    Satz \ref{haupt4} gelten würde, dürfte es ein solches Feld aber nicht geben. Dessen Exisenz stellt also einen 
+    Satz \ref{haupt4} gelten würde, dürfte es ein solches Feld aber nicht geben. Dessen Existenz stellt also einen 
     Widerspruch dazu dar, dass für $T^*$ nicht Satz \ref{haupt4} gilt! Da aus $R(1, 1; 1, n)>R(1, 1; m, 1)$ ein 
     Widerspruch folgt, kann nicht $R(1, 1; 1, n)>R(1, 1; m, 1)$ sein; es muss also:
     \[
