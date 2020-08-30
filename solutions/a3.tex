@@ -11,7 +11,9 @@ $\overline{AB}$ ist die Distanz von $A$ zu $B$ (stets mit positivem Vorzeichen; 
 "`HS"' ist kurz für (die entsprechend deklinierte Form von) "`Hilfssatz"'.
 
 Sehr oft habe ich die Distanzformel 
-\[\overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{, für alle Punkte $A,B$}\] 
+\[
+    \overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\text{, für alle Punkte $A,B$}
+\] 
 verwendet. Ich habe bei den Gleichungen, bei denen ich sie verwendet habe, oft nicht dazugeschrieben, dass sich die 
 Gleichungen mit der Distanzformel ergeben. Diese Entscheidung habe ich getroffen, da ich diese Formel so oft verwendet 
 habe, dass, wenn ich sie jedes mal erwähnt hätte, dies einige Sätze deutlich komplizierter und teilweise sogar 
@@ -246,7 +248,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
     \begin{proof}[Beweis des HS]
         Zunächst ergibt sich durch Umformen die Gleichung $x_M^2+y_M^2=2x_Mx_S+2y_My_S$. Diese Umformung ist 
         zwar etwas länger, allerdings in jedem Schritt elementar genug, dass ich einen Kommentar für überflüssig 
-        halte. Jedoch möchte ich anmerken, dass $\sqrt{r^2+1}^2=|r^2+1|=r^2+1$, da $r^2+1$ positiv ist.
+        halte.
         \begin{align*}
             x_M^2+y_M^2&=\left(\frac{x_N+c}{\sqrt{r^2+1}}\right)^2+\left(\frac{r(x_N+c)}{\sqrt{r^2+1}}\right)^2
             =\frac{(x_N+c)^2}{r^2+1}+\frac{r^2(x_N+c)^2}{r^2+1}\\
@@ -322,7 +324,7 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
         \end{align*}
         Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
     \end{proof}
-    Aus den Hilfssätzen \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
+    Aus den HS \ref{dumm_P}, \ref{dumm_M}, \ref{dumm_N} und \ref{dumm_Q} folgt direkt: 
     $\overline{PS}=\overline{MS}=\overline{NS}=\overline{QS}=\sqrt{x_S^2+y_S^2}$. Wenn $n$ nicht orthogonal zu $m$ 
     ist, gibt es also einen festen Punkt $Q\neq P$ so, dass $P, M, N, Q$ den gleichen Abstand zu einem Punkt $S$ 
     haben, also stets auf einem gemeinsamen Kreis liegen.

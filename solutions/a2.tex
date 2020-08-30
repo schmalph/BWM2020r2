@@ -3,14 +3,9 @@
 \subsection*{Hinweise zur Darstellung}
 
 $\gcd(\alpha, \beta)$ steht für den größten gemeinsamen Teiler (engl.: greatest common divisor) der Zahlen $\alpha$ 
-und $\beta$. Also ist z.B. $\gcd(\alpha, \beta) = 1$ äquivalent zu "`$\alpha$ und $\beta$ sind teilerfremd"'.
-
-"`O.B.d.A."' (oder mitten im Satz "`o.B.d.A."') ist kurz für "`ohne Beschränkung der Allgemeinheit"'.
-
-$\Q$ ist die Menge der rationalen Zahlen.
-
-$\mathbb{Z}$ ist die Menge der ganzen Zahlen.
-
+und $\beta$. Also ist z.B. $\gcd(\alpha, \beta) = 1$ äquivalent zu "`$\alpha$ und $\beta$ sind teilerfremd"'.\\
+$\Q$ ist die Menge der rationalen Zahlen.\\
+$\mathbb{Z}$ ist die Menge der ganzen Zahlen.\\
 $\alpha \mid \beta$ heißt, dass $\alpha$ ein Teiler von $\beta$, also $\beta$ ein Vielfaches von $\alpha$ ist.
 
 \subsection*{Lösung von Aufgabe 2}
@@ -24,7 +19,8 @@ Die in Aufgabe 2 zu zeigende Aussage ist nun die des folgenden Satzes:
     Nehme man an, es gäbe drei Zahlen $x, y, z \in \Q$, die beide Gleichungen erfüllen. Da $x, y$ rationale Zahlen 
     sind, muss es vier Zahlen $a', b', c', d' \in \mathbb{Z}$ ($b', d' \neq 0$) geben, für die $x = \frac{a'}{b'}$ 
     und $y = \frac{c'}{d'}$. Sei nun $\frac{a}{b}$ die vollständig gekürzte Form des Bruches $\frac{a'}{b'}$ und 
-    $\frac{c}{d}$ die des Bruches $\frac{c'}{d'}$. D.h. es ist $x = \frac{a}{b}$ und $y = \frac{c}{d}$ mit 
+    $\frac{c}{d}$ die des Bruches $\frac{c'}{d'}$ und sei hierbei $b, d>0$, also, wenn $x$ bzw. $y$ negativ ist, ist 
+    es $a$ bzw. $c$, aber nie $b$ bzw. $d$. D.h. es ist $x = \frac{a}{b}$ und $y = \frac{c}{d}$ mit 
     $\gcd(a, b) = \gcd(c, d) = 1$ (wären die größten gemeinsamen Teiler größer als 1, wären die Brüche offensichtlich 
     nicht vollständig gekürzt). Nun ist wegen $x+y+z=0$ offenbar $z = -x-y = -\frac{a}{b} - \frac{c}{d} = -\frac{a 
     \cdot d}{b \cdot d} - \frac{c \cdot b}{d \cdot b} = - \frac{ad+cb}{db}$. Damit gilt dann wegen $x^2+y^2+z^2 = 100$:
@@ -40,17 +36,29 @@ Die in Aufgabe 2 zu zeigende Aussage ist nun die des folgenden Satzes:
     \end{align*}\\
     Sei nun $\gcd(b, d) = t$ und seien die dann natürlichen Zahlen $\frac{b}{t}$ und $\frac{d}{t}$ mit $p$ bzw. $q$ 
     bezeichnet (sie sind natürlich, da, weil $t$ der größte gemeinsame Teiler von $b$ und $d$ ist, natürlich $t$ von 
-    sowohl $b$ als auch $d$ Teiler sein muss). Sei nun $\gcd(p,q)=u$, dann ist auch $u|b$ und $u|d$. Nun werden beim 
-    Teilen durch den größten gemeinsamen Teiler (also hier $t$) aber stets alle echten gemeinsamen Teiler 
-    "`weggekürzt"'. Also kann $u$ kein echter Teiler sein, weshalb $p$ und $q$ teilerfremd sein müssen! Wenn man nun 
-    $b = pt$ und $d = qt$ in \eqref{frac_manip} einsetzt, erhält man:
+    sowohl $b$ als auch $d$ Teiler sein muss).
+    \begin{lem}
+        Die Zahlen $p$ und $q$ sind teilerfremd.
+    \end{lem}
+    \begin{proof}[Beweis des HS durch Widerspruch]
+        \renewcommand{\qedsymbol}{$\square$}
+        Sei $k$ ein gemeinsamer Teiler von $p$ und $q$. Sei ferner $k^e$ die größte Potenz von $k$, die $p$ und $q$ teilt. 
+        Es ist also $k^e|p$ und $k^e|q$, aber gleichzeitig $k^{e+1}\nmid p$ oder $k^{e+1}\nmid q$. Sei nun $k^i$ die 
+        größte Potenz von $k$, die $t$ teilt. Dann ist offensichtlich $k^{e+i}$ die größte Exponenz von $k$, die 
+        $pt=b$ und $qt=d$ teilt. Es ist also $k^{e+i}|b$ und $k^{e+i}|d$. Damit ist dann aber offensichtlich auch 
+        $k^{e+i}|\gcd(b, d)=t$. Gleichzeitig ist aber $k^{i}$ die größte Exponenz von $k$, die $t$ teilt! Es darf 
+        also nicht $e+i>i$ sein, also muss v.a. $e=0$ gelten. Damit teilt aber $k$ nicht $p$ und $q$. Da die Annahme, 
+        $p$ und $q$ hätten einen gemeinsamen Teiler, zu einem Widerspruch führt, muss sie falsch sein und damit müssen 
+        $p$ und $q$ teilerfremd sein!
+    \end{proof}
+    Wenn man nun $b = pt$ und $d = qt$ in \eqref{frac_manip} einsetzt, erhält man:
     \begin{align*}
         50 \cdot (db)^2 &= (ad)^2 + abcd + (cb)^2\\
-        = 50 \cdot p^2t^2 \cdot q^2 t^2 &= a^2 \cdot q^2 t^2 + ac \cdot pt \cdot qt + c^2 \cdot p^2t^2 \quad \| 
+        = 50 \cdot q^2t^2 \cdot p^2 t^2 &= a^2 \cdot q^2 t^2 + ac \cdot pt \cdot qt + c^2 \cdot p^2t^2 \quad \| 
         \cdot \frac{1}{t^2}\\
-        \iff 50 \cdot t^2 \cdot  p^2 q^2 &= a^2 q^2 + acpq +c^2p^2 \numberthis \label{divisib}
+        \iff 50 \cdot t^2 \cdot  q^2 p^2 &= a^2 q^2 + acpq +c^2p^2 \numberthis \label{divisib}
     \end{align*}\\
-    Nun ist in \eqref{divisib} offensichtlich die linke Seit durch $p$ und durch $q$ teilbar, also muss es die 
+    Nun ist in \eqref{divisib} offensichtlich die linke Seite durch $p$ und durch $q$ teilbar, also muss es die 
     rechte Seite auch sein. Es muss also $p \mid a^2 q^2 + acpq + c^2 p^2$ und $q \mid a^2 q^2 + acpq + c^2 p^2$. 
     Aus $p \mid a^2 q^2 + acpq + c^2 p^2$ folgt wegen $p \mid acpq + c^2 p^2$ offenbar, dass $p \mid a^2 q^2$, während 
     aus $q \mid a^2 q^2 + acpq + c^2 p^2$ wegen $q \mid a^2 q^2 + acpq$ folgt, dass $q \mid c^2 p^2$. Es gilt also:
