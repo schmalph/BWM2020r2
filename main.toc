@@ -1,6 +1,6 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{Benutzte Hilfsmittel}{2}%
-\contentsline {section}{\numberline {1}Aufgabe 1}{3}%
-\contentsline {section}{\numberline {2}Aufgabe 2}{8}%
-\contentsline {section}{\numberline {3}Aufgabe 3}{10}%
-\contentsline {section}{\numberline {4}Aufgabe 4}{17}%
+\contentsline {section}{Benutzte Hilfsmittel}{1}%
+\contentsline {section}{\numberline {1}Aufgabe 1}{2}%
+\contentsline {section}{\numberline {2}Aufgabe 2}{7}%
+\contentsline {section}{\numberline {3}Aufgabe 3}{9}%
+\contentsline {section}{\numberline {4}Aufgabe 4}{16}%
