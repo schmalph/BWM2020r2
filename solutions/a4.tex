@@ -29,12 +29,12 @@ Seien zunächst folgende Begriffe eingeführt, die den Beweis hoffentlich kürze
     \end{alignat*}    
 \end{definition}
 \begin{definition}
-    Mit einer "`spaltenweise geordneten"' Tabelle ist eine Tabelle gemeint, für die stets $R(s, 1; s, m)\leq 
-    R(s+1, 1; s+1, m)$ gilt, wobei $m$ die Anzahl an Zeilen, $R$ die Rechtecksfunktion dieser Tabelle ist und 
-    $1\leq s\leq m-1$. Ähnlich ist mit einer "`zeilenweise geordneten"' Tabelle eine gemeint, für die stets 
-    $R(z, 1; z, n)\leq R(z+1, 1; z+1, n)$ gilt, wobei $n$ die Anzahl an Spalten, $R$ die Rechtecksfunktion dieser 
-    Tabelle ist und $1\leq z\leq n-1$. Ist eine Tabelle zeilen- und spaltenweise geordneten, heißt sie kurz auch 
-    "`wohlgeordnet"'.
+    Mit einer "`spaltenweise geordneten"' Tabelle ist eine Tabelle gemeint, für die stets $R(1, s; m, s)\leq 
+    R(1, s+1; m, s+1)$ (für $1\leq s\leq n-1$) gilt, wobei $m$ die Anzahl an Zeilen, $n$ die Anzahl an Spalten und 
+    $R$ die Rechtecksfunktion dieser Tabelle ist. Ähnlich ist mit einer "`zeilenweise geordneten"' Tabelle eine 
+    gemeint, für die stets $R(z, 1; z, n)\leq R(z+1, 1; z+1, n)$ (für $1\leq z\leq m-1$) gilt, wobei $m$ die Anzahl 
+    an Zeilen, $n$ die Anzahl an Spalten und $R$ die Rechtecksfunktion dieser Tabelle ist. Ist eine Tabelle zeilen- 
+    und spaltenweise geordneten, heißt sie kurz auch "`wohlgeordnet"'.
 \end{definition}
 
 \subsection*{Hilfssätze über die eingeführten Begriffe}
@@ -94,7 +94,7 @@ da sie dann immer ohne Umformungsschritte überprüfbar sind.
     der $j$-ten Spalte dieser Tabelle.
 \end{lem}
 \begin{proof}[Beweis des HS]
-    Per Defintion ist $R(i, 1; i, n)=(i, 1)'+(i, 2)'+\cdots+(i, n-1)'+(i, n)$. Die Felder der $i$-ten Zeile sind die 
+    Per Defintion ist $R(i, 1; i, n)=(i, 1)'+(i, 2)'+\cdots+(i, n-1)'+(i, n)'$. Die Felder der $i$-ten Zeile sind die 
     der Form $(i, a)$, wobei $1\leq a\leq n$. Offensichtlich sind diese genau die Felder, deren Feldwerte aufaddiert 
     werden, um $R(i, 1; i, n)$ zu berechnen. $R(i, 1; i, n)$ ist also die Summe der Werte in den Feldern der $i$-ten 
     Zeile.
