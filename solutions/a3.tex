@@ -74,7 +74,7 @@ würde, was einen Widerspruch dazu darstellt, dass $m$ und $n$ sich nur in einem
 wird im Folgenden $r$ genannt. Die Geradengleichung von $m$ ist also: $y=r\cdot x$ bzw. $x=\frac{y}{r}$. Da $M$ auf 
 $m$ liegt, muss $x_M=\frac{y_M}{r}$ gelten. Zusammen mit $|x_N+c|=\sqrt{x_M^2+y_M^2}$ ergibt das dann: $|x_N+c|
 =\sqrt{x_M^2+y_M^2}=\sqrt{(\frac{y_M}{r})^2+y_M^2}=\sqrt{\frac{1}{r^2}\cdot y_M^2+y_M^2}=\sqrt{(1+\frac{1}{r^2})
-\cdot y_m^2}=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat und 
+\cdot y_M^2}=|y_M|\cdot\sqrt{1+\frac{1}{r^2}}$. Da aber $y_M$ das gleiche Vorzeichen wie $d_M=x_N+c$ hat und 
 $\sqrt{1+\frac{1}{r^2}}$ stets positiv ist, gilt die Gleichung auch ohne Betragsstriche:
 \begin{alignat*}{2}
     x_N+c&=y_M\cdot\sqrt{1+\frac{1}{r^2}}&&\\
@@ -304,8 +304,8 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             \left(x_N+c\right)c\left(r^2+1\right)\right)\\
             &=\frac{1}{d}\left(cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)+\left(x_N+c\right)c\left(r^2+1\right)
             -cx_N\sqrt{r^2+1}\right)\\
-            &=\frac{1}{d}\left(cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)\right)\\
-            &\quad+\frac{1}{d}\left(\left(x_N+c\right)c\left(r^2+1\right)-cx_N\sqrt{r^2+1}\right)\\
+            &=\frac{1}{d}\left(cx_N\sqrt{r^2+1}-cx_N\left(r^2+1\right)\right)
+            +\frac{1}{d}\left(\left(x_N+c\right)c\left(r^2+1\right)-cx_N\sqrt{r^2+1}\right)\\
             &=\frac{1}{d}\left(1\cdot cx_N\sqrt{r^2+1}+\left(-\sqrt{r^2+1}\right)\cdot cx_N\sqrt{r^2+1}\right)\\
             &\quad+\frac{1}{d}\left((x_N+c)\sqrt{r^2+1}\cdot c\sqrt{r^2+1}-x_N\cdot c\sqrt{r^2+1}\right)\\
             &=\frac{1}{d}\left(1-\sqrt{r^2+1}\right)\left(cx_N\sqrt{r^2+1}\right)+\frac{1}{d}\left((x_N+c)\sqrt{r^2+1}
@@ -314,12 +314,12 @@ Nun muss noch bewiesen werden, dass es einen solchen Punkt $Q$ auch gibt, wenn $
             \left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
             &=\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{d}x_N+ \frac{c\sqrt{r^2+1}}{d}\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
             &=\frac{c\sqrt{r^2+1}\left(1-\sqrt{r^2+1}\right)}{\left(1-\sqrt{r^2+1}\right)^2+r^2}x_N+
-            \frac{c\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
-            &=x_Qx_N+y_Q\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
+            \frac{cr\sqrt{r^2+1}}{\left(1-\sqrt{r^2+1}\right)^2+r^2}\frac{(x_N+c)\sqrt{r^2+1}-x_N}{r}\\
+            &=x_Qx_N+y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{r}\\
         \end{align*}
         \begin{align*}
-            x_Q^2+y_Q^2&=x_Qx_N+y_Q\left((x_N+c)\sqrt{r^2+1}-x_N\right)\\
-            &=2x_Q\frac{x_N}{2}+2y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2}\\
+            x_Q^2+y_Q^2&=x_Qx_N+y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{r}\\
+            &=2x_Q\frac{x_N}{2}+2y_Q\frac{(x_N+c)\sqrt{r^2+1}-x_N}{2r}\\
             &=2x_Qx_S+2y_Qy_S
         \end{align*}
         Aus der Gleichung $x_Q^2+y_Q^2=2x_Qx_S+2y_Qy_S$ ergibt sich mit HS \ref{cor_hilfe} direkt die Behauptung.
