@@ -69,10 +69,12 @@ Die in Aufgabe 2 zu zeigende Aussage ist nun die des folgenden Satzes:
     \[
         p \mid a^2 \text{ und } q \mid c^2 \iff \frac{b}{t} \mid a^2 \text{ und } \frac{d}{t} \mid c^2
     \]
-    Nun sind aber $a$ und $b$ teilerfremd, d.h. kein Teiler von $b$ (was $\frac{b}{t}$ ja ist) außer 1 kann $a$ bzw. 
-    $a^2$ teilen. Es muss also $\frac{b}{t} = 1$ und damit $b = t$. Da auch $d$ und $c$ teilerfremd sind, folgt mit 
-    gleicher Begründung, dass $d = t$. Damit ist dann $b = d$. Setzt man dies in \eqref{frac_manip} ein, so erhält 
-    man:
+    Nun befinden sich in der Primfaktorisierung von $a^2$ die gleichen Primfaktoren wie in der von $a$, nur eben 
+    jeweils doppelt so oft. Da $b$ teilerfremd zu $a$ ist, haben sie auch keine Primfaktoren gemeinsam, also haben 
+    $b$ und $a^2$ ebenfalls keine Primfaktoren, also überhaupt keine Faktoren, gemeinsam. D.h. kein Teiler von $b$ 
+    (was $\frac{b}{t}$ ja ist) außer 1 kann $a^2$ teilen. Es muss also $\frac{b}{t} = 1$ und damit $b = t$. Da auch 
+    $d$ und $c$ teilerfremd sind, folgt mit gleicher Begründung, dass $d = t$. Damit ist dann $b = d$. Setzt man dies 
+    in \eqref{frac_manip} ein, so erhält man:
     \begin{align*}
         50 \cdot b^2 \cdot b^2 &= a^2 b^2 + ac \cdot b^2 + c^2 b^2 \quad \| \cdot \frac{1}{b^2}\\
         \iff 50b^2 &= a^2 + ac + c^2 \numberthis \label{even_odd}
